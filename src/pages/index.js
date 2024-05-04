@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import Script from "next/script";
 import { useEffect, useState } from "react";
 import Header from "@/components/header/header";
 import Stepper from "@/components/stepper/stepper";
@@ -12,7 +9,6 @@ import {
   ExecuteResponse,
 } from "@soulmachines/smskillsdk";
 import { Output, Intent, Variables } from "@soulmachines/smskillsdk";
-
 
 // execute endpoint handler containing response generation logic
 // function executeHandler(request) {
@@ -45,29 +41,22 @@ import { Output, Intent, Variables } from "@soulmachines/smskillsdk";
 //   response.json(executeResponse);
 // })
 
-
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 const apiKey =
   "eyJzb3VsSWQiOiJkZG5hLWxwZmxleDk4MWQtLWV4cGxvcmVyIiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfNDE5ZTNjYjEtMDRmOS00ZGZmLWFkYjItM2FlY2VjZmY3ODMxIn0=";
 let scene;
 
 export default function Home() {
-
-  const [step, setStep]=useState(0);
+  const [step, setStep] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
-        connect();
+      connect();
     }, 100);
 
-    setTimeout(() => {
-      setStep(1);
-  }, 2000);
-    // const resetButton = document.getElementById("reset-button");
-    // resetButton.addEventListener("click", () => (window.location = "/"));
+   
   }, []);
-
-  console.log("myscene", { scene });
 
   async function connect() {
     // get the video element
@@ -90,6 +79,8 @@ export default function Home() {
 
   function onConnectionSuccess(sessionId) {
     console.info("success! session id:", sessionId);
+    setLoading(false);
+    setStep(1);
 
     // start the video playing
     scene
@@ -114,13 +105,13 @@ export default function Home() {
     }
   }
   function sendMessage() {
-   scene.sendUserText("Hello")
+    scene.sendUserText("Hello");
   }
   return (
     <>
       {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
       <Header />
-      <Stepper setStep={setStep} step={step}/>
+      <Stepper setStep={setStep} step={step} loading={loading}/>
       {/* <button onClick={sendMessage}> Send message</button> */}
     </>
   );
