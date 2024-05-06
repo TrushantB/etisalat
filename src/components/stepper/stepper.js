@@ -7,12 +7,16 @@ import Four from "./four/four";
 
 const Stepper = ({ setStep, step, loading }) => {
   return (
-    <div className="a w-100 flex items-center justify-center relative mx-3 h-[calc(100vh-100px)]">
-      <div className="absolute">
-        <video id="sm-video" className="h-[calc(100vh-100px)]"></video>
+    <div className="a w-100 flex items-center justify-center relative mx-3 ">
+      <div className="relative video-container">
+        <video id="sm-video" className=""></video>
+        <img
+          className="absolute bottom-5 right-5 w-32 h-12"
+          src="/images/full-logo.svg"
+        ></img>
       </div>
       {loading && (
-        <div class="loader">
+        <div class="loader !absolute">
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>
