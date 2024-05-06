@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 
-const Three = ({ setStep }) => {
+const Three = ({
+  setStep,
+  handleQuickPayRecharge,
+  handleAddToBill,
+  handleHomeWireless,
+  handleTVInternet,
+  handlePrepaidPlans,
+  handlePostpaidPlans,
+}) => {
   const [isMain, setIsMain] = useState(true);
   const [ispostpaid, setIsPostpaid] = useState(false);
   const [isPrepaid, setIsPrepaid] = useState(false);

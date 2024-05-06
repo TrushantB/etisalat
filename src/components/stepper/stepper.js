@@ -5,7 +5,19 @@ import Two from "./two/two";
 import Three from "./three/three";
 import Four from "./four/four";
 
-const Stepper = ({ setStep, step, loading }) => {
+const Stepper = ({
+  setStep,
+  step,
+  loading,
+  onSelectLanguage,
+  onSelectType,
+  handleQuickPayRecharge,
+  handleAddToBill,
+  handleHomeWireless,
+  handleTVInternet,
+  handlePrepaidPlans,
+  handlePostpaidPlans,
+}) => {
   const handleLeftStep = () => {
     if (step > 1) {
       setStep(step - 1);
@@ -16,6 +28,7 @@ const Stepper = ({ setStep, step, loading }) => {
       setStep(step + 1);
     }
   };
+
   return (
     <div className="a w-100 flex items-center justify-center relative mx-3 sm:h-[calc(100vh-112px)] ">
       <div className="relative flex items-center flex-col video-container">
@@ -61,9 +74,21 @@ const Stepper = ({ setStep, step, loading }) => {
           <div></div>
         )}
         <div className=" justify-center items-center w-auto">
-          {step === 1 && <One setStep={setStep} />}
-          {step === 2 && <Two setStep={setStep} />}
-          {step === 3 && <Three setStep={setStep} />}
+          {step === 1 && (
+            <One setStep={setStep} onSelectLanguage={onSelectLanguage} />
+          )}
+          {step === 2 && <Two setStep={setStep} onSelectType={onSelectType} />}
+          {step === 3 && (
+            <Three
+              setStep={setStep}
+              onSelectPostpaidPlans={handlePostpaidPlans}
+              handlePrepaidPlans={handlePrepaidPlans}
+              handleTVInternet={handleTVInternet}
+              handleHomeWireless={handleHomeWireless}
+              handleAddToBill={handleAddToBill}
+              handleQuickPayRecharge={handleQuickPayRecharge}
+            />
+          )}
           {step === 4 && <Four setStep={setStep} />}
         </div>
 
