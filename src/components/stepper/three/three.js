@@ -18,16 +18,19 @@ const Three = ({
   const handlePostPaid = () => {
     setIsMain(false);
     setIsPostpaid(true);
+    handlePostpaidPlans();
   };
 
   const handlePrePaid = () => {
     setIsMain(false);
     setIsPrepaid(true);
+    handlePrepaidPlans();
   };
 
   const handleTv = () => {
     setIsMain(false);
     setIsTv(true);
+    handleTVInternet();
   };
 
   const handleBack = () => {
@@ -41,6 +44,7 @@ const Three = ({
   const handleWifi = () => {
     setIsMain(false);
     setIsWifi(true);
+    handleHomeWireless();
   };
 
   return (
@@ -75,14 +79,12 @@ const Three = ({
             <p className="text-[8px] bg-[#E00800] rounded-md w-auto absolute p-1 -top-2 left-1 flex text-white">
               FREE voucher
             </p>
-            <div
-              onClick={handleTv}
-              className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md"
-            >
+            <div className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md">
               <img className="w-8 h-8" src="/images/tv.svg" alt="" />
               <p className="text-center text-sm">Tv & Internet</p>
             </div>
           </div>
+
           <div
             onClick={handleWifi}
             className="flex flex-col relative cursor-pointer"
@@ -90,10 +92,7 @@ const Three = ({
             <p className="text-[8px] bg-[#E00800] rounded-md w-auto absolute p-1 -top-2 left-1 flex text-white">
               5G
             </p>
-            <div
-              onClick={handleTv}
-              className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md"
-            >
+            <div className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md">
               <img className="w-8 h-8" src="/images/wifi.svg" alt="" />
               <p className="text-center text-sm">Home Wireless</p>
             </div>
@@ -101,6 +100,7 @@ const Three = ({
           <a
             href="https://www.etisalat.ae/en/c/digital-lifestyle/add-to-bill.html"
             target="_blank"
+            onClick={() => handleAddToBill()}
             className="bg-white flex flex-col gap-2 p-3 justify-center h-full items-center h-full rounded-md cursor-pointer"
           >
             <img className="w-8 h-8" src="/images/bill.svg" alt="" />
@@ -110,6 +110,7 @@ const Three = ({
           <a
             target="_blank"
             href="https://www.etisalat.ae/b2c/quick-pay.html?locale=en"
+            onClick={() => handleQuickPayRecharge()}
             className="bg-white flex flex-col gap-2 p-3 justify-center items-center rounded-md cursor-pointer"
           >
             <img className="w-8 h-8" src="/images/pay.svg" alt="" />

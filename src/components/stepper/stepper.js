@@ -73,24 +73,28 @@ const Stepper = ({
         ) : (
           <div></div>
         )}
-        <div className=" justify-center items-center w-auto">
-          {step === 1 && (
-            <One setStep={setStep} onSelectLanguage={onSelectLanguage} />
-          )}
-          {step === 2 && <Two setStep={setStep} onSelectType={onSelectType} />}
-          {step === 3 && (
-            <Three
-              setStep={setStep}
-              onSelectPostpaidPlans={handlePostpaidPlans}
-              handlePrepaidPlans={handlePrepaidPlans}
-              handleTVInternet={handleTVInternet}
-              handleHomeWireless={handleHomeWireless}
-              handleAddToBill={handleAddToBill}
-              handleQuickPayRecharge={handleQuickPayRecharge}
-            />
-          )}
-          {step === 4 && <Four setStep={setStep} />}
-        </div>
+        {!loading && (
+          <div className=" justify-center items-center w-auto">
+            {step === 1 && (
+              <One setStep={setStep} onSelectLanguage={onSelectLanguage} />
+            )}
+            {step === 2 && (
+              <Two setStep={setStep} onSelectType={onSelectType} />
+            )}
+            {step === 3 && (
+              <Three
+                setStep={setStep}
+                handlePostpaidPlans={handlePostpaidPlans}
+                handlePrepaidPlans={handlePrepaidPlans}
+                handleTVInternet={handleTVInternet}
+                handleHomeWireless={handleHomeWireless}
+                handleAddToBill={handleAddToBill}
+                handleQuickPayRecharge={handleQuickPayRecharge}
+              />
+            )}
+            {step === 4 && <Four setStep={setStep} />}
+          </div>
+        )}
 
         {step !== 3 ? (
           <div></div>
