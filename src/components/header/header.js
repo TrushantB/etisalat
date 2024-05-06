@@ -15,27 +15,27 @@ const Header = () => {
 
       {/* contact main div */}
       <div className="flex  sm:flex-row lg:gap-12 items-center sm:items-start gap-2">
-        <div className="flex flex-col sm:flex-row sm:gap-10 order-2 sm:order-1">
-          <div className="flex gap-2 lg:gap-5 items-center sm:items-start">
+        <div className="flex flex-col sm:flex-row sm:gap-14 order-2 sm:order-1">
+          <div className="flex gap-2 lg:gap-4 items-center sm:items-stretch">
             <img
-              className="sm:w-7 sm:h-7 w-4 h-4"
+              className="sm:w-6 sm:h-6 w-4 h-4"
               src="/images/phone.svg"
               alt=""
             />
-            <p>8005800</p>
+            <a href="tel:8005800">8005800</a>
           </div>
 
-          <div className="flex sm:items-start gap-2 lg:gap-5 items-center">
+          <div className="flex sm:items-stretch gap-2 lg:gap-4 items-center">
             <img
-              className="sm:w-7 sm:h-7 w-4 h-4"
+              className="sm:w-6 sm:h-6 w-4 h-4"
               src="/images/mail.svg"
               alt=""
             />
-            <p>info@etisalat.ae</p>
+            <a href="mailto:info@etisalat.ae">info@etisalat.ae</a>
           </div>
         </div>
-        <div className="order-1 sm:order-2">
-          <img className="w-20 h-20" src="/images/qrcode.svg" alt="" />
+        <div className="order-1 sm:order-2 shadow-lg rounded-md">
+          <img className="w-20 h-20" src="/images/file.png" alt="" />
         </div>
       </div>
     </div>

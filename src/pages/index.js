@@ -54,8 +54,6 @@ export default function Home() {
     setTimeout(() => {
       connect();
     }, 100);
-
-   
   }, []);
 
   async function connect() {
@@ -111,7 +109,7 @@ export default function Home() {
     <>
       {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
       <Header />
-      <Stepper setStep={setStep} step={step} loading={loading}/>
+      <Stepper setStep={setStep} step={step} loading={loading} />
       {/* <button onClick={sendMessage}> Send message</button> */}
     </>
   );
