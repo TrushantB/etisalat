@@ -31,8 +31,8 @@ export default function Home() {
     scene = new Scene({
       apiKey: language === "English" ? apiKeyEN : apiKeyUAE,
       videoElement: videoEl,
-      requestedMediaDevices: { microphone: false, camera: true },
-      requiredMediaDevices: { microphone: false, camera: true },
+      requestedMediaDevices: { microphone: true, camera: true },
+      requiredMediaDevices: { microphone: true, camera: true },
     });
 
     persona = new Persona(scene, Date.now());
