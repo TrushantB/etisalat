@@ -35,8 +35,8 @@ const Stepper = ({
   };
 
   return (
-    <div className="a w-100 flex  justify-center relative mx-3 lg:mx-0 sm:h-[calc(100vh-112px)] ">
-      <div className="relative flex items-center  flex-col video-container">
+    <div className="a w-100 flex  justify-center  relative mx-3 lg:mx-0   h-[calc(100vh-112px)] ">
+      <div className="relative flex items-center  flex-col video-container  ">
         <video
           id="sm-video"
           className={loading ? "opacity-0" : "opacity-100"}
