@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Three = ({
   setStep,
+  isEnglish,
   handleQuickPayRecharge,
   handleAddToBill,
   handleHomeWireless,
@@ -60,7 +61,9 @@ const Three = ({
             </p>
             <div className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md">
               <img className="w-8 h-8" src="/images/postpaid.svg" alt="" />
-              <p className="text-center text-sm">Postpaid Plans</p>
+              <p className="text-center text-sm">
+                {isEnglish ? "Postpaid plans" : "خطط الدفع الآجل"}
+              </p>
             </div>
           </div>
 
@@ -69,7 +72,9 @@ const Three = ({
             className="bg-white flex flex-col gap-2 justify-center p-3 items-center rounded-md cursor-pointer"
           >
             <img className="w-8 h-8" src="/images/postpaid.svg" alt="" />
-            <p className="text-center text-sm">Prepaid Plans</p>
+            <p className="text-center text-sm">
+              {isEnglish ? "Prepaid Plans" : "خطط الدفع المسبق"}
+            </p>
           </div>
 
           <div
@@ -81,7 +86,10 @@ const Three = ({
             </p>
             <div className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md">
               <img className="w-8 h-8" src="/images/tv.svg" alt="" />
-              <p className="text-center text-sm">Tv & Internet</p>
+              <p className="text-center text-sm">
+                {" "}
+                {isEnglish ? "Tv & Internet" : "التلفزيون والإنترنت"}
+              </p>
             </div>
           </div>
 
@@ -94,15 +102,21 @@ const Three = ({
             </p>
             <div className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md">
               <img className="w-8 h-8" src="/images/wifi.svg" alt="" />
-              <p className="text-center text-sm">Home Wireless</p>
+              <p className="text-center text-sm">
+                {isEnglish ? "Home Wireless" : "لاسلكي منزلي"}
+              </p>
             </div>
           </div>
+
           <a
             onClick={() => handleAddToBill()}
             className="bg-white flex flex-col gap-2 p-3 justify-center h-full items-center h-full rounded-md cursor-pointer"
           >
             <img className="w-8 h-8" src="/images/bill.svg" alt="" />
-            <p className="text-center text-sm">Add to Bill</p>
+            <p className="text-center text-sm">
+              {" "}
+              {isEnglish ? "Home Wireless" : "إضافة إلى الفاتورة"}
+            </p>
           </a>
 
           <a
@@ -112,7 +126,9 @@ const Three = ({
             className="bg-white flex flex-col gap-2 p-3 justify-center items-center rounded-md cursor-pointer"
           >
             <img className="w-8 h-8" src="/images/pay.svg" alt="" />
-            <p className="text-center text-sm">Quick pay Recharge</p>
+            <p className="text-center text-sm">
+              {isEnglish ? "Quick pay Recharge" : "إعادة شحن الدفع السريع"}
+            </p>
           </a>
         </div>
       )}

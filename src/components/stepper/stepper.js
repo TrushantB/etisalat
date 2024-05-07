@@ -19,7 +19,7 @@ const Stepper = ({
   handlePostpaidPlans,
   handleLiveChat,
   handleFAQ,
-  isEnglish
+  isEnglish,
 }) => {
   const handleLeftStep = () => {
     if (step > 1) {
@@ -82,11 +82,16 @@ const Stepper = ({
               <One setStep={setStep} onSelectLanguage={onSelectLanguage} />
             )}
             {step === 2 && (
-              <Two setStep={setStep} onSelectType={onSelectType} isEnglish={isEnglish}/>
+              <Two
+                setStep={setStep}
+                onSelectType={onSelectType}
+                isEnglish={isEnglish}
+              />
             )}
             {step === 3 && (
               <Three
                 setStep={setStep}
+                isEnglish={isEnglish}
                 handlePostpaidPlans={handlePostpaidPlans}
                 handlePrepaidPlans={handlePrepaidPlans}
                 handleTVInternet={handleTVInternet}
