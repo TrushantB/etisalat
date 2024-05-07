@@ -17,6 +17,9 @@ const Stepper = ({
   handleTVInternet,
   handlePrepaidPlans,
   handlePostpaidPlans,
+  handleLiveChat,
+  handleFAQ,
+  isEnglish
 }) => {
   const handleLeftStep = () => {
     if (step > 1) {
@@ -40,19 +43,19 @@ const Stepper = ({
         ></img>
       </div>
       {loading && (
-        <div class="loader !absolute">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-          <div class="bar4"></div>
-          <div class="bar5"></div>
-          <div class="bar6"></div>
-          <div class="bar7"></div>
-          <div class="bar8"></div>
-          <div class="bar9"></div>
-          <div class="bar10"></div>
-          <div class="bar11"></div>
-          <div class="bar12"></div>
+        <div className="loader !absolute">
+          <div className="bar1"></div>
+          <div className="bar2"></div>
+          <div className="bar3"></div>
+          <div className="bar4"></div>
+          <div className="bar5"></div>
+          <div className="bar6"></div>
+          <div className="bar7"></div>
+          <div className="bar8"></div>
+          <div className="bar9"></div>
+          <div className="bar10"></div>
+          <div className="bar11"></div>
+          <div className="bar12"></div>
         </div>
       )}
       <div className="flex  justify-between w-full items-center  gap-10 absolute mt-24">
@@ -79,7 +82,7 @@ const Stepper = ({
               <One setStep={setStep} onSelectLanguage={onSelectLanguage} />
             )}
             {step === 2 && (
-              <Two setStep={setStep} onSelectType={onSelectType} />
+              <Two setStep={setStep} onSelectType={onSelectType} isEnglish={isEnglish}/>
             )}
             {step === 3 && (
               <Three
@@ -92,7 +95,13 @@ const Stepper = ({
                 handleQuickPayRecharge={handleQuickPayRecharge}
               />
             )}
-            {step === 4 && <Four setStep={setStep} />}
+            {step === 4 && (
+              <Four
+                setStep={setStep}
+                handleFAQ={handleFAQ}
+                handleLiveChat={handleLiveChat}
+              />
+            )}
           </div>
         )}
 

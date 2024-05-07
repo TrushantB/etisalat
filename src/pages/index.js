@@ -25,8 +25,8 @@ export default function Home() {
     scene = new Scene({
       apiKey: language === "English" ? apiKeyEN : apiKeyUAE,
       videoElement: videoEl,
-      requestedMediaDevices: { microphone: true, camera: true },
-      requiredMediaDevices: { microphone: true, camera: true },
+      requestedMediaDevices: { microphone: false, camera: true },
+      requiredMediaDevices: { microphone: false, camera: true },
     });
 
     persona = new Persona(scene, Date.now());
@@ -67,10 +67,10 @@ export default function Home() {
 
   // Step 1 start
   const onSelectLanguage = async (newLanguage) => {
-    setLoading(true);
     if (newLanguage !== language) {
       await scene?.disconnect();
       connect(newLanguage);
+      setLoading(true);
     }
     setLanguage(newLanguage);
   };
@@ -92,7 +92,7 @@ export default function Home() {
   // Step 3 start
   const handlePostpaidPlans = () => {
     persona
-      .conversationSend("postpaid plans")
+      .conversationSend("Postpaid plans")
       .then((response) => {
         console.log("response", response);
       })
@@ -103,7 +103,7 @@ export default function Home() {
 
   const handlePrepaidPlans = () => {
     persona
-      .conversationSend("prepaid plans")
+      .conversationSend("Prepaid plans")
       .then((response) => {
         console.log("response", response);
       })
@@ -114,7 +114,7 @@ export default function Home() {
 
   const handleTVInternet = () => {
     persona
-      .conversationSend("TV and Internet")
+      .conversationSend("TV & Internet")
       .then((response) => {
         console.log("response", response);
       })
@@ -125,7 +125,7 @@ export default function Home() {
 
   const handleHomeWireless = () => {
     persona
-      .conversationSend("Home wireless")
+      .conversationSend("Home Wireless")
       .then((response) => {
         console.log("response", response);
       })
@@ -156,6 +156,30 @@ export default function Home() {
   };
   // Step 3 end
 
+  // Step 4 start
+  const handleFAQ = () => {
+    persona
+      .conversationSend("FAQ")
+      .then((response) => {
+        console.log("response", response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleLiveChat = () => {
+    persona
+      .conversationSend("Live chat")
+      .then((response) => {
+        console.log("response", response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  // Step 4 end
+
   return (
     <>
       {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
@@ -172,6 +196,9 @@ export default function Home() {
         handleHomeWireless={handleHomeWireless}
         handleAddToBill={handleAddToBill}
         handleQuickPayRecharge={handleQuickPayRecharge}
+        handleFAQ={handleFAQ}
+        handleLiveChat={handleLiveChat}
+        isEnglish={language === 'English'}
       />
     </>
   );
