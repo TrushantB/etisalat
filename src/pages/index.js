@@ -191,23 +191,27 @@ export default function Home() {
   return (
     <>
       {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
-      <Header />
-      <Stepper
-        setStep={setStep}
-        step={step}
-        loading={loading}
-        onSelectLanguage={onSelectLanguage}
-        onSelectType={onSelectType}
-        handlePostpaidPlans={handlePostpaidPlans}
-        handlePrepaidPlans={handlePrepaidPlans}
-        handleTVInternet={handleTVInternet}
-        handleHomeWireless={handleHomeWireless}
-        handleAddToBill={handleAddToBill}
-        handleQuickPayRecharge={handleQuickPayRecharge}
-        handleFAQ={handleFAQ}
-        handleLiveChat={handleLiveChat}
-        isEnglish={language === "English"}
-      />
+      <div className="lg:w-[60%] mx-auto shadow-md px-4">
+        {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
+
+        <Header />
+        <Stepper
+          setStep={setStep}
+          step={step}
+          loading={loading}
+          onSelectLanguage={onSelectLanguage}
+          onSelectType={onSelectType}
+          handlePostpaidPlans={handlePostpaidPlans}
+          handlePrepaidPlans={handlePrepaidPlans}
+          handleTVInternet={handleTVInternet}
+          handleHomeWireless={handleHomeWireless}
+          handleAddToBill={handleAddToBill}
+          handleQuickPayRecharge={handleQuickPayRecharge}
+          handleFAQ={handleFAQ}
+          handleLiveChat={handleLiveChat}
+          isEnglish={language === "English"}
+        />
+      </div>
     </>
   );
 }
