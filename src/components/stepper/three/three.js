@@ -15,6 +15,8 @@ const Three = ({
   const [isPrepaid, setIsPrepaid] = useState(false);
   const [isTv, setIsTv] = useState(false);
   const [isWifi, setIsWifi] = useState(false);
+  const [isAddToBill, setIsAddToBill] = useState(false);
+  const [isRecharge, setIsRecharge] = useState(false);
 
   const handlePostPaid = () => {
     setIsMain(false);
@@ -40,12 +42,26 @@ const Three = ({
     setIsPrepaid(false);
     setIsWifi(false);
     setIsTv(false);
+    setIsAddToBill(false);
+    setIsRecharge(false);
   };
 
   const handleWifi = () => {
     setIsMain(false);
     setIsWifi(true);
     handleHomeWireless();
+  };
+
+  const handleAddBill = () => {
+    setIsMain(false);
+    setIsAddToBill(true);
+    handleAddToBill();
+  };
+
+  const handleRecharge = () => {
+    setIsMain(false);
+    setIsRecharge(true);
+    handleQuickPayRecharge();
   };
 
   return (
@@ -108,60 +124,100 @@ const Three = ({
             </div>
           </div>
 
-          <a
-            onClick={() => handleAddToBill()}
+          <div
+            onClick={() => handleAddBill()}
             className="bg-white flex flex-col gap-2 p-3 justify-center h-full items-center h-full rounded-md cursor-pointer"
           >
             <img className="w-8 h-8" src="/images/bill.svg" alt="" />
             <p className="text-center text-sm">
               {" "}
-              {isEnglish ? "Home Wireless" : "إضافة إلى الفاتورة"}
+              {isEnglish ? "Add to Bill" : "إضافة إلى الفاتورة"}
             </p>
-          </a>
+          </div>
 
-          <a
-            target="_blank"
-            href="https://www.etisalat.ae/b2c/quick-pay.html?locale=en"
-            onClick={() => handleQuickPayRecharge()}
+          <div
+            onClick={handleRecharge}
             className="bg-white flex flex-col gap-2 p-3 justify-center items-center rounded-md cursor-pointer"
           >
             <img className="w-8 h-8" src="/images/pay.svg" alt="" />
             <p className="text-center text-sm">
               {isEnglish ? "Quick pay Recharge" : "إعادة شحن الدفع السريع"}
             </p>
-          </a>
+          </div>
         </div>
       )}
       {ispostpaid && (
-        <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800] mt-28 py-8 grid grid-cols-2 px-3 gap-3 ">
+        <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-2 px-3 gap-3 ">
           <button
             onClick={handleBack}
             className="absolute text-white left-4 top-2 text-xs "
           >
-            Back
+            <div className="flex items-center ">
+              <svg
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+                className="!w-[14px] !h-[14px]"
+              >
+                <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+              </svg>{" "}
+            </div>
           </button>
           <div className="flex flex-col relative cursor-pointer">
-            <div className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md">
-              <p className="text-sm">Freedom Live Plans</p>
-              <p className="text-xs ">Up to 40% off on all plans</p>
+            <div
+              className="bg-white flex flex-col justify-centers p-3 gap-2 rounded-md"
+              dir={isEnglish ? "ltr" : "rtl"}
+            >
+              <p className="text-sm">
+                {isEnglish ? "Freedom Live Plans" : "خطط فريدوم لايف"}
+              </p>
+              <p className="text-xs ">
+                {isEnglish
+                  ? "Up to 40% off on all plans"
+                  : "خصم يصل إلى 40% على جميع الخطط"}
+              </p>
               <ul className=" list-disc ps-5">
-                <li className="text-[11px]">Loads of data and minutes</li>
-                <li className="text-[11px]">free Content Passes</li>
                 <li className="text-[11px]">
-                  Extra data for your favorite apps
+                  {isEnglish
+                    ? "Loads of data and minutes"
+                    : "كميات كبيرة من البيانات والدقائق"}
+                </li>
+                <li className="text-[11px]">
+                  {isEnglish ? "free Content Passes" : "رصيد محتوى مجاني"}
+                </li>
+                <li className="text-[11px]">
+                  {isEnglish
+                    ? "Extra data for your favorite apps"
+                    : "بيانات إضافية لتطبيقاتك المفضلة"}
                 </li>
               </ul>
             </div>
           </div>
-
           <div className="flex flex-col relative cursor-pointer">
-            <div className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md h-full">
-              <p className="text-sm">Emirati Live Plans</p>
-              <p className="text-xs ">Up to 40% off on all plans</p>
+            <div
+              className="bg-white flex flex-col justify-center p-3 gap-2 rounded-md h-full"
+              dir={isEnglish ? "ltr" : "rtl"}
+            >
+              <p className="text-sm">
+                {isEnglish ? "Emirati Live Plans" : "خطط إماراتي لايف"}
+              </p>
+              <p className="text-xs ">
+                {isEnglish
+                  ? "Up to 40% off on all plans"
+                  : "خصم يصل إلى 40% على جميع الخطط"}
+              </p>
               <ul className=" list-disc ps-5">
-                <li className="text-[11px]">Loads of GBs and minutes</li>
-                <li className="text-[11px]">Premium Numbers</li>
-                <li className="text-[11px]">Free Roam like home </li>
+                <li className="text-[11px]">
+                  {isEnglish
+                    ? "Loads of GBs and minutes"
+                    : "كميات كبيرة من البيانات والدقائق"}
+                </li>
+                <li className="text-[11px]">
+                  {isEnglish ? "Premium Numbers" : "أرقام بريميوم"}
+                </li>
+                <li className="text-[11px]">
+                  {isEnglish ? "Free Roam like home" : "تجوال مجاني مثل المنزل"}
+                </li>
               </ul>
             </div>
           </div>
@@ -169,43 +225,81 @@ const Three = ({
       )}
 
       {isPrepaid && (
-        <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800] mt-28 py-8 grid grid-cols-2 px-3 gap-3 ">
+        <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-2 px-3 gap-3 ">
           <button
             onClick={handleBack}
             className="absolute text-white left-4 top-2 text-xs "
           >
-            Back
+            <div className="flex items-center ">
+              <svg
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+                className="!w-[14px] !h-[14px]"
+              >
+                <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+              </svg>{" "}
+            </div>
           </button>
           <div className="flex flex-col relative cursor-pointer">
-            <div className="bg-white  flex flex-col  justify-center  p-3 gap-2 rounded-md">
-              <p className="text-sm">Wasel Flexi</p>
+            <div
+              className="bg-white flex flex-col justify-center p-3 gap-2 rounded-md"
+              dir={isEnglish ? "ltr" : "rtl"}
+            >
+              <p className="text-sm">
+                {isEnglish ? "Wasel Flexi" : "واصل فليكسي"}
+              </p>
               <p className="text-xs ">
-                Get FREE SIM worth AED 55 with Wasel Flexi
+                {isEnglish
+                  ? "Get FREE SIM worth AED 55 with Wasel Flexi"
+                  : "احصل على شريحة مجانية بقيمة 55 درهم مع واصل فليكسي"}
               </p>
               <ul className=" list-disc ps-5">
-                <li className="text-[11px]">Double data on all plans</li>
                 <li className="text-[11px]">
-                  Save 50% with Wasel Flexi Yearly plans
+                  {isEnglish
+                    ? "Double data on all plans"
+                    : "ضعف البيانات على جميع الخطط"}
                 </li>
                 <li className="text-[11px]">
-                  Unlimited data for GoChat Messenger
+                  {isEnglish
+                    ? "Save 50% with Wasel Flexi Yearly plans"
+                    : "وفر 50% مع خطط واصل فليكسي السنوية"}
+                </li>
+                <li className="text-[11px]">
+                  {isEnglish
+                    ? "Unlimited data for GoChat Messenger"
+                    : "بيانات غير محدودة لتطبيق GoChat Messenger"}
                 </li>
               </ul>
             </div>
           </div>
-
           <div className="flex flex-col relative cursor-pointer ">
-            <div className="bg-white  flex flex-col  justify-between   p-3 gap-2 rounded-md ">
-              <p className="text-sm">Emirati Wasel plan</p>
+            <div
+              className="bg-white flex flex-col justify-between p-3 gap-2 rounded-md h-full"
+              dir={isEnglish ? "ltr" : "rtl"}
+            >
+              <p className="text-sm">
+                {isEnglish ? "Emirati Wasel plan" : "خطة واصل الإماراتية"}
+              </p>
               <p className="text-xs ">
-                Customise your own combination of data, minutes{" "}
+                {isEnglish
+                  ? "Customise your own combination of data, minutes"
+                  : "قم بتخصيص مزيج البيانات والدقائق الخاص بك"}
               </p>
               <ul className=" list-disc ps-5">
                 <li className="text-[11px]">
-                  Get FREE SIM when you shop online
+                  {isEnglish
+                    ? "Get FREE SIM when you shop online"
+                    : "احصل على شريحة مجانية عند التسوق عبر الإنترنت"}
                 </li>
-                <li className="text-[11px]">Extra data on all plans</li>
-                <li className="text-[11px]">Special Bronze number </li>
+                <li className="text-[11px]">
+                  {isEnglish
+                    ? "Extra data on all plans"
+                    : "بيانات إضافية على جميع الخطط"}
+                </li>
+                <li className="text-[11px]">
+                  {isEnglish ? "Special Bronze number" : "رقم برونزي خاص"}
+                </li>
               </ul>
             </div>
           </div>
@@ -213,69 +307,218 @@ const Three = ({
       )}
 
       {isTv && (
-        <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800] mt-28 py-8 grid grid-cols-2 px-3 gap-3 ">
+        <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-2 px-3 gap-3 ">
           <button
             onClick={handleBack}
             className="absolute text-white left-4 top-2 text-xs "
           >
-            Back
+            <div className="flex items-center ">
+              <svg
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+                className="!w-[14px] !h-[14px]"
+              >
+                <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+              </svg>{" "}
+            </div>
           </button>
           <div className="flex flex-col relative cursor-pointer">
-            <div className="bg-white  flex flex-col  justify-center  p-3 gap-1 rounded-md">
-              <p className="text-sm font-bold">Ultra Starter</p>
-              <p className="text-xs text-gray-500">24 Month Commitment</p>
-              <p className="text-xs">AED 299/month</p>
-              <p className=" bg-[#E00800] text-xs px-1 rounded text-white">
-                Free Installation + Smiles Voucher
+            <div
+              className="bg-white flex flex-col justify-center p-3 gap-1 rounded-md"
+              dir={isEnglish ? "ltr" : "rtl"}
+            >
+              <p className="text-sm font-bold">
+                {isEnglish ? "Ultra Starter" : "أولترا ستارتر"}
               </p>
-              <p className="text-[#e00800] text-xs">6 month rental discount</p>
-              <p className="font-bold text-sm">INTERNET- 500mbps</p>
-            </div>
-          </div>
-
-          <div className="flex flex-col relative cursor-pointer">
-            <div className="bg-white  flex flex-col  justify-center  p-3 gap-1 rounded-md">
-              <p className="text-sm font-bold">Ultra Sport</p>
-
-              <p className="text-xs text-gray-500">24 Month Commitment</p>
-              <p className="text-xs">AED 515/month</p>
+              <p className="text-xs text-gray-500">
+                {isEnglish ? "24 Month Commitment" : "التزام لمدة 24 شهرًا"}
+              </p>
+              <p className="text-xs">
+                {isEnglish ? "AED 299/month" : "299 درهم / شهر"}
+              </p>
               <p className=" bg-[#E00800] text-xs px-1 rounded text-white">
-                Free Installation + Smiles Voucher
+                {isEnglish
+                  ? "Free Installation + Smiles Voucher"
+                  : "تركيب مجاني + قسيمة سمايل"}
               </p>
               <p className="text-[#e00800] text-xs">
-                Free speed boost upto 1GB
+                {isEnglish
+                  ? "6 month rental discount"
+                  : "خصم 6 أشهر على الإيجار"}
               </p>
-              <p className="font-bold text-sm">INTERNET- 750mbps</p>
+              <p className="font-bold text-sm">
+                {isEnglish
+                  ? "INTERNET- 500mbps"
+                  : "إنترنت - 500 ميجابت في الثانية"}
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col relative cursor-pointer">
+            <div
+              className="bg-white flex flex-col justify-center p-3 gap-1 rounded-md"
+              dir={isEnglish ? "ltr" : "rtl"}
+            >
+              <p className="text-sm font-bold">
+                {isEnglish ? "Ultra Sport" : "أولترا سبورت"}
+              </p>
+              <p className="text-xs text-gray-500">
+                {isEnglish ? "24 Month Commitment" : "التزام لمدة 24 شهرًا"}
+              </p>
+              <p className="text-xs">
+                {isEnglish ? "AED 515/month" : "515 درهم / شهر"}
+              </p>
+              <p className=" bg-[#E00800] text-xs px-1 rounded text-white">
+                {isEnglish
+                  ? "Free Installation + Smiles Voucher"
+                  : "تركيب مجاني + قسيمة سمايل"}
+              </p>
+              <p className="text-[#e00800] text-xs">
+                {isEnglish
+                  ? "Free speed boost upto 1GB"
+                  : "تسريع مجاني حتى 1 جيجابايت"}
+              </p>
+              <p className="font-bold text-sm">
+                {isEnglish
+                  ? "INTERNET- 750mbps"
+                  : "إنترنت - 750 ميجابت في الثانية"}
+              </p>
             </div>
           </div>
         </div>
       )}
 
       {isWifi && (
-        <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800] mt-28 py-8 grid grid-cols-2 px-3 gap-3 ">
+        <div
+          dir={isEnglish ? "ltr" : "rtl"}
+          className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-2 px-3 gap-3 "
+        >
           <button
             onClick={handleBack}
             className="absolute text-white left-4 top-2 text-xs "
           >
-            Back
+            <div className="flex items-center ">
+              <svg
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+                className="!w-[14px] !h-[14px]"
+              >
+                <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+              </svg>{" "}
+            </div>
           </button>
           <div className="flex flex-col relative cursor-pointer ">
-            <div className="bg-white  flex flex-col  justify-center h-full  p-3 gap-1 rounded-md">
-              <p className="text-sm font-bold">Home Wireless Advance</p>
-              <p className="text-xs text-gray-500">12 Month Commitment</p>
-              <p className="text-xs">199 AED/month</p>
+            <div className="bg-white flex flex-col justify-center h-full p-3 gap-1 rounded-md">
+              <p className="text-sm font-bold">
+                {isEnglish ? "Home Wireless Advance" : "لاسلكي منزلي أدفانس"}
+              </p>
+              <p className="text-xs text-gray-500">
+                {isEnglish ? "12 Month Commitment" : "التزام لمدة 12 شهرًا"}
+              </p>
+              <p className="text-xs">
+                {isEnglish ? "199 AED/month" : "199 درهم / شهر"}
+              </p>
               <p className=" bg-[#E00800] text-xs px-1 rounded text-white">
-                Limited time offer: 50% OFF
+                {isEnglish
+                  ? "Limited time offer: 50% OFF"
+                  : "عرض محدود: خصم %50"}
               </p>
             </div>
           </div>
           <div className="flex flex-col relative cursor-pointer">
-            <div className="bg-white  flex flex-col  justify-center  p-3 gap-1 rounded-md">
-              <p className="text-sm font-bold">Home Wireless Premium</p>
-              <p className="text-xs text-gray-500">24 Month Commitment</p>
-              <p className="text-xs">299 AED/month</p>
+            <div className="bg-white flex flex-col justify-center p-3 gap-1 rounded-md">
+              <p className="text-sm font-bold">
+                {isEnglish ? "Home Wireless Premium" : "لاسلكي منزلي بريميوم"}
+              </p>
+              <p className="text-xs text-gray-500">
+                {isEnglish ? "24 Month Commitment" : "التزام لمدة 24 شهرًا"}
+              </p>
+              <p className="text-xs">
+                {isEnglish ? "299 AED/month" : "299 درهم / شهر"}
+              </p>
               <p className=" bg-[#E00800] text-xs px-1 rounded text-white">
-                Limited time offer: 25% OFF
+                {isEnglish
+                  ? "Limited time offer: 25% OFF"
+                  : "عرض محدود: خصم %25"}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isAddToBill && (
+        <div
+          dir={isEnglish ? "ltr" : "rtl"}
+          className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 "
+        >
+          <button
+            onClick={handleBack}
+            className="absolute text-white left-4 top-2 text-xs "
+          >
+            <div className="flex items-center ">
+              <svg
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+                className="!w-[14px] !h-[14px]"
+              >
+                <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+              </svg>{" "}
+            </div>
+          </button>
+          <div className="flex flex-col relative cursor-pointer ">
+            <div className="bg-white flex flex-col justify-center items-start h-full p-3 gap-1 rounded-md">
+              <p>
+                {isEnglish
+                  ? "Pay for your online services with your e& UAE number in a safe secure and hassle-free manner with e& UAEs"
+                  : "ادفع مقابل خدماتك عبر الإنترنت باستخدام رقمك الإلكتروني والإماراتي بطريقة آمنة وخالية من المتاعب مع e&الإمارات العربية المتحدة"}
+                <a
+                  target="_blank"
+                  className="text-blue-400 underline"
+                  href="https://www.etisalat.ae/en/c/digital-lifestyle/add-to-bill.html"
+                >
+                  {isEnglish ? "learn more" : "يتعلم أكثر"}
+                </a>{" "}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isRecharge && (
+        <div
+          dir={isEnglish ? "ltr" : "rtl"}
+          className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 "
+        >
+          <button
+            onClick={handleBack}
+            className="absolute text-white left-4 top-2 text-xs "
+          >
+            <div className="flex items-center ">
+              <svg
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+                className="!w-[14px] !h-[14px]"
+              >
+                <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+              </svg>{" "}
+            </div>
+          </button>
+          <div className="flex flex-col relative cursor-pointer ">
+            <div className="bg-white flex flex-col justify-center items-start h-full p-3 gap-1 rounded-md">
+              <p>
+                {isEnglish
+                  ? " Take care of yours bills & recharge with Etisalat quick pay and recharge"
+                  : "اهتم بفواتيرك واشحن رصيدك مع اتصالات الدفع السريع وإعادة الشحن"}
+                <a
+                  target="_blank"
+                  className="text-blue-400 underline me-1 ms-1"
+                  href="https://www.etisalat.ae/en/c/digital-lifestyle/add-to-bill.html"
+                >
+                  {isEnglish ? "learn more" : "يتعلم أكثر"}
+                </a>{" "}
               </p>
             </div>
           </div>
