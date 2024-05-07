@@ -19,7 +19,7 @@ const Stepper = ({
   handlePostpaidPlans,
   handleLiveChat,
   handleFAQ,
-  isEnglish,
+  isEnglish
 }) => {
   const handleLeftStep = () => {
     if (step > 1) {
@@ -35,7 +35,7 @@ const Stepper = ({
   return (
     <div className="a w-100 flex items-center justify-center relative mx-3 lg:mx-0 sm:h-[calc(100vh-112px)] ">
       <div className="relative flex items-center flex-col video-container">
-        <video id="sm-video"></video>
+        <video id="sm-video" className={loading ? 'opacity-0' : 'opacity-100'}></video>
 
         <img
           className="absolute bottom-5 right-5 w-32 h-12"
@@ -82,16 +82,11 @@ const Stepper = ({
               <One setStep={setStep} onSelectLanguage={onSelectLanguage} />
             )}
             {step === 2 && (
-              <Two
-                setStep={setStep}
-                onSelectType={onSelectType}
-                isEnglish={isEnglish}
-              />
+              <Two setStep={setStep} onSelectType={onSelectType} isEnglish={isEnglish}/>
             )}
             {step === 3 && (
               <Three
                 setStep={setStep}
-                isEnglish={isEnglish}
                 handlePostpaidPlans={handlePostpaidPlans}
                 handlePrepaidPlans={handlePrepaidPlans}
                 handleTVInternet={handleTVInternet}
