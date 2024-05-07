@@ -51,14 +51,14 @@ const Three = ({
     <>
       {isMain && (
         <div className="  bg-gradient-to-r from-[#0A0A0A] to-[#E00800]  py-5 grid grid-cols-3 px-3 gap-3 ">
-          <div className="flex flex-col relative cursor-pointer">
+          <div
+            className="flex flex-col relative cursor-pointer"
+            onClick={handlePostPaid}
+          >
             <p className="text-[8px] bg-[#E00800] rounded-md w-auto absolute p-1 -top-2 left-1 flex text-white">
               New Offers
             </p>
-            <div
-              onClick={handlePostPaid}
-              className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md"
-            >
+            <div className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md">
               <img className="w-8 h-8" src="/images/postpaid.svg" alt="" />
               <p className="text-center text-sm">Postpaid Plans</p>
             </div>
@@ -98,8 +98,6 @@ const Three = ({
             </div>
           </div>
           <a
-            href="https://www.etisalat.ae/en/c/digital-lifestyle/add-to-bill.html"
-            target="_blank"
             onClick={() => handleAddToBill()}
             className="bg-white flex flex-col gap-2 p-3 justify-center h-full items-center h-full rounded-md cursor-pointer"
           >

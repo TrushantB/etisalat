@@ -13,9 +13,15 @@ let scene = null;
 let persona = null;
 
 export default function Home() {
-  const [step, setStep] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [language, setLanguage] = useState(false);
+  const [step, setStep] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [language, setLanguage] = useState("English");
+
+  useEffect(() => {
+    setTimeout(() => {
+      connect(language);
+    }, 0);
+  }, []);
 
   async function connect(language) {
     // get the video element
@@ -41,6 +47,7 @@ export default function Home() {
   function onConnectionSuccess(sessionId) {
     console.info("success! session id:", sessionId);
     setLoading(false);
+    setStep(1);
 
     // start the video playing
     scene
@@ -78,14 +85,15 @@ export default function Home() {
 
   // Step 2 start
   const onSelectType = (type) => {
-    persona
-      .conversationSend(type)
-      .then((response) => {
-        console.log("response", response);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    console.log({ type });
+    // persona
+    //   .conversationSend(type)
+    //   .then((response) => {
+    //     console.log("response", response);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   };
   // Step 2 end
 
@@ -198,7 +206,7 @@ export default function Home() {
         handleQuickPayRecharge={handleQuickPayRecharge}
         handleFAQ={handleFAQ}
         handleLiveChat={handleLiveChat}
-        isEnglish={language === 'English'}
+        isEnglish={language === "English"}
       />
     </>
   );
