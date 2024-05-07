@@ -13,9 +13,10 @@ let scene = null;
 let persona = null;
 
 export default function Home() {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(true);
   const [language, setLanguage] = useState("English");
+  const [isMicOn, setIsMicOn] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -47,7 +48,6 @@ export default function Home() {
   function onConnectionSuccess(sessionId) {
     console.info("success! session id:", sessionId);
     setLoading(false);
-    setStep(1);
 
     // start the video playing
     scene
@@ -56,6 +56,10 @@ export default function Home() {
         console.info("started video with state:", videoState)
       )
       .catch((error) => console.warn("could not start video:", error));
+
+    scene.setMediaDeviceActive({
+      microphone: isMicOn,
+    });
   }
 
   function onConnectionError(error) {
@@ -186,8 +190,21 @@ export default function Home() {
         console.log(err);
       });
   };
-  // Step 4 end
 
+  const handleMicOnOff = () => {
+    if (isMicOn) {
+      scene.setMediaDeviceActive({
+        microphone: false,
+      });
+    } else {
+      scene.setMediaDeviceActive({
+        microphone: true,
+      });
+    }
+    setIsMicOn(!isMicOn);
+  };
+
+  // Step 4 end
   return (
     <>
       {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
@@ -210,6 +227,8 @@ export default function Home() {
           handleFAQ={handleFAQ}
           handleLiveChat={handleLiveChat}
           isEnglish={language === "English"}
+          isMicOn={isMicOn}
+          handleMicOnOff={handleMicOnOff}
         />
       </div>
     </>
