@@ -4,13 +4,16 @@ import Stepper from "@/components/stepper/stepper";
 import { Scene, Persona } from "@soulmachines/smwebsdk";
 
 const apiKeyUAE =
-  "eyJzb3VsSWQiOiJkZG5hLWxwZmxleDk4MWQtLWV4cGxvcmVyIiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfNDE5ZTNjYjEtMDRmOS00ZGZmLWFkYjItM2FlY2VjZmY3ODMxIn0=";
+  "eyJzb3VsSWQiOiJkZG5hLWxwZmxleDk4MWQtLWFyYWJpY2V0aXNhbGF0ZGVtbyIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzMyMTZmMTc5LWUyNzEtNDNkNC1hMTk1LTExYWE1MzRkZWQyOSJ9";
 
 const apiKeyEN =
   "eyJzb3VsSWQiOiJkZG5hLWxwZmxleDk4MWQtLWV0aXNhbGF0ZGVtbyIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2ExMGQ3MzQ3LTZjZGYtNGFlNi04N2FkLWI5NTBmNDA1YzBkYyJ9";
 
 let scene = null;
 let persona = null;
+
+let sceneAR = null;
+let personaAR = null;
 
 export default function Home() {
   const [step, setStep] = useState(1);
@@ -21,12 +24,14 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       connect(language);
+      connectAR("Arebic")
     }, 0);
   }, []);
 
   async function connect(language) {
     // get the video element
     const videoEl = document.getElementById("sm-video");
+    // videoEl.muted = true;
 
     // create a new scene object
     scene = new Scene({
@@ -42,6 +47,29 @@ export default function Home() {
     await scene
       .connect()
       .then((sessionId) => onConnectionSuccess(sessionId))
+      .catch((error) => onConnectionError(error));
+  }
+
+  async function connectAR(language) {
+    // get the video element
+    const videoEl = document.getElementById("sm-video-ar");
+    videoEl.muted = true;
+
+    // create a new scene object
+    sceneAR = new Scene({
+      apiKey: language === "English" ? apiKeyEN : apiKeyUAE,
+      videoElement: videoEl,
+      requestedMediaDevices: { microphone: true, camera: true },
+      requiredMediaDevices: { microphone: true, camera: true },
+
+    });
+   
+    personaAR = new Persona(sceneAR, Date.now());
+
+    // connect the Scene to the session server
+    await sceneAR
+      .connect()
+      .then((sessionId) => onConnectionSuccessAR(sessionId))
       .catch((error) => onConnectionError(error));
   }
 
@@ -62,6 +90,22 @@ export default function Home() {
     });
   }
 
+  function onConnectionSuccessAR(sessionId) {
+    console.info("success! session id:", sessionId);
+
+    // start the video playing
+    sceneAR
+      .startVideo()
+      .then((videoState) =>
+        console.info("started video with state:", videoState)
+      )
+      .catch((error) => console.warn("could not start video:", error));
+
+    sceneAR.setMediaDeviceActive({
+      microphone: isMicOn,
+    });
+  }
+
   function onConnectionError(error) {
     switch (error.name) {
       case "noUserMedia":
@@ -78,10 +122,15 @@ export default function Home() {
 
   // Step 1 start
   const onSelectLanguage = async (newLanguage) => {
-    if (newLanguage !== language) {
-      await scene?.disconnect();
-      connect(newLanguage);
-      setLoading(true);
+    const videoEl = document.getElementById("sm-video");
+    const videoElAR = document.getElementById("sm-video-ar");
+    if (newLanguage === 'English') {
+      videoElAR.muted = true;
+      videoEl.muted = false;
+
+    } else {
+      videoEl.muted = true;
+      videoElAR.muted = false;
     }
     setLanguage(newLanguage);
   };
@@ -192,15 +241,28 @@ export default function Home() {
   };
 
   const handleMicOnOff = () => {
-    if (isMicOn) {
-      scene.setMediaDeviceActive({
-        microphone: false,
-      });
+    if(language === "English") {
+      if (isMicOn) {
+        scene.setMediaDeviceActive({
+          microphone: false,
+        });
+      } else {
+        scene.setMediaDeviceActive({
+          microphone: true,
+        });
+      }
     } else {
-      scene.setMediaDeviceActive({
-        microphone: true,
-      });
+      if (isMicOn) {
+        sceneAR.setMediaDeviceActive({
+          microphone: false,
+        });
+      } else {
+        sceneAR.setMediaDeviceActive({
+          microphone: true,
+        });
+      }
     }
+   
     setIsMicOn(!isMicOn);
   };
 
@@ -231,6 +293,7 @@ export default function Home() {
           handleMicOnOff={handleMicOnOff}
         />
       </div>
+
     </>
   );
 }

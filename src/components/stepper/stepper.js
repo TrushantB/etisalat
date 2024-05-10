@@ -4,6 +4,7 @@ import One from "./one/one";
 import Two from "./two/two";
 import Three from "./three/three";
 import Four from "./four/four";
+import Login from "../login";
 
 const Stepper = ({
   setStep,
@@ -46,13 +47,18 @@ const Stepper = ({
         <button onClick={togglePopup} className="absolute right-0 z-10 w-24 h-16 opacity-0">test</button>
         {showPopup && 
         <div onClick={togglePopup} className="fixed inset-0 bg-[rgba(0,0,0,0.3)] z-50 flex items-center justify-center">
-          <div className="p-4 bg-white rounded-lg shadow-2xl w-60">
-            test
+          <div className="p-4 bg-white rounded-lg shadow-2xl w-96">
+            <Login />
           </div>
         </div>}
         <video
           id="sm-video"
-          className={loading ? "opacity-0" : "opacity-100"}
+          className={loading ? "opacity-0" : !isEnglish ?  "opacity-100 hidden" : "opacity-100"}
+        ></video>
+
+        <video
+          id="sm-video-ar"
+          className={loading ? "opacity-0" : isEnglish ?  "opacity-100 hidden" : "opacity-100"}
         ></video>
 
         <img
