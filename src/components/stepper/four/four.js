@@ -2,14 +2,14 @@ import React from "react";
 
 const Four = ({ handleLiveChat, handleFAQ, isEnglish }) => {
   return (
-    <div className=" bg-gradient-to-r from-[#0A0A0A] to-[#E00800]  sm:py-10 p-5 grid grid-cols-2 sm:px-10 gap-5 ">
+    <div className="bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] py-5 grid grid-cols-2 px-3 gap-3 gap-y-6 sm:gap-y-3 rounded-[24px]">
       <a
         target="_blank"
         onClick={() => handleLiveChat()}
-        className="bg-white flex flex-col gap-2 p-3 lg:w-40 justify-center items-center rounded-md cursor-pointer"
+        className="flex flex-col items-center justify-center h-full gap-1 p-2 bg-white rounded-md cursor-pointer sm:gap-2 sm:p-3 lg:w-40"
       >
-        <img className="w-8 h-8" src="/images/postpaid.svg" alt="" />
-        <p className="text-center text-sm">
+        <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/postpaid.svg" alt="" />
+        <p className="text-xs text-center sm:text-sm">
           {" "}
           {isEnglish ? "Live Chat" : "دردشة مباشرة"}{" "}
         </p>
@@ -17,10 +17,10 @@ const Four = ({ handleLiveChat, handleFAQ, isEnglish }) => {
       <a
         target="_blank"
         onClick={() => handleFAQ()}
-        className="bg-white flex flex-col gap-2 lg:w-40 justify-center p-3 items-center rounded-md cursor-pointer"
+        className="flex flex-col items-center justify-center h-full gap-1 p-2 bg-white rounded-md cursor-pointer sm:gap-2 sm:p-3 lg:w-40"
       >
-        <img className="w-8 h-8" src="/images/postpaid.svg" alt="" />
-        <p className="text-center text-sm">
+        <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/postpaid.svg" alt="" />
+        <p className="text-xs text-center sm:text-sm">
           {" "}
           {isEnglish ? "Faq" : "التعليمات"}{" "}
         </p>

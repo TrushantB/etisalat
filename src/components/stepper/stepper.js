@@ -36,19 +36,19 @@ const Stepper = ({
 
   return (
     <div className="a w-100 flex  justify-center  relative mx-3 lg:mx-0   h-[calc(100dvh-100px)] ">
-      <div className="relative flex items-center  flex-col video-container  ">
+      <div className="relative flex flex-col items-center video-container">
         <video
           id="sm-video"
           className={loading ? "opacity-0" : "opacity-100"}
         ></video>
 
         <img
-          className="absolute bottom-5 right-5 w-32 h-12"
+          className="absolute w-32 h-12 bottom-5 right-5"
           src="/images/full-logo.svg"
         ></img>
 
         <div
-          className="absolute bottom-5 left-5 w-12 h-12 bg-slate-800 rounded-full flex justify-center items-center cursor-pointer"
+          className="absolute flex items-center justify-center w-12 h-12 rounded-full cursor-pointer bottom-5 left-8 sm:left-5 bg-slate-800"
           onClick={() => handleMicOnOff()}
         >
           {isMicOn ? (
@@ -69,6 +69,11 @@ const Stepper = ({
             </svg>
           )}
         </div>
+        <div className="absolute flex items-center justify-center w-12 h-12 text-white rounded-full cursor-pointer bottom-5 left-24 sm:left-20 bg-slate-800">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="!w-6 !h-6">
+            <path d="M10.5 1.875a1.125 1.125 0 0 1 2.25 0v8.219c.517.162 1.02.382 1.5.659V3.375a1.125 1.125 0 0 1 2.25 0v10.937a4.505 4.505 0 0 0-3.25 2.373 8.963 8.963 0 0 1 4-.935A.75.75 0 0 0 18 15v-2.266a3.368 3.368 0 0 1 .988-2.37 1.125 1.125 0 0 1 1.591 1.59 1.118 1.118 0 0 0-.329.79v3.006h-.005a6 6 0 0 1-1.752 4.007l-1.736 1.736a6 6 0 0 1-4.242 1.757H10.5a7.5 7.5 0 0 1-7.5-7.5V6.375a1.125 1.125 0 0 1 2.25 0v5.519c.46-.452.965-.832 1.5-1.141V3.375a1.125 1.125 0 0 1 2.25 0v6.526c.495-.1.997-.151 1.5-.151V1.875Z" />
+          </svg>
+        </div>
       </div>
       {loading && (
         <div className="loader !self-center !absolute">
@@ -86,11 +91,11 @@ const Stepper = ({
           <div className="bar12"></div>
         </div>
       )}
-      <div className="flex  !self-center  justify-between w-full items-center  gap-10 absolute mt-24">
-        <div className="h-full w-full flex items-center justify-between relative">
+      <div className="flex  !self-end  justify-between w-full items-center  gap-10 absolute mb-20">
+        <div className="relative flex items-center justify-between w-full h-full">
           {(step !== 1) & !loading ? (
-            <button className=" h-full" onClick={handleLeftStep}>
-              <div className=" bg-black rounded-full flex justify-center sm:ms-10 items-center w-5 h-5 sm:w-10 sm:h-10">
+            <button className="h-full " onClick={handleLeftStep}>
+              <div className="flex items-center justify-center w-5 h-5 bg-black rounded-full sm:ms-10 sm:w-10 sm:h-10">
                 <svg
                   fill="white"
                   width={10}
@@ -103,10 +108,10 @@ const Stepper = ({
               </div>
             </button>
           ) : (
-            <div className="h-5 w-5 sm:ms-10"></div>
+            <div className="w-5 h-5 sm:ms-10"></div>
           )}
           {!loading && (
-            <div className=" justify-center items-center w-auto">
+            <div className="items-center justify-center w-auto ">
               {step === 1 && (
                 <One setStep={setStep} onSelectLanguage={onSelectLanguage} />
               )}
@@ -141,10 +146,10 @@ const Stepper = ({
           )}
 
           {step !== 3 ? (
-            <div className="h-5 w-5 sm:me-10"></div>
+            <div className="w-5 h-5 sm:me-10"></div>
           ) : (
             <button onClick={handleRightStep}>
-              <div className="bg-black rounded-full sm:me-10  flex justify-center items-center w-5 h-5 sm:h-10 sm:w-10">
+              <div className="flex items-center justify-center w-5 h-5 bg-black rounded-full sm:me-10 sm:h-10 sm:w-10">
                 <svg
                   fill="white"
                   xmlns="http://www.w3.org/2000/svg"

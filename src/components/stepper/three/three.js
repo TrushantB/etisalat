@@ -67,17 +67,17 @@ const Three = ({
   return (
     <>
       {isMain && (
-        <div className="  bg-gradient-to-r from-[#0A0A0A] to-[#E00800]  py-5 grid grid-cols-3 px-3 gap-3 ">
+        <div className="bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] py-5 grid grid-cols-3 px-3 gap-3 gap-y-6 sm:gap-y-3 rounded-[24px]">
           <div
-            className="flex flex-col relative cursor-pointer"
+            className="relative flex flex-col cursor-pointer"
             onClick={handlePostPaid}
           >
-            <p className="text-[8px] bg-[#E00800] rounded-md w-auto absolute p-1 -top-2 left-1 flex text-white">
+            <p className="text-[8px] bg-[#E00800] rounded-md w-auto absolute p-1 px-2 -top-3 sm:-top-2 left-1 flex text-white">
               New Offers
             </p>
-            <div className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md">
-              <img className="w-8 h-8" src="/images/postpaid.svg" alt="" />
-              <p className="text-center text-sm">
+            <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md sm:gap-2 sm:p-3">
+              <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/postpaid.svg" alt="" />
+              <p className="text-xs text-center sm:text-sm">
                 {isEnglish ? "Postpaid plans" : "خطط الدفع الآجل"}
               </p>
             </div>
@@ -85,24 +85,24 @@ const Three = ({
 
           <div
             onClick={handlePrePaid}
-            className="bg-white flex flex-col gap-2 justify-center p-3 items-center rounded-md cursor-pointer"
+            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer sm:gap-2 sm:p-3"
           >
-            <img className="w-8 h-8" src="/images/postpaid.svg" alt="" />
-            <p className="text-center text-sm">
+            <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/postpaid.svg" alt="" />
+            <p className="text-xs text-center sm:text-sm">
               {isEnglish ? "Prepaid Plans" : "خطط الدفع المسبق"}
             </p>
           </div>
 
           <div
             onClick={handleTv}
-            className="flex flex-col relative cursor-pointer"
+            className="relative flex flex-col cursor-pointer"
           >
-            <p className="text-[8px] bg-[#E00800] rounded-md w-auto absolute p-1 -top-2 left-1 flex text-white">
+            <p className="text-[8px] bg-[#E00800] rounded-md w-auto absolute p-1 px-2 -top-3 sm:-top-2 left-1 flex text-white">
               FREE voucher
             </p>
-            <div className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md">
-              <img className="w-8 h-8" src="/images/tv.svg" alt="" />
-              <p className="text-center text-sm">
+            <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md sm:gap-2 sm:p-3">
+              <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/tv.svg" alt="" />
+              <p className="text-xs text-center sm:text-sm">
                 {" "}
                 {isEnglish ? "Tv & Internet" : "التلفزيون والإنترنت"}
               </p>
@@ -111,14 +111,14 @@ const Three = ({
 
           <div
             onClick={handleWifi}
-            className="flex flex-col relative cursor-pointer"
+            className="relative flex flex-col cursor-pointer"
           >
-            <p className="text-[8px] bg-[#E00800] rounded-md w-auto absolute p-1 -top-2 left-1 flex text-white">
+            <p className="text-[8px] bg-[#E00800] rounded-md w-auto absolute p-1 px-2 -top-3 sm:-top-2 left-1 flex text-white">
               5G
             </p>
-            <div className="bg-white  flex flex-col  justify-center items-center p-3 gap-2 rounded-md">
-              <img className="w-8 h-8" src="/images/wifi.svg" alt="" />
-              <p className="text-center text-sm">
+            <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md sm:gap-2 sm:p-3">
+              <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/wifi.svg" alt="" />
+              <p className="text-xs text-center sm:text-sm">
                 {isEnglish ? "Home Wireless" : "لاسلكي منزلي"}
               </p>
             </div>
@@ -126,10 +126,10 @@ const Three = ({
 
           <div
             onClick={() => handleAddBill()}
-            className="bg-white flex flex-col gap-2 p-3 justify-center h-full items-center h-full rounded-md cursor-pointer"
+            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer sm:gap-2 sm:p-3"
           >
-            <img className="w-8 h-8" src="/images/bill.svg" alt="" />
-            <p className="text-center text-sm">
+            <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/bill.svg" alt="" />
+            <p className="text-xs text-center sm:text-sm">
               {" "}
               {isEnglish ? "Add to Bill" : "إضافة إلى الفاتورة"}
             </p>
@@ -137,10 +137,10 @@ const Three = ({
 
           <div
             onClick={handleRecharge}
-            className="bg-white flex flex-col gap-2 p-3 justify-center items-center rounded-md cursor-pointer"
+            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer sm:gap-2 sm:p-3"
           >
-            <img className="w-8 h-8" src="/images/pay.svg" alt="" />
-            <p className="text-center text-sm">
+            <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/pay.svg" alt="" />
+            <p className="text-xs text-center sm:text-sm">
               {isEnglish ? "Quick pay Recharge" : "إعادة شحن الدفع السريع"}
             </p>
           </div>
@@ -150,7 +150,7 @@ const Three = ({
         <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-2 px-3 gap-3 ">
           <button
             onClick={handleBack}
-            className="absolute text-white left-4 top-2 text-xs "
+            className="absolute text-xs text-white left-4 top-2 "
           >
             <div className="flex items-center ">
               <svg
@@ -163,9 +163,9 @@ const Three = ({
               </svg>{" "}
             </div>
           </button>
-          <div className="flex flex-col relative cursor-pointer">
+          <div className="relative flex flex-col cursor-pointer">
             <div
-              className="bg-white flex flex-col justify-centers p-3 gap-2 rounded-md"
+              className="flex flex-col gap-2 p-3 bg-white rounded-md justify-centers"
               dir={isEnglish ? "ltr" : "rtl"}
             >
               <p className="text-sm">
@@ -176,7 +176,7 @@ const Three = ({
                   ? "Up to 40% off on all plans"
                   : "خصم يصل إلى 40% على جميع الخطط"}
               </p>
-              <ul className=" list-disc ps-5">
+              <ul className="list-disc ps-5">
                 <li className="text-[11px]">
                   {isEnglish
                     ? "Loads of data and minutes"
@@ -193,9 +193,9 @@ const Three = ({
               </ul>
             </div>
           </div>
-          <div className="flex flex-col relative cursor-pointer">
+          <div className="relative flex flex-col cursor-pointer">
             <div
-              className="bg-white flex flex-col justify-center p-3 gap-2 rounded-md h-full"
+              className="flex flex-col justify-center h-full gap-2 p-3 bg-white rounded-md"
               dir={isEnglish ? "ltr" : "rtl"}
             >
               <p className="text-sm">
@@ -206,7 +206,7 @@ const Three = ({
                   ? "Up to 40% off on all plans"
                   : "خصم يصل إلى 40% على جميع الخطط"}
               </p>
-              <ul className=" list-disc ps-5">
+              <ul className="list-disc ps-5">
                 <li className="text-[11px]">
                   {isEnglish
                     ? "Loads of GBs and minutes"
@@ -228,7 +228,7 @@ const Three = ({
         <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-2 px-3 gap-3 ">
           <button
             onClick={handleBack}
-            className="absolute text-white left-4 top-2 text-xs "
+            className="absolute text-xs text-white left-4 top-2 "
           >
             <div className="flex items-center ">
               <svg
@@ -241,9 +241,9 @@ const Three = ({
               </svg>{" "}
             </div>
           </button>
-          <div className="flex flex-col relative cursor-pointer">
+          <div className="relative flex flex-col cursor-pointer">
             <div
-              className="bg-white flex flex-col justify-center p-3 gap-2 rounded-md"
+              className="flex flex-col justify-center gap-2 p-3 bg-white rounded-md"
               dir={isEnglish ? "ltr" : "rtl"}
             >
               <p className="text-sm">
@@ -254,7 +254,7 @@ const Three = ({
                   ? "Get FREE SIM worth AED 55 with Wasel Flexi"
                   : "احصل على شريحة مجانية بقيمة 55 درهم مع واصل فليكسي"}
               </p>
-              <ul className=" list-disc ps-5">
+              <ul className="list-disc ps-5">
                 <li className="text-[11px]">
                   {isEnglish
                     ? "Double data on all plans"
@@ -273,9 +273,9 @@ const Three = ({
               </ul>
             </div>
           </div>
-          <div className="flex flex-col relative cursor-pointer ">
+          <div className="relative flex flex-col cursor-pointer ">
             <div
-              className="bg-white flex flex-col justify-between p-3 gap-2 rounded-md h-full"
+              className="flex flex-col justify-between h-full gap-2 p-3 bg-white rounded-md"
               dir={isEnglish ? "ltr" : "rtl"}
             >
               <p className="text-sm">
@@ -286,7 +286,7 @@ const Three = ({
                   ? "Customise your own combination of data, minutes"
                   : "قم بتخصيص مزيج البيانات والدقائق الخاص بك"}
               </p>
-              <ul className=" list-disc ps-5">
+              <ul className="list-disc ps-5">
                 <li className="text-[11px]">
                   {isEnglish
                     ? "Get FREE SIM when you shop online"
@@ -310,7 +310,7 @@ const Three = ({
         <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-2 px-3 gap-3 ">
           <button
             onClick={handleBack}
-            className="absolute text-white left-4 top-2 text-xs "
+            className="absolute text-xs text-white left-4 top-2 "
           >
             <div className="flex items-center ">
               <svg
@@ -323,9 +323,9 @@ const Three = ({
               </svg>{" "}
             </div>
           </button>
-          <div className="flex flex-col relative cursor-pointer">
+          <div className="relative flex flex-col cursor-pointer">
             <div
-              className="bg-white flex flex-col justify-center p-3 gap-1 rounded-md"
+              className="flex flex-col justify-center gap-1 p-3 bg-white rounded-md"
               dir={isEnglish ? "ltr" : "rtl"}
             >
               <p className="text-sm font-bold">
@@ -347,16 +347,16 @@ const Three = ({
                   ? "6 month rental discount"
                   : "خصم 6 أشهر على الإيجار"}
               </p>
-              <p className="font-bold text-sm">
+              <p className="text-sm font-bold">
                 {isEnglish
                   ? "INTERNET- 500mbps"
                   : "إنترنت - 500 ميجابت في الثانية"}
               </p>
             </div>
           </div>
-          <div className="flex flex-col relative cursor-pointer">
+          <div className="relative flex flex-col cursor-pointer">
             <div
-              className="bg-white flex flex-col justify-center p-3 gap-1 rounded-md"
+              className="flex flex-col justify-center gap-1 p-3 bg-white rounded-md"
               dir={isEnglish ? "ltr" : "rtl"}
             >
               <p className="text-sm font-bold">
@@ -378,7 +378,7 @@ const Three = ({
                   ? "Free speed boost upto 1GB"
                   : "تسريع مجاني حتى 1 جيجابايت"}
               </p>
-              <p className="font-bold text-sm">
+              <p className="text-sm font-bold">
                 {isEnglish
                   ? "INTERNET- 750mbps"
                   : "إنترنت - 750 ميجابت في الثانية"}
@@ -395,7 +395,7 @@ const Three = ({
         >
           <button
             onClick={handleBack}
-            className="absolute text-white left-4 top-2 text-xs "
+            className="absolute text-xs text-white left-4 top-2 "
           >
             <div className="flex items-center ">
               <svg
@@ -408,8 +408,8 @@ const Three = ({
               </svg>{" "}
             </div>
           </button>
-          <div className="flex flex-col relative cursor-pointer ">
-            <div className="bg-white flex flex-col justify-center h-full p-3 gap-1 rounded-md">
+          <div className="relative flex flex-col cursor-pointer ">
+            <div className="flex flex-col justify-center h-full gap-1 p-3 bg-white rounded-md">
               <p className="text-sm font-bold">
                 {isEnglish ? "Home Wireless Advance" : "لاسلكي منزلي أدفانس"}
               </p>
@@ -426,8 +426,8 @@ const Three = ({
               </p>
             </div>
           </div>
-          <div className="flex flex-col relative cursor-pointer">
-            <div className="bg-white flex flex-col justify-center p-3 gap-1 rounded-md">
+          <div className="relative flex flex-col cursor-pointer">
+            <div className="flex flex-col justify-center gap-1 p-3 bg-white rounded-md">
               <p className="text-sm font-bold">
                 {isEnglish ? "Home Wireless Premium" : "لاسلكي منزلي بريميوم"}
               </p>
@@ -454,7 +454,7 @@ const Three = ({
         >
           <button
             onClick={handleBack}
-            className="absolute text-white left-4 top-2 text-xs "
+            className="absolute text-xs text-white left-4 top-2 "
           >
             <div className="flex items-center ">
               <svg
@@ -467,8 +467,8 @@ const Three = ({
               </svg>{" "}
             </div>
           </button>
-          <div className="flex flex-col relative cursor-pointer ">
-            <div className="bg-white flex flex-col justify-center items-start h-full p-3 gap-1 rounded-md">
+          <div className="relative flex flex-col cursor-pointer ">
+            <div className="flex flex-col items-start justify-center h-full gap-1 p-3 bg-white rounded-md">
               <p>
                 {isEnglish
                   ? "Pay for your online services with your e& UAE number in a safe secure and hassle-free manner with e& UAEs"
@@ -493,7 +493,7 @@ const Three = ({
         >
           <button
             onClick={handleBack}
-            className="absolute text-white left-4 top-2 text-xs "
+            className="absolute text-xs text-white left-4 top-2 "
           >
             <div className="flex items-center ">
               <svg
@@ -506,8 +506,8 @@ const Three = ({
               </svg>{" "}
             </div>
           </button>
-          <div className="flex flex-col relative cursor-pointer ">
-            <div className="bg-white flex flex-col justify-center items-start h-full p-3 gap-1 rounded-md">
+          <div className="relative flex flex-col cursor-pointer ">
+            <div className="flex flex-col items-start justify-center h-full gap-1 p-3 bg-white rounded-md">
               <p>
                 {isEnglish
                   ? " Take care of yours bills & recharge with Etisalat quick pay and recharge"
