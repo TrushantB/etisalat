@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import One from "./one/one";
 import Two from "./two/two";
 import Three from "./three/three";
@@ -23,6 +23,8 @@ const Stepper = ({
   isMicOn,
   handleMicOnOff,
 }) => {
+  const [showPopup, setShowPopup] = useState(false);
+
   const handleLeftStep = () => {
     if (step > 1) {
       setStep(step - 1);
@@ -34,9 +36,20 @@ const Stepper = ({
     }
   };
 
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
   return (
     <div className="a w-100 flex  justify-center  relative mx-3 lg:mx-0   h-[calc(100dvh-100px)] ">
       <div className="relative flex flex-col items-center video-container">
+        <button onClick={togglePopup} className="absolute right-0 z-10 w-24 h-16 opacity-0">test</button>
+        {showPopup && 
+        <div onClick={togglePopup} className="fixed inset-0 bg-[rgba(0,0,0,0.3)] z-50 flex items-center justify-center">
+          <div className="p-4 bg-white rounded-lg shadow-2xl w-60">
+            test
+          </div>
+        </div>}
         <video
           id="sm-video"
           className={loading ? "opacity-0" : "opacity-100"}
