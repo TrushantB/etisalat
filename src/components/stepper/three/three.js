@@ -147,7 +147,7 @@ const Three = ({
         </div>
       )}
       {ispostpaid && (
-        <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-2 px-3 gap-3 ">
+        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 ">
           <button
             onClick={handleBack}
             className="absolute text-xs text-white left-4 top-2 "
@@ -225,7 +225,7 @@ const Three = ({
       )}
 
       {isPrepaid && (
-        <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-2 px-3 gap-3 ">
+        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 ">
           <button
             onClick={handleBack}
             className="absolute text-xs text-white left-4 top-2 "
@@ -307,7 +307,7 @@ const Three = ({
       )}
 
       {isTv && (
-        <div className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-2 px-3 gap-3 ">
+        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 ">
           <button
             onClick={handleBack}
             className="absolute text-xs text-white left-4 top-2 "
@@ -391,7 +391,7 @@ const Three = ({
       {isWifi && (
         <div
           dir={isEnglish ? "ltr" : "rtl"}
-          className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-2 px-3 gap-3 "
+          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 "
         >
           <button
             onClick={handleBack}
@@ -450,7 +450,7 @@ const Three = ({
       {isAddToBill && (
         <div
           dir={isEnglish ? "ltr" : "rtl"}
-          className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 "
+          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 "
         >
           <button
             onClick={handleBack}
@@ -489,7 +489,7 @@ const Three = ({
       {isRecharge && (
         <div
           dir={isEnglish ? "ltr" : "rtl"}
-          className="bg-gradient-to-r relative from-[#0A0A0A] to-[#E00800]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 "
+          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 "
         >
           <button
             onClick={handleBack}
