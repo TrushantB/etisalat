@@ -24,7 +24,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       connect(language);
-      connectAR("Arebic")
+      connectAR("Arebic");
     }, 0);
   }, []);
 
@@ -61,9 +61,8 @@ export default function Home() {
       videoElement: videoEl,
       requestedMediaDevices: { microphone: true, camera: true },
       requiredMediaDevices: { microphone: true, camera: true },
-
     });
-   
+
     personaAR = new Persona(sceneAR, Date.now());
 
     // connect the Scene to the session server
@@ -124,10 +123,9 @@ export default function Home() {
   const onSelectLanguage = async (newLanguage) => {
     const videoEl = document.getElementById("sm-video");
     const videoElAR = document.getElementById("sm-video-ar");
-    if (newLanguage === 'English') {
+    if (newLanguage === "English") {
       videoElAR.muted = true;
       videoEl.muted = false;
-
     } else {
       videoEl.muted = true;
       videoElAR.muted = false;
@@ -241,7 +239,7 @@ export default function Home() {
   };
 
   const handleMicOnOff = () => {
-    if(language === "English") {
+    if (language === "English") {
       if (isMicOn) {
         scene.setMediaDeviceActive({
           microphone: false,
@@ -262,8 +260,12 @@ export default function Home() {
         });
       }
     }
-   
+
     setIsMicOn(!isMicOn);
+  };
+  const handleStopTalking = () => {
+    persona.stopSpeaking();
+    personaAR.stopSpeaking();
   };
 
   // Step 4 end
@@ -291,9 +293,9 @@ export default function Home() {
           isEnglish={language === "English"}
           isMicOn={isMicOn}
           handleMicOnOff={handleMicOnOff}
+          handleStopTalking={handleStopTalking}
         />
       </div>
-
     </>
   );
 }
