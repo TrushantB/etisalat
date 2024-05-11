@@ -47,8 +47,9 @@ const Stepper = ({
         <button onClick={togglePopup} className="fixed right-0 z-10 w-24 h-16 opacity-0 top-28 xl:right-[20%]">test</button>
       <div className="relative flex flex-col items-center w-full video-container">
         {showPopup && 
-        <div onClick={togglePopup} className="fixed inset-0 bg-[rgba(0,0,0,0.3)] z-50 flex items-center justify-center">
-          <div className="p-4 bg-white rounded-lg shadow-2xl w-96">
+        <div className="fixed inset-0 z-50 flex items-end justify-center">
+          <div onClick={togglePopup}  className="h-full w-full bg-[rgba(0,0,0,0.3)] absolute -z-10"></div>
+          <div className="p-8 bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] rounded-lg shadow-2xl w-96">
             <Login />
           </div>
         </div>}

@@ -1,7 +1,7 @@
 export default function Login() {
   return (
-    <div className="flex flex-col justify-center min-h-full px-6 pt-6 pb-8 lg:px-8">
-      <h2 className="pb-6 text-xl font-bold">Admin Login</h2>
+    <div className="flex flex-col justify-center min-h-full px-4 pt-2 pb-4 bg-white rounded-md lg:px-4">
+      <h2 className="pb-2 text-xl font-bold">Admin Login</h2>
       <div className=" sm:mx-auto sm:w-full sm:max-w-sm">
         <form className="space-y-6" action="#" method="POST">
           <div>
