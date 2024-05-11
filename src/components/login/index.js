@@ -1,6 +1,7 @@
 export default function Login() {
   return (
-    <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div className="flex flex-col justify-center min-h-full px-6 pt-6 pb-8 lg:px-8">
+      <h2 className="pb-6 text-xl font-bold">Admin Login</h2>
       <div className=" sm:mx-auto sm:w-full sm:max-w-sm">
         <form className="space-y-6" action="#" method="POST">
           <div>
@@ -33,7 +34,7 @@ export default function Login() {
               <div className="text-sm">
                 <a
                   href="#"
-                  className="font-semibold text-indigo-600 hover:text-indigo-500"
+                  className="font-semibold text-[rgba(224,8,0)] hover:text-indigo-500"
                 >
                   Forgot password?
                 </a>
@@ -54,7 +55,7 @@ export default function Login() {
           <div>
             <button
               type="submit"
-              className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="flex w-full justify-center rounded-full bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm"
             >
               Sign in
             </button>

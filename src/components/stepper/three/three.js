@@ -75,8 +75,8 @@ const Three = ({
             <p className="text-[8px] bg-[#E00800] rounded-md w-auto absolute p-1 px-2 -top-3 sm:-top-2 left-1 flex text-white">
               New Offers
             </p>
-            <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md sm:gap-2 sm:p-3">
-              <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/postpaid.svg" alt="" />
+            <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md ">
+              <img className="w-6 h-6 " src="/images/postpaid.svg" alt="" />
               <p className="text-xs text-center sm:text-sm">
                 {isEnglish ? "Postpaid plans" : "خطط الدفع الآجل"}
               </p>
@@ -85,9 +85,9 @@ const Three = ({
 
           <div
             onClick={handlePrePaid}
-            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer sm:gap-2 sm:p-3"
+            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer "
           >
-            <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/postpaid.svg" alt="" />
+            <img className="w-6 h-6 " src="/images/postpaid.svg" alt="" />
             <p className="text-xs text-center sm:text-sm">
               {isEnglish ? "Prepaid Plans" : "خطط الدفع المسبق"}
             </p>
@@ -100,8 +100,8 @@ const Three = ({
             <p className="text-[8px] bg-[#E00800] rounded-md w-auto absolute p-1 px-2 -top-3 sm:-top-2 left-1 flex text-white">
               FREE voucher
             </p>
-            <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md sm:gap-2 sm:p-3">
-              <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/tv.svg" alt="" />
+            <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md ">
+              <img className="w-6 h-6 " src="/images/tv.svg" alt="" />
               <p className="text-xs text-center sm:text-sm">
                 {" "}
                 {isEnglish ? "Tv & Internet" : "التلفزيون والإنترنت"}
@@ -116,8 +116,8 @@ const Three = ({
             <p className="text-[8px] bg-[#E00800] rounded-md w-auto absolute p-1 px-2 -top-3 sm:-top-2 left-1 flex text-white">
               5G
             </p>
-            <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md sm:gap-2 sm:p-3">
-              <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/wifi.svg" alt="" />
+            <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md ">
+              <img className="w-6 h-6 " src="/images/wifi.svg" alt="" />
               <p className="text-xs text-center sm:text-sm">
                 {isEnglish ? "Home Wireless" : "لاسلكي منزلي"}
               </p>
@@ -126,9 +126,9 @@ const Three = ({
 
           <div
             onClick={() => handleAddBill()}
-            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer sm:gap-2 sm:p-3"
+            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer "
           >
-            <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/bill.svg" alt="" />
+            <img className="w-6 h-6 " src="/images/bill.svg" alt="" />
             <p className="text-xs text-center sm:text-sm">
               {" "}
               {isEnglish ? "Add to Bill" : "إضافة إلى الفاتورة"}
@@ -137,9 +137,9 @@ const Three = ({
 
           <div
             onClick={handleRecharge}
-            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer sm:gap-2 sm:p-3"
+            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer "
           >
-            <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/pay.svg" alt="" />
+            <img className="w-6 h-6 " src="/images/pay.svg" alt="" />
             <p className="text-xs text-center sm:text-sm">
               {isEnglish ? "Quick pay Recharge" : "إعادة شحن الدفع السريع"}
             </p>
@@ -147,7 +147,7 @@ const Three = ({
         </div>
       )}
       {ispostpaid && (
-        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 ">
+        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px]">
           <button
             onClick={handleBack}
             className="absolute text-xs text-white left-4 top-2 "
@@ -165,7 +165,7 @@ const Three = ({
           </button>
           <div className="relative flex flex-col cursor-pointer">
             <div
-              className="flex flex-col gap-2 p-3 bg-white rounded-md justify-centers"
+              className="flex flex-col gap-1 p-2 bg-white rounded-md justify-centers"
               dir={isEnglish ? "ltr" : "rtl"}
             >
               <p className="text-sm">
@@ -195,7 +195,7 @@ const Three = ({
           </div>
           <div className="relative flex flex-col cursor-pointer">
             <div
-              className="flex flex-col justify-center h-full gap-2 p-3 bg-white rounded-md"
+              className="flex flex-col justify-center h-full gap-1 p-2 bg-white rounded-md "
               dir={isEnglish ? "ltr" : "rtl"}
             >
               <p className="text-sm">
@@ -225,7 +225,7 @@ const Three = ({
       )}
 
       {isPrepaid && (
-        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 ">
+        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px]">
           <button
             onClick={handleBack}
             className="absolute text-xs text-white left-4 top-2 "
@@ -243,7 +243,7 @@ const Three = ({
           </button>
           <div className="relative flex flex-col cursor-pointer">
             <div
-              className="flex flex-col justify-center gap-2 p-3 bg-white rounded-md"
+              className="flex flex-col justify-center gap-1 p-2 bg-white rounded-md "
               dir={isEnglish ? "ltr" : "rtl"}
             >
               <p className="text-sm">
@@ -275,7 +275,7 @@ const Three = ({
           </div>
           <div className="relative flex flex-col cursor-pointer ">
             <div
-              className="flex flex-col justify-between h-full gap-2 p-3 bg-white rounded-md"
+              className="flex flex-col justify-between h-full gap-1 p-2 bg-white rounded-md "
               dir={isEnglish ? "ltr" : "rtl"}
             >
               <p className="text-sm">
@@ -307,7 +307,7 @@ const Three = ({
       )}
 
       {isTv && (
-        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 ">
+        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px]">
           <button
             onClick={handleBack}
             className="absolute text-xs text-white left-4 top-2 "
@@ -391,7 +391,7 @@ const Three = ({
       {isWifi && (
         <div
           dir={isEnglish ? "ltr" : "rtl"}
-          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 "
+          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px]"
         >
           <button
             onClick={handleBack}
@@ -450,7 +450,7 @@ const Three = ({
       {isAddToBill && (
         <div
           dir={isEnglish ? "ltr" : "rtl"}
-          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 "
+          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 rounded-[24px]"
         >
           <button
             onClick={handleBack}
@@ -489,7 +489,7 @@ const Three = ({
       {isRecharge && (
         <div
           dir={isEnglish ? "ltr" : "rtl"}
-          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 "
+          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 rounded-[24px]"
         >
           <button
             onClick={handleBack}

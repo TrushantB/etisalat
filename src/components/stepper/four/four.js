@@ -6,9 +6,9 @@ const Four = ({ handleLiveChat, handleFAQ, isEnglish }) => {
       <a
         target="_blank"
         onClick={() => handleLiveChat()}
-        className="flex flex-col items-center justify-center h-full gap-1 p-2 bg-white rounded-md cursor-pointer sm:gap-2 sm:p-3 lg:w-40"
+        className="flex flex-col items-center justify-center h-full gap-1 p-2 bg-white rounded-md cursor-pointer lg:w-40"
       >
-        <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/postpaid.svg" alt="" />
+        <img className="w-6 h-6" src="/images/postpaid.svg" alt="" />
         <p className="text-xs text-center sm:text-sm">
           {" "}
           {isEnglish ? "Live Chat" : "دردشة مباشرة"}{" "}
@@ -17,9 +17,9 @@ const Four = ({ handleLiveChat, handleFAQ, isEnglish }) => {
       <a
         target="_blank"
         onClick={() => handleFAQ()}
-        className="flex flex-col items-center justify-center h-full gap-1 p-2 bg-white rounded-md cursor-pointer sm:gap-2 sm:p-3 lg:w-40"
+        className="flex flex-col items-center justify-center h-full gap-1 p-2 bg-white rounded-md cursor-pointer lg:w-40"
       >
-        <img className="w-6 h-6 sm:w-8 sm:h-8" src="/images/postpaid.svg" alt="" />
+        <img className="w-6 h-6" src="/images/postpaid.svg" alt="" />
         <p className="text-xs text-center sm:text-sm">
           {" "}
           {isEnglish ? "Faq" : "التعليمات"}{" "}
