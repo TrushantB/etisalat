@@ -119,8 +119,8 @@ svg {
 /* Media query for mobile devices */
 @media (min-width: 767px) {
   svg {
-    width: 20px; /* Adjust the width for mobile devices */
-    height: 20px; /* Adjust the height for mobile devices */
+    width: 20px;
+    height: 20px;
   }
 }
 @media (max-width: 576px) { 

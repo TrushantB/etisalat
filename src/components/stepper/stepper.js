@@ -48,7 +48,7 @@ const Stepper = ({
       <div className="relative flex flex-col items-center w-full video-container">
         {showPopup && 
         <div className="fixed inset-0 z-50 flex items-end justify-center">
-          <div onClick={togglePopup}  className="h-full w-full bg-[rgba(0,0,0,0.3)] absolute -z-10"></div>
+          <div onClick={togglePopup}  className="h-full w-full bg-[rgba(0,0,0,0.3)] absolute -z-10 cursor-pointer"></div>
           <div className="p-8 bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] rounded-lg shadow-2xl w-96">
             <Login />
           </div>
@@ -65,8 +65,7 @@ const Stepper = ({
 
         <img
           className="absolute w-32 h-12 bottom-5 right-5"
-          src="/images/full-logo.svg"
-        ></img>
+          src="/images/full-logo.svg" />
 
         <div
           className="absolute flex items-center justify-center w-12 h-12 rounded-full cursor-pointer bottom-5 left-8 sm:left-5 bg-slate-700 active:bg-slate-900"
