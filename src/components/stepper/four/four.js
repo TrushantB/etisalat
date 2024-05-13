@@ -6,10 +6,10 @@ const Four = ({ handleLiveChat, handleFAQ, isEnglish }) => {
       <a
         target="_blank"
         onClick={() => handleLiveChat()}
-        className="flex flex-col items-center justify-center h-full gap-1 p-2 bg-white rounded-md cursor-pointer lg:w-40"
+        className="flex flex-col items-center justify-center h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6"
       >
-        <img className="w-6 h-6" src="/images/postpaid.svg" alt="" />
-        <p className="text-xs text-center sm:text-sm">
+        <img className="w-6 h-6  min-[1800px]:w-24 min-[1800px]:h-24" src="/images/postpaid.svg" alt="" />
+        <p className="text-xs text-center sm:text-sm min-[1800px]:text-6xl">
           {" "}
           {isEnglish ? "Live Chat" : "دردشة مباشرة"}{" "}
         </p>
@@ -17,10 +17,10 @@ const Four = ({ handleLiveChat, handleFAQ, isEnglish }) => {
       <a
         target="_blank"
         onClick={() => handleFAQ()}
-        className="flex flex-col items-center justify-center h-full gap-1 p-2 bg-white rounded-md cursor-pointer lg:w-40"
+        className="flex flex-col items-center justify-center h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6"
       >
-        <img className="w-6 h-6" src="/images/postpaid.svg" alt="" />
-        <p className="text-xs text-center sm:text-sm">
+        <img className="w-6 h-6  min-[1800px]:w-24 min-[1800px]:h-24" src="/images/postpaid.svg" alt="" />
+        <p className="text-xs text-center sm:text-sm min-[1800px]:text-6xl">
           {" "}
           {isEnglish ? "Faq" : "التعليمات"}{" "}
         </p>

@@ -5,10 +5,10 @@ const Two = ({ setStep, onSelectType, isEnglish }) => {
     <div className="" onClick={() => setStep(2)}>
       <div className="text-white flex justify-center gap-3 p-5 py-3 rounded-full bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]">
         <button onClick={() => onSelectType("Bussiness")}>
-          <p className="text-[18px]">{isEnglish ? "Bussiness" : "عمل"}</p>
+          <p className="text-[18px] min-[1800px]:text-6xl">{isEnglish ? "Bussiness" : "عمل"}</p>
         </button>
         <button onClick={() => onSelectType("Consumer")}>
-          <p className="text-[18px]">{isEnglish ? "Consumer" : "مستهلك"}</p>
+          <p className="text-[18px] min-[1800px]:text-6xl">{isEnglish ? "Consumer" : "مستهلك"}</p>
         </button>
       </div>
     </div>

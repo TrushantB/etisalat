@@ -201,7 +201,7 @@ export default function Home() {
   return (
     <>
       {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
-      <div className="xl:w-[60%] pt-5 mx-auto shadow-md px-4">
+      <div className="xl:w-[60%] pt-5 mx-auto px-4 min-[1800px]:w-full">
         {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
 
         <Header />
