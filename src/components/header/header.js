@@ -14,7 +14,7 @@ const Header = () => {
       {/* logo div end */}
 
       {/* contact main div */}
-      <div className="flex items-center gap-2 sm:flex-row lg:gap-12 sm:items-start">
+      <div className="flex items-center gap-2 sm:flex-row lg:gap-12 sm:items-center">
         <div className="flex flex-col order-2 sm:flex-row sm:gap-14 sm:order-1">
           <div className="flex items-center gap-2 lg:gap-4 sm:items-stretch">
             <img

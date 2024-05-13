@@ -53,7 +53,7 @@ const Stepper = ({
       {showPopup && 
         <div className="fixed inset-0 z-50 flex items-end justify-center">
           <div onClick={togglePopup}  className="h-full w-full bg-[rgba(0,0,0,0.3)] absolute -z-10 cursor-pointer"></div>
-          <div className="p-8 bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] rounded-lg shadow-2xl w-96">
+          <div className="p-8 bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] rounded-lg shadow-2xl w-96 min-[1800px]:w-2/5">
             <Login />
           </div>
         </div>}
