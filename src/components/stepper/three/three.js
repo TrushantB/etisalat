@@ -67,7 +67,7 @@ const Three = ({
   return (
     <>
       {isMain && (
-        <div className="bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] py-5 grid grid-cols-3 px-3 gap-3 gap-y-6 sm:gap-y-3 rounded-[24px] min-[1800px]:gap-y-8 min-[1800px]:gap-8">
+        <div className="bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] py-5 grid grid-cols-3 px-3 gap-3 gap-y-6 sm:gap-y-3 rounded-[24px]  modal-wrapper">
           <div
             className="relative flex flex-col cursor-pointer"
             onClick={handlePostPaid}
@@ -77,7 +77,7 @@ const Three = ({
             </p>
             <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
               <img className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24" src="/images/postpaid.svg" alt="" />
-              <p className="text-xs text-center sm:text-sm min-[1800px]:text-6xl">
+              <p className="text-xs text-center sm:text-sm text-secondary-in">
                 {isEnglish ? "Postpaid plans" : "خطط الدفع الآجل"}
               </p>
             </div>
@@ -88,7 +88,7 @@ const Three = ({
             className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
           >
             <img className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24  " src="/images/postpaid.svg" alt="" />
-            <p className="text-xs text-center sm:text-sm min-[1800px]:text-6xl">
+            <p className="text-xs text-center sm:text-sm text-secondary-in">
               {isEnglish ? "Prepaid Plans" : "خطط الدفع المسبق"}
             </p>
           </div>
@@ -102,7 +102,7 @@ const Three = ({
             </p>
             <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
               <img className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24  " src="/images/tv.svg" alt="" />
-              <p className="text-xs text-center sm:text-sm min-[1800px]:text-6xl">
+              <p className="text-xs text-center sm:text-sm text-secondary-in">
                 {" "}
                 {isEnglish ? "Tv & Internet" : "التلفزيون والإنترنت"}
               </p>
@@ -118,7 +118,7 @@ const Three = ({
             </p>
             <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
               <img className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24  " src="/images/wifi.svg" alt="" />
-              <p className="text-xs text-center sm:text-sm min-[1800px]:text-6xl">
+              <p className="text-xs text-center sm:text-sm text-secondary-in">
                 {isEnglish ? "Home Wireless" : "لاسلكي منزلي"}
               </p>
             </div>
@@ -129,7 +129,7 @@ const Three = ({
             className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
           >
             <img className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24  " src="/images/bill.svg" alt="" />
-            <p className="text-xs text-center sm:text-sm min-[1800px]:text-6xl">
+            <p className="text-xs text-center sm:text-sm text-secondary-in">
               {" "}
               {isEnglish ? "Add to Bill" : "إضافة إلى الفاتورة"}
             </p>
@@ -140,14 +140,14 @@ const Three = ({
             className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
           >
             <img className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 " src="/images/pay.svg" alt="" />
-            <p className="text-xs text-center sm:text-sm min-[1800px]:text-6xl">
+            <p className="text-xs text-center sm:text-sm text-secondary-in">
               {isEnglish ? "Quick pay Recharge" : "إعادة شحن الدفع السريع"}
             </p>
           </div>
         </div>
       )}
       {ispostpaid && (
-        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] min-[1800px]:py-16 min-[1800px]:px-6">
+        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] modal-wrapper pt-top">
           <button
             onClick={handleBack}
             className="absolute text-xs text-white left-4 top-2 "
@@ -165,27 +165,27 @@ const Three = ({
           </button>
           <div className="relative flex flex-col cursor-pointer">
             <div
-              className="flex flex-col gap-1 p-2 bg-white rounded-md justify-centers min-[1800px]:p-6 min-[1800px]:gap-3"
+              className="flex flex-col gap-1 p-2 bg-white rounded-md justify-start min-[1800px]:p-6 min-[1800px]:gap-3"
               dir={isEnglish ? "ltr" : "rtl"}
             >
-              <p className="text-sm min-[1800px]:text-6xl">
+              <p className="text-sm text-primary-in">
                 {isEnglish ? "Freedom Live Plans" : "خطط فريدوم لايف"}
               </p>
-              <p className="text-xs min-[1800px]:text-4xl">
+              <p className="text-xs text-secondary-in">
                 {isEnglish
                   ? "Up to 40% off on all plans"
                   : "خصم يصل إلى 40% على جميع الخطط"}
               </p>
               <ul className="list-disc ps-5">
-                <li className="text-[11px] min-[1800px]:text-4xl">
+                <li className="text-[11px] text-secondary-in">
                   {isEnglish
                     ? "Loads of data and minutes"
                     : "كميات كبيرة من البيانات والدقائق"}
                 </li>
-                <li className="text-[11px] min-[1800px]:text-4xl">
+                <li className="text-[11px] text-secondary-in">
                   {isEnglish ? "free Content Passes" : "رصيد محتوى مجاني"}
                 </li>
-                <li className="text-[11px] min-[1800px]:text-4xl">
+                <li className="text-[11px] text-secondary-in">
                   {isEnglish
                     ? "Extra data for your favorite apps"
                     : "بيانات إضافية لتطبيقاتك المفضلة"}
@@ -195,27 +195,27 @@ const Three = ({
           </div>
           <div className="relative flex flex-col cursor-pointer">
             <div
-              className="flex flex-col justify-center h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
+              className="flex flex-col justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
               dir={isEnglish ? "ltr" : "rtl"}
             >
-              <p className="text-sm min-[1800px]:text-6xl">
+              <p className="text-sm text-primary-in">
                 {isEnglish ? "Emirati Live Plans" : "خطط إماراتي لايف"}
               </p>
-              <p className="text-xs min-[1800px]:text-4xl">
+              <p className="text-xs text-secondary-in">
                 {isEnglish
                   ? "Up to 40% off on all plans"
                   : "خصم يصل إلى 40% على جميع الخطط"}
               </p>
               <ul className="list-disc ps-5">
-                <li className="text-[11px] min-[1800px]:text-4xl">
+                <li className="text-[11px] text-secondary-in">
                   {isEnglish
                     ? "Loads of GBs and minutes"
                     : "كميات كبيرة من البيانات والدقائق"}
                 </li>
-                <li className="text-[11px] min-[1800px]:text-4xl">
+                <li className="text-[11px] text-secondary-in">
                   {isEnglish ? "Premium Numbers" : "أرقام بريميوم"}
                 </li>
-                <li className="text-[11px] min-[1800px]:text-4xl">
+                <li className="text-[11px] text-secondary-in">
                   {isEnglish ? "Free Roam like home" : "تجوال مجاني مثل المنزل"}
                 </li>
               </ul>
@@ -225,7 +225,7 @@ const Three = ({
       )}
 
       {isPrepaid && (
-        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] min-[1800px]:py-16 min-[1800px]:px-6">
+        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] modal-wrapper pt-top">
           <button
             onClick={handleBack}
             className="absolute text-xs text-white left-4 top-2 "
@@ -246,26 +246,26 @@ const Three = ({
               className="flex flex-col justify-center gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
               dir={isEnglish ? "ltr" : "rtl"}
             >
-              <p className="text-sm min-[1800px]:text-6xl">
+              <p className="text-sm text-primary-in">
                 {isEnglish ? "Wasel Flexi" : "واصل فليكسي"}
               </p>
-              <p className="text-xs min-[1800px]:text-4xl">
+              <p className="text-xs text-secondary-in">
                 {isEnglish
                   ? "Get FREE SIM worth AED 55 with Wasel Flexi"
                   : "احصل على شريحة مجانية بقيمة 55 درهم مع واصل فليكسي"}
               </p>
               <ul className="list-disc ps-5">
-                <li className="text-[11px] min-[1800px]:text-4xl">
+                <li className="text-[11px] text-secondary-in">
                   {isEnglish
                     ? "Double data on all plans"
                     : "ضعف البيانات على جميع الخطط"}
                 </li>
-                <li className="text-[11px] min-[1800px]:text-4xl">
+                <li className="text-[11px] text-secondary-in">
                   {isEnglish
                     ? "Save 50% with Wasel Flexi Yearly plans"
                     : "وفر 50% مع خطط واصل فليكسي السنوية"}
                 </li>
-                <li className="text-[11px] min-[1800px]:text-4xl">
+                <li className="text-[11px] text-secondary-in">
                   {isEnglish
                     ? "Unlimited data for GoChat Messenger"
                     : "بيانات غير محدودة لتطبيق GoChat Messenger"}
@@ -278,26 +278,26 @@ const Three = ({
               className="flex flex-col justify-between h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
               dir={isEnglish ? "ltr" : "rtl"}
             >
-              <p className="text-sm min-[1800px]:text-6xl">
+              <p className="text-sm text-primary-in">
                 {isEnglish ? "Emirati Wasel plan" : "خطة واصل الإماراتية"}
               </p>
-              <p className="text-xs min-[1800px]:text-4xl">
+              <p className="text-xs text-secondary-in">
                 {isEnglish
                   ? "Customise your own combination of data, minutes"
                   : "قم بتخصيص مزيج البيانات والدقائق الخاص بك"}
               </p>
               <ul className="list-disc ps-5">
-                <li className="text-[11px] min-[1800px]:text-4xl">
+                <li className="text-[11px] text-secondary-in">
                   {isEnglish
                     ? "Get FREE SIM when you shop online"
                     : "احصل على شريحة مجانية عند التسوق عبر الإنترنت"}
                 </li>
-                <li className="text-[11px] min-[1800px]:text-4xl">
+                <li className="text-[11px] text-secondary-in">
                   {isEnglish
                     ? "Extra data on all plans"
                     : "بيانات إضافية على جميع الخطط"}
                 </li>
-                <li className="text-[11px] min-[1800px]:text-4xl">
+                <li className="text-[11px] text-secondary-in">
                   {isEnglish ? "Special Bronze number" : "رقم برونزي خاص"}
                 </li>
               </ul>
@@ -307,7 +307,7 @@ const Three = ({
       )}
 
       {isTv && (
-        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] min-[1800px]:py-16 min-[1800px]:px-6">
+        <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] modal-wrapper pt-top">
           <button
             onClick={handleBack}
             className="absolute text-xs text-white left-4 top-2 "
@@ -328,26 +328,26 @@ const Three = ({
               className="flex flex-col justify-center gap-1 p-3 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
               dir={isEnglish ? "ltr" : "rtl"}
             >
-              <p className="text-sm font-bold min-[1800px]:text-5xl">
+              <p className="text-sm font-bold text-secondary-in">
                 {isEnglish ? "Ultra Starter" : "أولترا ستارتر"}
               </p>
-              <p className="text-xs text-gray-500 min-[1800px]:text-4xl">
+              <p className="text-xs text-gray-500 text-secondary-in">
                 {isEnglish ? "24 Month Commitment" : "التزام لمدة 24 شهرًا"}
               </p>
-              <p className="text-xs min-[1800px]:text-4xl">
+              <p className="text-xs text-secondary-in">
                 {isEnglish ? "AED 299/month" : "299 درهم / شهر"}
               </p>
-              <p className=" bg-[#E00800] text-xs px-1 rounded text-white min-[1800px]:text-4xl">
+              <p className=" bg-[#E00800] text-xs px-1 rounded text-white text-base">
                 {isEnglish
                   ? "Free Installation + Smiles Voucher"
                   : "تركيب مجاني + قسيمة سمايل"}
               </p>
-              <p className="text-[#e00800] text-xs min-[1800px]:text-4xl">
+              <p className="text-[#e00800] text-xs text-secondary-in">
                 {isEnglish
                   ? "6 month rental discount"
                   : "خصم 6 أشهر على الإيجار"}
               </p>
-              <p className="text-sm font-bold min-[1800px]:text-4xl">
+              <p className="text-sm font-bold text-secondary-in">
                 {isEnglish
                   ? "INTERNET- 500mbps"
                   : "إنترنت - 500 ميجابت في الثانية"}
@@ -359,26 +359,26 @@ const Three = ({
               className="flex flex-col justify-center gap-1 p-3 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
               dir={isEnglish ? "ltr" : "rtl"}
             >
-              <p className="text-sm font-bold min-[1800px]:text-6xl">
+              <p className="text-sm font-bold text-primary-in">
                 {isEnglish ? "Ultra Sport" : "أولترا سبورت"}
               </p>
-              <p className="text-xs min-[1800px]:text-4xl text-gray-500">
+              <p className="text-xs text-gray-500 text-secondary-in">
                 {isEnglish ? "24 Month Commitment" : "التزام لمدة 24 شهرًا"}
               </p>
-              <p className="text-xs min-[1800px]:text-4xl">
+              <p className="text-xs text-secondary-in">
                 {isEnglish ? "AED 515/month" : "515 درهم / شهر"}
               </p>
-              <p className=" bg-[#E00800] text-xs min-[1800px]:text-4xl px-1 rounded text-white">
+              <p className=" bg-[#E00800] text-xs text-base px-1 rounded text-white">
                 {isEnglish
                   ? "Free Installation + Smiles Voucher"
                   : "تركيب مجاني + قسيمة سمايل"}
               </p>
-              <p className="text-[#e00800] text-xs min-[1800px]:text-4xl">
+              <p className="text-[#e00800] text-xs text-secondary-in">
                 {isEnglish
                   ? "Free speed boost upto 1GB"
                   : "تسريع مجاني حتى 1 جيجابايت"}
               </p>
-              <p className="text-sm font-bold  min-[1800px]:text-4xl">
+              <p className="text-sm font-bold text-secondary-in">
                 {isEnglish
                   ? "INTERNET- 750mbps"
                   : "إنترنت - 750 ميجابت في الثانية"}
@@ -391,11 +391,11 @@ const Three = ({
       {isWifi && (
         <div
           dir={isEnglish ? "ltr" : "rtl"}
-          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] min-[1800px]:py-16 min-[1800px]:px-6"
+          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] modal-wrapper pt-top"
         >
           <button
             onClick={handleBack}
-            className="absolute text-xs min-[1800px]:text-4xl text-white left-4 top-2 "
+            className="absolute text-xs text-white text-secondary-in left-4 top-2 "
           >
             <div className="flex items-center ">
               <svg
@@ -410,16 +410,16 @@ const Three = ({
           </button>
           <div className="relative flex flex-col cursor-pointer ">
             <div className="flex flex-col justify-center h-full gap-1 p-3 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
-              <p className="text-sm font-bold min-[1800px]:text-6xl">
+              <p className="text-sm font-bold text-primary-in">
                 {isEnglish ? "Home Wireless Advance" : "لاسلكي منزلي أدفانس"}
               </p>
-              <p className="text-xs min-[1800px]:text-4xl text-gray-500">
+              <p className="text-xs text-gray-500 text-secondary-in">
                 {isEnglish ? "12 Month Commitment" : "التزام لمدة 12 شهرًا"}
               </p>
-              <p className="text-xs min-[1800px]:text-4xl">
+              <p className="text-xs text-secondary-in">
                 {isEnglish ? "199 AED/month" : "199 درهم / شهر"}
               </p>
-              <p className=" bg-[#E00800] text-xs min-[1800px]:text-4xl px-1 rounded text-white">
+              <p className=" bg-[#E00800] text-xs text-secondary-in px-1 rounded text-white">
                 {isEnglish
                   ? "Limited time offer: 50% OFF"
                   : "عرض محدود: خصم %50"}
@@ -428,16 +428,16 @@ const Three = ({
           </div>
           <div className="relative flex flex-col cursor-pointer">
             <div className="flex flex-col justify-center gap-1 p-3 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
-              <p className="text-sm font-bold min-[1800px]:text-6xl">
+              <p className="text-sm font-bold text-primary-in">
                 {isEnglish ? "Home Wireless Premium" : "لاسلكي منزلي بريميوم"}
               </p>
-              <p className="text-xs min-[1800px]:text-4xl text-gray-500">
+              <p className="text-xs text-gray-500 text-secondary-in">
                 {isEnglish ? "24 Month Commitment" : "التزام لمدة 24 شهرًا"}
               </p>
-              <p className="text-xs min-[1800px]:text-4xl">
+              <p className="text-xs text-secondary-in">
                 {isEnglish ? "299 AED/month" : "299 درهم / شهر"}
               </p>
-              <p className=" bg-[#E00800] text-xs min-[1800px]:text-4xl px-1 rounded text-white">
+              <p className=" bg-[#E00800] text-xs text-secondary-in px-1 rounded text-white">
                 {isEnglish
                   ? "Limited time offer: 25% OFF"
                   : "عرض محدود: خصم %25"}
@@ -450,11 +450,11 @@ const Three = ({
       {isAddToBill && (
         <div
           dir={isEnglish ? "ltr" : "rtl"}
-          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 rounded-[24px] min-[1800px]:py-16 min-[1800px]:px-6"
+          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 rounded-[24px] modal-wrapper"
         >
           <button
             onClick={handleBack}
-            className="absolute text-xs min-[1800px]:text-4xl text-white left-4 top-2 "
+            className="absolute text-xs text-white text-secondary-in left-4 top-2 "
           >
             <div className="flex items-center ">
               <svg
@@ -469,7 +469,7 @@ const Three = ({
           </button>
           <div className="relative flex flex-col cursor-pointer ">
             <div className="flex flex-col items-start justify-center h-full gap-1 p-3 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
-              <p className="min-[1800px]:text-5xl">
+              <p className="text-secondary-in">
                 {isEnglish
                   ? "Pay for your online services with your e& UAE number in a safe secure and hassle-free manner with e& UAEs"
                   : "ادفع مقابل خدماتك عبر الإنترنت باستخدام رقمك الإلكتروني والإماراتي بطريقة آمنة وخالية من المتاعب مع e&الإمارات العربية المتحدة"}
@@ -489,11 +489,11 @@ const Three = ({
       {isRecharge && (
         <div
           dir={isEnglish ? "ltr" : "rtl"}
-          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 rounded-[24px]  min-[1800px]:py-16 min-[1800px]:px-6"
+          className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-1 w-8/12 mx-auto px-3 rounded-[24px]  modal-wrapper pt-top"
         >
           <button
             onClick={handleBack}
-            className="absolute text-xs min-[1800px]:text-4xl text-white left-4 top-2 "
+            className="absolute text-xs text-white text-secondary-in left-4 top-2 "
           >
             <div className="flex items-center ">
               <svg
@@ -508,7 +508,7 @@ const Three = ({
           </button>
           <div className="relative flex flex-col cursor-pointer ">
             <div className="flex flex-col items-start justify-center h-full gap-1 p-3 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
-              <p className="min-[1800px]:text-5xl">
+              <p className="text-secondary-in">
                 {isEnglish
                   ? " Take care of yours bills & recharge with Etisalat quick pay and recharge"
                   : "اهتم بفواتيرك واشحن رصيدك مع اتصالات الدفع السريع وإعادة الشحن"}
