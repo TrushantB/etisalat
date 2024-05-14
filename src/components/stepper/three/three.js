@@ -168,7 +168,7 @@ const Three = ({
               className="flex flex-col gap-1 p-2 bg-white rounded-md justify-start min-[1800px]:p-6 min-[1800px]:gap-3"
               dir={isEnglish ? "ltr" : "rtl"}
             >
-              <p className="text-sm text-primary-in">
+              <p className="text-sm font-bold text-secondary-in">
                 {isEnglish ? "Freedom Live Plans" : "خطط فريدوم لايف"}
               </p>
               <p className="text-xs text-secondary-in">
@@ -177,15 +177,15 @@ const Three = ({
                   : "خصم يصل إلى 40% على جميع الخطط"}
               </p>
               <ul className="list-disc ps-5">
-                <li className="text-[11px] text-secondary-in">
+                <li className="text-[11px] text-base">
                   {isEnglish
                     ? "Loads of data and minutes"
                     : "كميات كبيرة من البيانات والدقائق"}
                 </li>
-                <li className="text-[11px] text-secondary-in">
+                <li className="text-[11px] text-base">
                   {isEnglish ? "free Content Passes" : "رصيد محتوى مجاني"}
                 </li>
-                <li className="text-[11px] text-secondary-in">
+                <li className="text-[11px] text-base">
                   {isEnglish
                     ? "Extra data for your favorite apps"
                     : "بيانات إضافية لتطبيقاتك المفضلة"}
@@ -198,7 +198,7 @@ const Three = ({
               className="flex flex-col justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
               dir={isEnglish ? "ltr" : "rtl"}
             >
-              <p className="text-sm text-primary-in">
+              <p className="text-sm font-bold text-secondary-in">
                 {isEnglish ? "Emirati Live Plans" : "خطط إماراتي لايف"}
               </p>
               <p className="text-xs text-secondary-in">
@@ -207,15 +207,15 @@ const Three = ({
                   : "خصم يصل إلى 40% على جميع الخطط"}
               </p>
               <ul className="list-disc ps-5">
-                <li className="text-[11px] text-secondary-in">
+                <li className="text-[11px] text-base">
                   {isEnglish
                     ? "Loads of GBs and minutes"
                     : "كميات كبيرة من البيانات والدقائق"}
                 </li>
-                <li className="text-[11px] text-secondary-in">
+                <li className="text-[11px] text-base">
                   {isEnglish ? "Premium Numbers" : "أرقام بريميوم"}
                 </li>
-                <li className="text-[11px] text-secondary-in">
+                <li className="text-[11px] text-base">
                   {isEnglish ? "Free Roam like home" : "تجوال مجاني مثل المنزل"}
                 </li>
               </ul>
@@ -246,7 +246,7 @@ const Three = ({
               className="flex flex-col justify-center gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
               dir={isEnglish ? "ltr" : "rtl"}
             >
-              <p className="text-sm text-primary-in">
+              <p className="text-sm font-bold text-text-secondary-in">
                 {isEnglish ? "Wasel Flexi" : "واصل فليكسي"}
               </p>
               <p className="text-xs text-secondary-in">
@@ -255,17 +255,17 @@ const Three = ({
                   : "احصل على شريحة مجانية بقيمة 55 درهم مع واصل فليكسي"}
               </p>
               <ul className="list-disc ps-5">
-                <li className="text-[11px] text-secondary-in">
+                <li className="text-[11px] text-base">
                   {isEnglish
                     ? "Double data on all plans"
                     : "ضعف البيانات على جميع الخطط"}
                 </li>
-                <li className="text-[11px] text-secondary-in">
+                <li className="text-[11px] text-base">
                   {isEnglish
                     ? "Save 50% with Wasel Flexi Yearly plans"
                     : "وفر 50% مع خطط واصل فليكسي السنوية"}
                 </li>
-                <li className="text-[11px] text-secondary-in">
+                <li className="text-[11px] text-base">
                   {isEnglish
                     ? "Unlimited data for GoChat Messenger"
                     : "بيانات غير محدودة لتطبيق GoChat Messenger"}
@@ -278,7 +278,7 @@ const Three = ({
               className="flex flex-col justify-between h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
               dir={isEnglish ? "ltr" : "rtl"}
             >
-              <p className="text-sm text-primary-in">
+              <p className="text-sm font-bold text-secondary-in">
                 {isEnglish ? "Emirati Wasel plan" : "خطة واصل الإماراتية"}
               </p>
               <p className="text-xs text-secondary-in">
@@ -287,17 +287,17 @@ const Three = ({
                   : "قم بتخصيص مزيج البيانات والدقائق الخاص بك"}
               </p>
               <ul className="list-disc ps-5">
-                <li className="text-[11px] text-secondary-in">
+                <li className="text-[11px] text-base">
                   {isEnglish
                     ? "Get FREE SIM when you shop online"
                     : "احصل على شريحة مجانية عند التسوق عبر الإنترنت"}
                 </li>
-                <li className="text-[11px] text-secondary-in">
+                <li className="text-[11px] text-base">
                   {isEnglish
                     ? "Extra data on all plans"
                     : "بيانات إضافية على جميع الخطط"}
                 </li>
-                <li className="text-[11px] text-secondary-in">
+                <li className="text-[11px] text-base">
                   {isEnglish ? "Special Bronze number" : "رقم برونزي خاص"}
                 </li>
               </ul>
@@ -331,10 +331,10 @@ const Three = ({
               <p className="text-sm font-bold text-secondary-in">
                 {isEnglish ? "Ultra Starter" : "أولترا ستارتر"}
               </p>
-              <p className="text-xs text-gray-500 text-secondary-in">
+              <p className="text-xs text-base text-gray-500">
                 {isEnglish ? "24 Month Commitment" : "التزام لمدة 24 شهرًا"}
               </p>
-              <p className="text-xs text-secondary-in">
+              <p className="text-xs text-base">
                 {isEnglish ? "AED 299/month" : "299 درهم / شهر"}
               </p>
               <p className=" bg-[#E00800] text-xs px-1 rounded text-white text-base">
@@ -342,12 +342,12 @@ const Three = ({
                   ? "Free Installation + Smiles Voucher"
                   : "تركيب مجاني + قسيمة سمايل"}
               </p>
-              <p className="text-[#e00800] text-xs text-secondary-in">
+              <p className="text-[#e00800] text-xs text-base">
                 {isEnglish
                   ? "6 month rental discount"
                   : "خصم 6 أشهر على الإيجار"}
               </p>
-              <p className="text-sm font-bold text-secondary-in">
+              <p className="text-sm text-base font-bold">
                 {isEnglish
                   ? "INTERNET- 500mbps"
                   : "إنترنت - 500 ميجابت في الثانية"}
@@ -359,13 +359,13 @@ const Three = ({
               className="flex flex-col justify-center gap-1 p-3 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
               dir={isEnglish ? "ltr" : "rtl"}
             >
-              <p className="text-sm font-bold text-primary-in">
+              <p className="text-sm font-bold text-secondary-in">
                 {isEnglish ? "Ultra Sport" : "أولترا سبورت"}
               </p>
-              <p className="text-xs text-gray-500 text-secondary-in">
+              <p className="text-xs text-base text-gray-500">
                 {isEnglish ? "24 Month Commitment" : "التزام لمدة 24 شهرًا"}
               </p>
-              <p className="text-xs text-secondary-in">
+              <p className="text-xs text-base">
                 {isEnglish ? "AED 515/month" : "515 درهم / شهر"}
               </p>
               <p className=" bg-[#E00800] text-xs text-base px-1 rounded text-white">
@@ -373,12 +373,12 @@ const Three = ({
                   ? "Free Installation + Smiles Voucher"
                   : "تركيب مجاني + قسيمة سمايل"}
               </p>
-              <p className="text-[#e00800] text-xs text-secondary-in">
+              <p className="text-[#e00800] text-xs text-base">
                 {isEnglish
                   ? "Free speed boost upto 1GB"
                   : "تسريع مجاني حتى 1 جيجابايت"}
               </p>
-              <p className="text-sm font-bold text-secondary-in">
+              <p className="text-sm text-base font-bold">
                 {isEnglish
                   ? "INTERNET- 750mbps"
                   : "إنترنت - 750 ميجابت في الثانية"}
@@ -410,16 +410,16 @@ const Three = ({
           </button>
           <div className="relative flex flex-col cursor-pointer ">
             <div className="flex flex-col justify-center h-full gap-1 p-3 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
-              <p className="text-sm font-bold text-primary-in">
+              <p className="text-sm font-bold text-secondary-in">
                 {isEnglish ? "Home Wireless Advance" : "لاسلكي منزلي أدفانس"}
               </p>
-              <p className="text-xs text-gray-500 text-secondary-in">
+              <p className="text-base text-gray-500">
                 {isEnglish ? "12 Month Commitment" : "التزام لمدة 12 شهرًا"}
               </p>
-              <p className="text-xs text-secondary-in">
+              <p className="text-base">
                 {isEnglish ? "199 AED/month" : "199 درهم / شهر"}
               </p>
-              <p className=" bg-[#E00800] text-xs text-secondary-in px-1 rounded text-white">
+              <p className=" bg-[#E00800] text-base px-1 rounded text-white">
                 {isEnglish
                   ? "Limited time offer: 50% OFF"
                   : "عرض محدود: خصم %50"}
@@ -428,16 +428,16 @@ const Three = ({
           </div>
           <div className="relative flex flex-col cursor-pointer">
             <div className="flex flex-col justify-center gap-1 p-3 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
-              <p className="text-sm font-bold text-primary-in">
+              <p className="text-sm font-bold text-secondary-in">
                 {isEnglish ? "Home Wireless Premium" : "لاسلكي منزلي بريميوم"}
               </p>
-              <p className="text-xs text-gray-500 text-secondary-in">
+              <p className="text-base text-gray-500">
                 {isEnglish ? "24 Month Commitment" : "التزام لمدة 24 شهرًا"}
               </p>
-              <p className="text-xs text-secondary-in">
+              <p className="text-base">
                 {isEnglish ? "299 AED/month" : "299 درهم / شهر"}
               </p>
-              <p className=" bg-[#E00800] text-xs text-secondary-in px-1 rounded text-white">
+              <p className=" bg-[#E00800] text-base px-1 rounded text-white">
                 {isEnglish
                   ? "Limited time offer: 25% OFF"
                   : "عرض محدود: خصم %25"}

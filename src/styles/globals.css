@@ -148,6 +148,10 @@ svg {
     width: 0.7in !important;
     height: 0.7in !important;
   }
+  .text-small {
+    font-size: 0.4in !important;
+    line-height: 1.5 !important;
+  }
   .text-base {
     font-size: 0.5in !important;
     line-height: 1.5 !important;
@@ -183,7 +187,7 @@ svg {
     column-gap: 0.2in !important;
   }
   .modal-wrapper.pt-top {
-    padding-top: 0.5in !important;
+    padding-top: 0.8in !important;
   }
   .modal-bottom-space {
     margin-bottom: 1.5in !important;
