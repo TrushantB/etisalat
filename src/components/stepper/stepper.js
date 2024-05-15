@@ -25,6 +25,13 @@ const Stepper = ({
   handleStopTalking,
 }) => {
   const [showPopup, setShowPopup] = useState(false);
+  const [isMain, setIsMain] = useState(true);
+  const [ispostpaid, setIsPostpaid] = useState(false);
+  const [isPrepaid, setIsPrepaid] = useState(false);
+  const [isTv, setIsTv] = useState(false);
+  const [isWifi, setIsWifi] = useState(false);
+  const [isAddToBill, setIsAddToBill] = useState(false);
+  const [isRecharge, setIsRecharge] = useState(false);
 
   const handleLeftStep = () => {
     if (step > 1) {
@@ -131,17 +138,24 @@ const Stepper = ({
               className="h-full mx-2 button-left"
               onClick={handleLeftStep}
             >
-              <div className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32">
-                <svg
-                  fill="white"
-                  width={10}
-                  height={10}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 320 512"
-                >
-                  <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
-                </svg>
-              </div>
+              {!isPrepaid &&
+                !ispostpaid &&
+                !isAddToBill &&
+                !isRecharge &&
+                !isTv &&
+                !isWifi && (
+                  <div className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32">
+                    <svg
+                      fill="white"
+                      width={10}
+                      height={10}
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 320 512"
+                    >
+                      <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                    </svg>
+                  </div>
+                )}
             </button>
           ) : (
             <div className="w-5 h-5 sm:ms-10"></div>
@@ -165,6 +179,20 @@ const Stepper = ({
                   handleHomeWireless={handleHomeWireless}
                   handleAddToBill={handleAddToBill}
                   handleQuickPayRecharge={handleQuickPayRecharge}
+                  isMain={isMain}
+                  ispostpaid={ispostpaid}
+                  isPrepaid={isPrepaid}
+                  isTv={isTv}
+                  isWifi={isWifi}
+                  isAddToBill={isAddToBill}
+                  isRecharge={isRecharge}
+                  setIsMain={setIsMain}
+                  setIsPostpaid={setIsPostpaid}
+                  setIsPrepaid={setIsPrepaid}
+                  setIsTv={setIsTv}
+                  setIsWifi={setIsWifi}
+                  setIsAddToBill={setIsAddToBill}
+                  setIsRecharge={setIsRecharge}
                 />
               )}
               {step === 3 && (
@@ -182,15 +210,22 @@ const Stepper = ({
             <div className="w-5 h-5 sm:me-10 buton-right"></div>
           ) : (
             <button className="mx-2" onClick={handleRightStep}>
-              <div className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:me-10 sm:h-10 sm:w-10 min-[1800px]:w-32 min-[1800px]:h-32">
-                <svg
-                  fill="white"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 320 512"
-                >
-                  <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
-                </svg>
-              </div>
+              {!isPrepaid &&
+                !ispostpaid &&
+                !isAddToBill &&
+                !isRecharge &&
+                !isTv &&
+                !isWifi && (
+                  <div className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:me-10 sm:h-10 sm:w-10 min-[1800px]:w-32 min-[1800px]:h-32">
+                    <svg
+                      fill="white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 320 512"
+                    >
+                      <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
+                    </svg>
+                  </div>
+                )}
             </button>
           )}
         </div>

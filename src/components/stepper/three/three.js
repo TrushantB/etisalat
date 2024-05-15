@@ -9,15 +9,21 @@ const Three = ({
   handleTVInternet,
   handlePrepaidPlans,
   handlePostpaidPlans,
+  isMain,
+  ispostpaid,
+  isPrepaid,
+  isTv,
+  isWifi,
+  isAddToBill,
+  isRecharge,
+  setIsMain,
+  setIsPostpaid,
+  setIsPrepaid,
+  setIsTv,
+  setIsWifi,
+  setIsAddToBill,
+  setIsRecharge,
 }) => {
-  const [isMain, setIsMain] = useState(true);
-  const [ispostpaid, setIsPostpaid] = useState(false);
-  const [isPrepaid, setIsPrepaid] = useState(false);
-  const [isTv, setIsTv] = useState(false);
-  const [isWifi, setIsWifi] = useState(false);
-  const [isAddToBill, setIsAddToBill] = useState(false);
-  const [isRecharge, setIsRecharge] = useState(false);
-
   const handlePostPaid = () => {
     setIsMain(false);
     setIsPostpaid(true);
@@ -174,19 +180,20 @@ const Three = ({
         <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] modal-wrapper pt-top">
           <button
             onClick={handleBack}
-            className="absolute text-xs text-white left-4 top-2 min-[1800px]:top-4"
+            className="absolute text-xs text-white left-4 top-2 min-[1800px]:top-[14px]"
           >
             <div className="flex items-center ">
               <svg
                 fill="white"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 512"
-                className="!w-[14px] !h-[14px] min-[1800px]:!w-[40px] min-[1800px]:!h-[40px] "
+                className="!w-[14px] !h-[14px]  min-[1800px]:!w-[50px] min-[1800px]:!h-[50px] "
               >
                 <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
               </svg>{" "}
             </div>
           </button>
+
           <div className="relative flex flex-col cursor-pointer">
             <div
               className="flex flex-col gap-1 p-2 bg-white rounded-md justify-start min-[1800px]:p-6 min-[1800px]:gap-3"
@@ -252,14 +259,14 @@ const Three = ({
         <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] modal-wrapper pt-top">
           <button
             onClick={handleBack}
-            className="absolute text-xs text-white left-4 top-2 min-[1800px]:top-4"
+            className="absolute text-xs text-white left-4 top-2 min-[1800px]:top-[14px]"
           >
             <div className="flex items-center ">
               <svg
                 fill="white"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 512"
-                className="!w-[14px] !h-[14px] min-[1800px]:!w-[40px] min-[1800px]:!h-[40px] "
+                className="!w-[14px] !h-[14px]  min-[1800px]:!w-[50px] min-[1800px]:!h-[50px] "
               >
                 <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
               </svg>{" "}
@@ -267,7 +274,7 @@ const Three = ({
           </button>
           <div className="relative  h-full flex flex-col cursor-pointer">
             <div
-              className="flex flex-col h-full justify-center gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
+              className="flex flex-col h-full  gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
               dir={isEnglish ? "ltr" : "rtl"}
             >
               <p className="text-sm font-bold text-secondary-in">
@@ -339,14 +346,14 @@ const Three = ({
         <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] modal-wrapper pt-top">
           <button
             onClick={handleBack}
-            className="absolute text-xs text-white left-4 top-2 min-[1800px]:top-4"
+            className="absolute text-xs text-white left-4 top-2 min-[1800px]:top-[14px]"
           >
             <div className="flex items-center ">
               <svg
                 fill="white"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 512"
-                className="!w-[14px] !h-[14px] min-[1800px]:!w-[40px] min-[1800px]:!h-[40px] "
+                className="!w-[14px] !h-[14px]  min-[1800px]:!w-[50px] min-[1800px]:!h-[50px] "
               >
                 <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
               </svg>{" "}
@@ -424,14 +431,14 @@ const Three = ({
         >
           <button
             onClick={handleBack}
-            className="absolute text-xs text-white text-secondary-in left-4 top-2 min-[1800px]:top-4"
+            className="absolute text-xs text-white text-secondary-in left-4 top-2 min-[1800px]:top-[14px]"
           >
             <div className="flex items-center ">
               <svg
                 fill="white"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 512"
-                className="!w-[14px] !h-[14px] min-[1800px]:!w-[40px] min-[1800px]:!h-[40px] "
+                className="!w-[14px] !h-[14px]  min-[1800px]:!w-[50px] min-[1800px]:!h-[50px] "
               >
                 <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
               </svg>{" "}
@@ -483,14 +490,14 @@ const Three = ({
         >
           <button
             onClick={handleBack}
-            className="absolute text-xs text-white text-secondary-in left-4 top-2 min-[1800px]:top-4"
+            className="absolute text-xs text-white text-secondary-in left-4 top-2 min-[1800px]:top-[14px]"
           >
             <div className="flex items-center ">
               <svg
                 fill="white"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 512"
-                className="!w-[14px] !h-[14px] min-[1800px]:!w-[40px] min-[1800px]:!h-[40px] "
+                className="!w-[14px] !h-[14px]  min-[1800px]:!w-[50px] min-[1800px]:!h-[50px] "
               >
                 <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
               </svg>{" "}
@@ -522,14 +529,14 @@ const Three = ({
         >
           <button
             onClick={handleBack}
-            className="absolute text-xs text-white text-secondary-in left-4 top-2 min-[1800px]:top-4"
+            className="absolute text-xs text-white text-secondary-in left-4 top-2 min-[1800px]:top-[14px]"
           >
             <div className="flex items-center ">
               <svg
                 fill="white"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 512"
-                className="!w-[14px] !h-[14px] min-[1800px]:!w-[40px] min-[1800px]:!h-[40px] "
+                className="!w-[14px] !h-[14px]  min-[1800px]:!w-[50px] min-[1800px]:!h-[50px] "
               >
                 <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
               </svg>{" "}
