@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "@/components/header/header";
 import Stepper from "@/components/stepper/stepper";
 import { Scene, Persona } from "@soulmachines/smwebsdk";
+import InfoPopup from "@/components/infoPopup/infoPopup";
 
 const apiKeyEN =
   "eyJzb3VsSWQiOiJkZG5hLWxwZmxleDk4MWQtLWV0aXNhbGF0ZGVtbyIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2ExMGQ3MzQ3LTZjZGYtNGFlNi04N2FkLWI5NTBmNDA1YzBkYyJ9";
@@ -182,14 +183,14 @@ export default function Home() {
 
   const handleMicOnOff = () => {
     if (isMicOn) {
-        scene.setMediaDeviceActive({
-          microphone: false,
-        });
-      } else {
-        scene.setMediaDeviceActive({
-          microphone: true,
-        });
-      }
+      scene.setMediaDeviceActive({
+        microphone: false,
+      });
+    } else {
+      scene.setMediaDeviceActive({
+        microphone: true,
+      });
+    }
     setIsMicOn(!isMicOn);
   };
 
@@ -201,7 +202,7 @@ export default function Home() {
   return (
     <>
       {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
-      <div className="xl:w-[60%] pt-5 mx-auto px-4 min-[1800px]:w-full">
+      <div className="xl:w-[60%] pt-5 mx-auto px-4 min-[1800px]:w-full  relative flex flex-col items-center">
         {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
 
         <Header />
@@ -223,11 +224,13 @@ export default function Home() {
           handleMicOnOff={handleMicOnOff}
           handleStopTalking={handleStopTalking}
         />
+        {/* <div className="absolute bottom-0">
+          <InfoPopup />
+        </div> */}
       </div>
     </>
   );
 }
-
 
 // import { useEffect, useState } from "react";
 // import Header from "@/components/header/header";

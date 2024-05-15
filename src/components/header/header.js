@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between px-3 lg:items-start lg:px-0 sm:pb-3">
+    <div className="flex items-center w-full justify-between px-3 lg:items-start lg:px-0 sm:pb-3">
       {/* logo div */}
       <div>
         <img
@@ -22,7 +22,9 @@ const Header = () => {
               src="/images/phone.svg"
               alt=""
             />
-            <a href="tel:8005800" className="text-base">8005800</a>
+            <a href="tel:8005800" className="text-base">
+              8005800
+            </a>
           </div>
 
           <div className="flex items-center gap-2 lg:gap-4">
@@ -31,7 +33,9 @@ const Header = () => {
               src="/images/mail.svg"
               alt=""
             />
-            <a href="mailto:info@etisalat.ae" className="text-base">info@etisalat.ae</a>
+            <a href="mailto:info@etisalat.ae" className="text-base">
+              info@etisalat.ae
+            </a>
           </div>
         </div>
         <div className="order-1 rounded-md shadow-lg sm:order-2">

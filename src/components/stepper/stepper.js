@@ -50,13 +50,17 @@ const Stepper = ({
         test
       </button>
       <div className="relative flex flex-col items-center w-full video-container">
-      {showPopup && 
-        <div className="fixed inset-0 z-50 flex items-end justify-center">
-          <div onClick={togglePopup}  className="h-full w-full bg-[rgba(0,0,0,0.3)] absolute -z-10 cursor-pointer"></div>
-          <div className="p-8 bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] rounded-[24px] shadow-2xl w-96 toggle-popup">
-            <Login />
+        {showPopup && (
+          <div className="fixed inset-0 z-50 flex items-end justify-center">
+            <div
+              onClick={togglePopup}
+              className="h-full w-full bg-[rgba(0,0,0,0.3)] absolute -z-10 cursor-pointer"
+            ></div>
+            <div className="p-8 bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] rounded-[24px] shadow-2xl w-96 toggle-popup">
+              <Login />
+            </div>
           </div>
-        </div>}
+        )}
 
         <video
           id="sm-video"
@@ -65,7 +69,8 @@ const Stepper = ({
 
         <img
           className="absolute w-32 h-12 bottom-5 right-5 footer-logo"
-          src="/images/full-logo.svg" />
+          src="/images/full-logo.svg"
+        />
 
         <div
           className="absolute flex items-center justify-center w-12 h-12 rounded-full cursor-pointer bottom-5 left-8 sm:left-5 bg-slate-700 active:bg-slate-900 min-[1800px]:!w-28 min-[1800px]:!h-28"
@@ -122,8 +127,11 @@ const Stepper = ({
       <div className="flex  !self-end  justify-between w-full items-center  gap-10 absolute mb-20 lg:mb-16 modal-bottom-space">
         <div className="relative flex items-center justify-between w-full h-full">
           {(step !== 1) & !loading ? (
-            <button className="h-full mx-2" onClick={handleLeftStep}>
-              <div className="flex items-center justify-center w-5 h-5 bg-black rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-24 min-[1800px]:h-24">
+            <button
+              className="h-full mx-2 button-left"
+              onClick={handleLeftStep}
+            >
+              <div className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32">
                 <svg
                   fill="white"
                   width={10}
@@ -171,10 +179,10 @@ const Stepper = ({
           )}
 
           {step !== 2 ? (
-            <div className="w-5 h-5 sm:me-10"></div>
+            <div className="w-5 h-5 sm:me-10 buton-right"></div>
           ) : (
             <button className="mx-2" onClick={handleRightStep}>
-              <div className="flex items-center justify-center w-5 h-5 bg-black rounded-full sm:me-10 sm:h-10 sm:w-10 min-[1800px]:w-24 min-[1800px]:h-24">
+              <div className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:me-10 sm:h-10 sm:w-10 min-[1800px]:w-32 min-[1800px]:h-32">
                 <svg
                   fill="white"
                   xmlns="http://www.w3.org/2000/svg"
