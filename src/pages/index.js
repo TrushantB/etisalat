@@ -5,7 +5,7 @@ import { Scene, Persona } from "@soulmachines/smwebsdk";
 import InfoPopup from "@/components/infoPopup/infoPopup";
 
 const apiKeyEN =
-  "eyJzb3VsSWQiOiJkZG5hLWxwZmxleDk4MWQtLWV0aXNhbGF0ZGVtbyIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2ExMGQ3MzQ3LTZjZGYtNGFlNi04N2FkLWI5NTBmNDA1YzBkYyJ9";
+  "eyJzb3VsSWQiOiJkZG5hLWxwZmxleDk4MWQtLWFiZHVsLWV0aXNhbGF0ZGVtbyIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzBlOTJmYWQwLThlYTMtNGVhOC05YTI1LWI4YTdmZjYzYzk0NCJ9";
 
 let scene = null;
 let persona = null;
@@ -48,6 +48,11 @@ export default function Home() {
     console.info("success! session id:", sessionId);
     setLoading(false);
 
+    scene?.onRecognizeResultsEvent.addListener(
+      (conversationState) => {
+        console.log("conversationState", conversationState);
+      }
+  );
     // start the video playing
     scene
       .startVideo()
