@@ -161,7 +161,11 @@ const Stepper = ({
             <div className="w-5 h-5 sm:ms-10"></div>
           )}
           {!loading && (
-            <div className="items-center justify-center w-auto ">
+            <div
+              className={`items-center justify-center ${
+                step == 2 ? "w-full" : "w-auto"
+              } `}
+            >
               {step === 1 && (
                 <Two
                   setStep={setStep}
