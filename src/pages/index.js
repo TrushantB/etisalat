@@ -209,7 +209,6 @@ export default function Home() {
       {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
       <div className="xl:w-[60%] pt-5 mx-auto px-4 min-[1800px]:w-full  relative flex flex-col items-center">
         {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
-
         <Header />
         <Stepper
           setStep={setStep}
