@@ -48,11 +48,9 @@ export default function Home() {
     console.info("success! session id:", sessionId);
     setLoading(false);
 
-    scene?.onRecognizeResultsEvent.addListener(
-      (conversationState) => {
-        console.log("conversationState", conversationState);
-      }
-  );
+    scene?.onRecognizeResultsEvent.addListener((conversationState) => {
+      console.log("conversationState", conversationState);
+    });
     // start the video playing
     scene
       .startVideo()
@@ -229,9 +227,9 @@ export default function Home() {
           handleMicOnOff={handleMicOnOff}
           handleStopTalking={handleStopTalking}
         />
-        {/* <div className="absolute bottom-0">
+        <div className="absolute bottom-0">
           <InfoPopup />
-        </div> */}
+        </div>
       </div>
     </>
   );
