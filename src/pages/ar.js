@@ -4,7 +4,7 @@ import Stepper from "@/components/stepper/stepper";
 import { Scene, Persona } from "@soulmachines/smwebsdk";
 
 const apiKeyUAE =
-  "eyJzb3VsSWQiOiJkZG5hLWxwZmxleDk4MWQtLWV4cGxvcmVyIiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfNDE5ZTNjYjEtMDRmOS00ZGZmLWFkYjItM2FlY2VjZmY3ODMxIn0=";
+  "eyJzb3VsSWQiOiJkZG5hLXNldG9vLXNvbHV0aW9uc2Y4NzAtLWFiZHVsLWFyYWJpYyIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzA2YmRhNjU5LTM4MjItNDUzZS04YmRhLTA0MzM2ZTA1NzQ4OSJ9";
 
 let scene = null;
 let persona = null;
