@@ -5,7 +5,7 @@ import { Scene, Persona } from "@soulmachines/smwebsdk";
 import InfoPopup from "@/components/infoPopup/infoPopup";
 
 const apiKeyEN =
-  "eyJzb3VsSWQiOiJkZG5hLWxwZmxleDk4MWQtLWFiZHVsLWV0aXNhbGF0ZGVtbyIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzBlOTJmYWQwLThlYTMtNGVhOC05YTI1LWI4YTdmZjYzYzk0NCJ9";
+  "eyJzb3VsSWQiOiJkZG5hLXNldG9vLXNvbHV0aW9uc2Y4NzAtLW1ldGFoIiwiYXV0aFNlcnZlciI6Imh0dHBzOi8vZGguc291bG1hY2hpbmVzLmNsb3VkL2FwaS9qd3QiLCJhdXRoVG9rZW4iOiJhcGlrZXlfdjFfYTAxOWNjNzQtMmY2Yi00MzkzLWI0N2EtZmYyZDUzMGVjYmIwIn0=";
 
 let scene = null;
 let persona = null;
