@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 import Stepper from "@/components/stepper/stepper";
 import { Scene, Persona } from "@soulmachines/smwebsdk";
 import InfoPopup from "@/components/infoPopup/infoPopup";
@@ -207,7 +208,7 @@ export default function Home() {
   return (
     <>
       {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
-      <div className="xl:w-[60%] pt-5 mx-auto px-4 min-[1800px]:w-full  relative flex flex-col items-center">
+      <div className="xl:w-[60%] mx-auto min-[1800px]:w-full">
         {/* <Script src="https://res.cloudinary.com/di2eukaqk/raw/upload/v1714761656/smwebsdk_wzzdcv.js" /> */}
         <Header />
         <Stepper
@@ -231,6 +232,11 @@ export default function Home() {
         {/* <div className="absolute bottom-0">
           <InfoPopup />
         </div> */}
+        <Footer
+         isMicOn={isMicOn}
+         handleMicOnOff={handleMicOnOff}
+         handleStopTalking={handleStopTalking}
+        />
       </div>
     </>
   );

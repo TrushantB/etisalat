@@ -32,7 +32,7 @@ const Four = ({ handleLiveChat, handleFAQ, isEnglish }) => {
         </p>
       </a>
       {showPopup && 
-        <div className="fixed inset-0 z-50 flex items-end justify-center">
+        <div className="fixed inset-0 z-50 flex items-end justify-center live-chat-popup">
           <div onClick={togglePopup}  className="h-full w-full bg-[rgba(0,0,0,0.3)] absolute -z-10 cursor-pointer"></div>
           <div className="p-8 bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] rounded-[24px] shadow-2xl w-96 min-[1800px]:w-2/5 mb-16 min-[1800px]:mb-24">
             <div className="flex flex-col justify-center min-h-full px-4 pt-2 pb-4 bg-white rounded-md lg:px-4 text-secondary-in">

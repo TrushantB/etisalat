@@ -2,12 +2,12 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="flex items-center w-full justify-between px-3 lg:items-start lg:px-0 sm:pb-3">
+    <div className="flex items-center justify-between w-full px-4 py-6 lg:items-start">
       {/* logo div */}
       <div>
         <img
           className="lg:w-20 lg:h-20 h-14 w-14 logo"
-          src="/images/logo.svg"
+          src="/images/logo.png"
           alt=""
         />
       </div>
