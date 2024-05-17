@@ -11,6 +11,7 @@
   "dependencies": {
     "@soulmachines/smskillsdk": "^1.4.0-rc.0",
     "@soulmachines/smwebsdk": "^15.7.0",
+    "@zegocloud/zego-uikit-prebuilt": "^2.2.0",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
