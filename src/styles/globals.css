@@ -197,7 +197,7 @@ svg {
     padding-top: 0.8in !important;
   }
   .modal-bottom-space {
-    margin-bottom: 1.5in !important;
+    margin-bottom: 1.8in !important;
   }
   .toggle-popup {
     width: 50% !important;
@@ -232,10 +232,6 @@ svg {
   }
   .button-inner svg {
     @apply !w-10 !h-10;
-  }
-  .live-chat-popup,
-  .login-popup {
-    @apply mb-[14rem];
   }
   .services-icon {
     @apply w-24 h-24;
