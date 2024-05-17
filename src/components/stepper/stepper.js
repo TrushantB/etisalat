@@ -183,33 +183,42 @@ const Stepper = ({
                   setStep={setStep}
                   onSelectType={onSelectType}
                   isEnglish={isEnglish}
-                  handlePostpaidPlans={handlePostpaidPlans}
-                  handlePrepaidPlans={handlePrepaidPlans}
-                  handleTVInternet={handleTVInternet}
-                  handleHomeWireless={handleHomeWireless}
-                  handleAddToBill={handleAddToBill}
-                  handleQuickPayRecharge={handleQuickPayRecharge}
                   isMain={isMain}
-                  ispostpaid={ispostpaid}
-                  isPrepaid={isPrepaid}
-                  isTv={isTv}
-                  isWifi={isWifi}
-                  isAddToBill={isAddToBill}
-                  isRecharge={isRecharge}
-                  setIsMain={setIsMain}
-                  setIsPostpaid={setIsPostpaid}
-                  setIsPrepaid={setIsPrepaid}
-                  setIsTv={setIsTv}
-                  setIsWifi={setIsWifi}
-                  setIsAddToBill={setIsAddToBill}
-                  setIsRecharge={setIsRecharge}
                 /> :
-                <Four
+                // <Four
+                //   setStep={setStep}
+                //   handleFAQ={handleFAQ}
+                //   handleLiveChat={handleLiveChat}
+                //   isEnglish={isEnglish}
+                //   onSelectType={onSelectType}
+                //   handlePostpaidPlans={handlePostpaidPlans}
+                //   handlePrepaidPlans={handlePrepaidPlans}
+                //   handleTVInternet={handleTVInternet}
+                //   handleHomeWireless={handleHomeWireless}
+                //   handleAddToBill={handleAddToBill}
+                //   handleQuickPayRecharge={handleQuickPayRecharge}
+                //   isMain={isMain}
+                //   ispostpaid={ispostpaid}
+                //   isPrepaid={isPrepaid}
+                //   isTv={isTv}
+                //   isWifi={isWifi}
+                //   isAddToBill={isAddToBill}
+                //   isRecharge={isRecharge}
+                //   setIsMain={setIsMain}
+                //   setIsPostpaid={setIsPostpaid}
+                //   setIsPrepaid={setIsPrepaid}
+                //   setIsTv={setIsTv}
+                //   setIsWifi={setIsWifi}
+                //   setIsAddToBill={setIsAddToBill}
+                //   setIsRecharge={setIsRecharge}
+                // />
+                <Three
                   setStep={setStep}
-                  handleFAQ={handleFAQ}
-                  handleLiveChat={handleLiveChat}
+                  onSelectType={onSelectType}
                   isEnglish={isEnglish}
-                />}
+                  isMain={isMain}
+                />
+              }
                 </>
               )}
               {step === 3 && (
