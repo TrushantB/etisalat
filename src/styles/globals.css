@@ -119,6 +119,9 @@ svg {
   height: 100%;
   object-fit: cover;
 }
+.footer {
+  @apply px-8 py-16 bg-slate-400;
+}
 /* Media query for mobile devices */
 @media (min-width: 767px) {
   svg {
@@ -138,39 +141,39 @@ svg {
     height: 80px;
   }
 }
-@media (min-width: 12.13in) and (min-height: 29.13in) {
+@media (min-width: 12.13in) and (min-height: 29in) {
   .logo,
   .scan-code {
-    width: 2.5in !important;
-    height: 2.5in !important;
+    width: 1.5in !important;
+    height: 1.5in !important;
   }
   .icon {
     width: 0.7in !important;
     height: 0.7in !important;
   }
   .footer .icon {
-    width: 1in !important;
-    height: 1in !important;
+    width: 0.7in !important;
+    height: 0.7in !important;
   }
   .text-small {
-    font-size: 0.4in !important;
+    font-size: 0.3in !important;
     line-height: 1.5 !important;
   }
   .text-base {
-    font-size: 0.5in !important;
-    line-height: 1.5 !important;
-  }
-  .text-primary-in {
-    font-size: 0.7in !important;
+    font-size: 0.4in !important;
     line-height: 1.5 !important;
   }
   .text-secondary-in {
-    font-size: 0.6in !important;
+    font-size: 0.45in !important;
+    line-height: 1.5 !important;
+  }
+  .text-primary-in {
+    font-size: 0.5in !important;
     line-height: 1.5 !important;
   }
   .main-wrapper {
-    height: calc(80vh - 524px) !important;
-    margin-top: 12vh !important;
+    height: calc(80vh - 422px) !important;
+    margin-top: 20vh !important;
   }
   .admin-button {
     top: 270px !important;
@@ -179,7 +182,7 @@ svg {
     height: 2in !important;
   }
   .footer-logo {
-    width: 4.5in !important;
+    width: 3.3in !important;
     height: auto !important;
   }
   .button-wrapper {
@@ -201,19 +204,19 @@ svg {
   }
   .footer {
     @apply px-8 py-16 bg-slate-400;
-    height: 14cm;
+    height: 6cm;
   }
   .footer-icons {
     @apply gap-10;
   }
   #sm-video {
-    padding: 0 4cm;
+    padding: 0 2cm;
   }
   body .min-\[1800px\]\:\!w-28 {
-    width: 12rem !important;
+    width: 8rem !important;
   }
   body .min-\[1800px\]\:\!h-28 {
-    height: 12rem !important;
+    height: 8rem !important;
   }
   .button-left,
   .button-right {
@@ -231,16 +234,20 @@ svg {
 @media (min-width: 54in) and (min-height: 87.5in) {
   .logo,
   .scan-code {
-    width: 11.15in !important;
-    height: 11.15in !important;
+    width: 9in !important;
+    height: 9in !important;
   }
-  .video-container {
+  body .video-container {
     max-width: 5184px;
     max-height: 8400px;
   }
   .icon {
     width: 2in !important;
     height: 2in !important;
+  }
+  .footer .icon {
+    width: 2.4in !important;
+    height: 2.4in !important;
   }
   .text-small {
     font-size: 0.88in !important;
@@ -259,8 +266,8 @@ svg {
     line-height: 1.5 !important;
   }
   .main-wrapper {
-    height: calc(80vh - 1154px) !important;
-    margin-top: 20vh !important;
+    height: calc(80vh - 944px) !important;
+    margin-top: 14vh !important;
   }
   .admin-button {
     top: 1084px !important;
@@ -290,10 +297,10 @@ svg {
     width: 50% !important;
   }
   body .min-\[1800px\]\:\!w-28 {
-    width: 3in !important;
+    width: 4in !important;
   }
   body .min-\[1800px\]\:\!h-28 {
-    height: 3in !important;
+    height: 4in !important;
   }
   body .min-\[1800px\]\:left-40 {
     left: 4in;
@@ -303,5 +310,8 @@ svg {
   }
   div.shadow-lg:has(.scan-code) {
     box-shadow: none !important;
+  }
+  #sm-video {
+    padding: 0 12cm;
   }
 }
