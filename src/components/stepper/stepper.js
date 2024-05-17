@@ -22,7 +22,8 @@ const Stepper = ({
   isEnglish,
   isMicOn,
   handleMicOnOff,
-  handleStopTalking
+  handleStopTalking,
+  type
 }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [isMain, setIsMain] = useState(true);
@@ -54,7 +55,7 @@ const Stepper = ({
         onClick={togglePopup}
         className="fixed right-0 z-10 w-24 h-16 opacity-0 top-28 xl:right-[20%] admin-button"
       >
-        test
+        admin login
       </button>
       <div className="relative flex flex-col items-center w-full video-container">
         {showPopup && (
@@ -177,8 +178,10 @@ const Stepper = ({
                 />
               )}
               {step === 2 && (
+                <>{type === "business"? 
                 <Three
                   setStep={setStep}
+                  onSelectType={onSelectType}
                   isEnglish={isEnglish}
                   handlePostpaidPlans={handlePostpaidPlans}
                   handlePrepaidPlans={handlePrepaidPlans}
@@ -200,7 +203,14 @@ const Stepper = ({
                   setIsWifi={setIsWifi}
                   setIsAddToBill={setIsAddToBill}
                   setIsRecharge={setIsRecharge}
-                />
+                /> :
+                <Four
+                  setStep={setStep}
+                  handleFAQ={handleFAQ}
+                  handleLiveChat={handleLiveChat}
+                  isEnglish={isEnglish}
+                />}
+                </>
               )}
               {step === 3 && (
                 <Four
@@ -213,7 +223,8 @@ const Stepper = ({
             </div>
           )}
 
-          {step !== 2 ? (
+<div className="w-5 h-5 sm:me-10 buton-right"></div>
+          {/* {step !== 2 ? (
             <div className="w-5 h-5 sm:me-10 buton-right"></div>
           ) : (
             <button className="mx-2 button-right" onClick={handleRightStep}>
@@ -234,7 +245,7 @@ const Stepper = ({
                   </div>
                 )}
             </button>
-          )}
+          )} */}
         </div>
       </div>
     </div>

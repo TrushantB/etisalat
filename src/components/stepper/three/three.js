@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Three = ({
   setStep,
+  onSelectType,
   isEnglish,
   handleQuickPayRecharge,
   handleAddToBill,
@@ -69,18 +70,13 @@ const Three = ({
     setIsRecharge(true);
     handleQuickPayRecharge();
   };
-
   return (
     <>
       {isMain && (
         <div className="bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] py-5 grid grid-cols-3 px-3 gap-3 gap-y-6 sm:gap-y-3 rounded-[24px]  modal-wrapper">
           <div
             className="relative flex flex-col cursor-pointer"
-            onClick={handlePostPaid}
           >
-            <p className="text-[8px] bg-[#E00800] text-small rounded-md w-auto absolute p-1 px-2 -top-3 sm:-top-2 left-1 flex text-white min-[1800px]:text-xl min-[1800px]:-top-4">
-              New Offers
-            </p>
             <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
               <img
                 className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon"
@@ -88,13 +84,12 @@ const Three = ({
                 alt=""
               />
               <p className="text-xs text-center sm:text-sm text-secondary-in">
-                {isEnglish ? "Postpaid plans" : "خطط الدفع الآجل"}
+                {isEnglish ? "Bill Deviation" : "انحراف الفاتورة"}
               </p>
             </div>
           </div>
 
           <div
-            onClick={handlePrePaid}
             className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
           >
             <img
@@ -103,17 +98,13 @@ const Three = ({
               alt=""
             />
             <p className="text-xs text-center sm:text-sm text-secondary-in">
-              {isEnglish ? "Prepaid Plans" : "خطط الدفع المسبق"}
+              {isEnglish ? "Internet not working" : "الإنترنت لا يعمل"}
             </p>
           </div>
 
           <div
-            onClick={handleTv}
             className="relative flex flex-col cursor-pointer"
           >
-            <p className="text-[8px] bg-[#E00800] text-small rounded-md w-auto absolute p-1 px-2 -top-3 sm:-top-2 left-1 flex text-white min-[1800px]:text-xl min-[1800px]:-top-4">
-              FREE voucher
-            </p>
             <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
               <img
                 className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon  min-[1800px]:mt-3  "
@@ -122,18 +113,14 @@ const Three = ({
               />
               <p className="text-xs text-center sm:text-sm text-secondary-in">
                 {" "}
-                {isEnglish ? "Tv & Internet" : "التلفزيون والإنترنت"}
+                {isEnglish ? "Facing an issue with eLife" : "واجهت مشكلة مع إي لايف"}
               </p>
             </div>
           </div>
 
           <div
-            onClick={handleWifi}
             className="relative flex flex-col cursor-pointer"
           >
-            <p className="text-[8px] bg-[#E00800] text-small rounded-md w-auto absolute p-1 px-2 -top-3 sm:-top-2 left-1 flex text-white min-[1800px]:text-xl min-[1800px]:-top-4">
-              5G
-            </p>
             <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
               <img
                 className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon  "
@@ -141,13 +128,12 @@ const Three = ({
                 alt=""
               />
               <p className="text-xs text-center sm:text-sm text-secondary-in">
-                {isEnglish ? "Home Wireless" : "لاسلكي منزلي"}
+                {isEnglish ? "Speed is very slow" : "السرعة بطيئة جدًا"}
               </p>
             </div>
           </div>
 
           <div
-            onClick={() => handleAddBill()}
             className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
           >
             <img
@@ -157,12 +143,11 @@ const Three = ({
             />
             <p className="text-xs text-center sm:text-sm text-secondary-in">
               {" "}
-              {isEnglish ? "Add to Bill" : "إضافة إلى الفاتورة"}
+              {isEnglish ? "Live Chat" : "دردشة مباشرة"}{" "}
             </p>
           </div>
 
           <div
-            onClick={handleRecharge}
             className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
           >
             <img
@@ -171,7 +156,7 @@ const Three = ({
               alt=""
             />
             <p className="text-xs text-center sm:text-sm text-secondary-in">
-              {isEnglish ? "Quick pay Recharge" : "إعادة شحن الدفع السريع"}
+            {isEnglish ? "Faq" : "التعليمات"}{" "}
             </p>
           </div>
         </div>

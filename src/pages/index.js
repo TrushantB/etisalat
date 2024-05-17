@@ -15,6 +15,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [language, setLanguage] = useState("English");
   const [isMicOn, setIsMicOn] = useState(true);
+  const [type, setType] = useState('business');
 
   useEffect(() => {
     setTimeout(() => {
@@ -85,6 +86,7 @@ export default function Home() {
   // Step 2 start
   const onSelectType = (type) => {
     console.log({ type });
+    setType(type);
     // persona
     //   .conversationSend(type)
     //   .then((response) => {
@@ -227,6 +229,7 @@ export default function Home() {
           isMicOn={isMicOn}
           handleMicOnOff={handleMicOnOff}
           handleStopTalking={handleStopTalking}
+          type={type}
         />
         {/* <div className="absolute bottom-0">
           <InfoPopup />
