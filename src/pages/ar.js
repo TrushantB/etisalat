@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
 import Stepper from "@/components/stepper/stepper";
 import { Scene, Persona } from "@soulmachines/smwebsdk";
 
@@ -223,11 +222,6 @@ export default function Home() {
           isMicOn={isMicOn}
           handleMicOnOff={handleMicOnOff}
           handleStopTalking={handleStopTalking}
-        />
-        <Footer
-         isMicOn={isMicOn}
-         handleMicOnOff={handleMicOnOff}
-         handleStopTalking={handleStopTalking}
         />
       </div>
     </>

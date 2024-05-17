@@ -7,7 +7,7 @@ const Footer = ({
 }) => {
   return (
     
-    <div className="flex items-center justify-between w-full px-4 py-4 border-t footer">
+    <div className="flex items-center justify-between w-full px-4 py-4 footer">
         <div className="flex items-center gap-4 footer-icons">
         <div
             className="flex items-center justify-center w-12 h-12 rounded-full cursor-pointer bottom-5 left-8 sm:left-5 bg-slate-700 active:bg-slate-900 min-[1800px]:!w-28 min-[1800px]:!h-28"
