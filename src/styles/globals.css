@@ -120,7 +120,7 @@ svg {
   object-fit: cover;
 }
 .footer {
-  @apply px-8 py-16 bg-slate-400;
+  @apply fixed bottom-0 px-8 py-16 bg-transparent;
 }
 /* Media query for mobile devices */
 @media (min-width: 767px) {
@@ -141,7 +141,7 @@ svg {
     height: 80px;
   }
 }
-@media (min-width: 12.13in) and (min-height: 29in) {
+@media (min-width: 12in) and (min-height: 29in) {
   .logo,
   .scan-code {
     width: 1.5in !important;
@@ -172,7 +172,7 @@ svg {
     line-height: 1.5 !important;
   }
   .main-wrapper {
-    height: calc(80vh - 422px) !important;
+    height: calc(80vh - 192px) !important;
     margin-top: 20vh !important;
   }
   .admin-button {
@@ -203,14 +203,14 @@ svg {
     width: 50% !important;
   }
   .footer {
-    @apply px-8 py-16 bg-slate-400;
-    height: 6cm;
+    @apply fixed bottom-0 px-8 py-16 bg-transparent;
+    height: 8cm;
   }
   .footer-icons {
     @apply gap-10;
   }
   #sm-video {
-    padding: 0 2cm;
+    padding: 0 3cm;
   }
   body .min-\[1800px\]\:\!w-28 {
     width: 8rem !important;
@@ -225,10 +225,20 @@ svg {
   .button-left > div,
   .button-right > div {
     margin: 0 !important;
+    @apply !w-14 !h-14;
+  }
+  .button-inner {
+    @apply !mx-4 !w-24 !h-20;
+  }
+  .button-inner svg {
+    @apply !w-10 !h-10;
   }
   .live-chat-popup,
   .login-popup {
-    @apply mb-[33rem];
+    @apply mb-[14rem];
+  }
+  .services-icon {
+    @apply w-24 h-24;
   }
 }
 @media (min-width: 54in) and (min-height: 87.5in) {
