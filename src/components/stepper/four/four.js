@@ -14,7 +14,7 @@ const Four = ({ handleLiveChat, handleFAQ, isEnglish }) => {
         onClick={togglePopup}
         className="flex flex-col items-center justify-center h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6"
       >
-        <img className="w-6 h-6  min-[1800px]:w-24 min-[1800px]:h-24" src="/images/postpaid.svg" alt="" />
+        <img className="w-6 h-6  min-[1800px]:w-24 min-[1800px]:h-24 services-icon" src="/images/postpaid.svg" alt="" />
         <p className="text-xs text-center sm:text-sm text-secondary-in">
           {" "}
           {isEnglish ? "Live Chat" : "دردشة مباشرة"}{" "}
@@ -25,7 +25,7 @@ const Four = ({ handleLiveChat, handleFAQ, isEnglish }) => {
         onClick={() => handleFAQ()}
         className="flex flex-col items-center justify-center h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6"
       >
-        <img className="w-6 h-6  min-[1800px]:w-24 min-[1800px]:h-24" src="/images/postpaid.svg" alt="" />
+        <img className="w-6 h-6  min-[1800px]:w-24 min-[1800px]:h-24 services-icon" src="/images/postpaid.svg" alt="" />
         <p className="text-xs text-center sm:text-sm text-secondary-in">
           {" "}
           {isEnglish ? "Faq" : "التعليمات"}{" "}

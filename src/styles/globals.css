@@ -225,10 +225,20 @@ svg {
   .button-left > div,
   .button-right > div {
     margin: 0 !important;
+    @apply !w-14 !h-14;
+  }
+  .button-inner {
+    @apply !mx-4 !w-24 !h-20;
+  }
+  .button-inner svg {
+    @apply !w-10 !h-10;
   }
   .live-chat-popup,
   .login-popup {
-    @apply mb-[33rem];
+    @apply mb-[14rem];
+  }
+  .services-icon {
+    @apply w-24 h-24;
   }
 }
 @media (min-width: 54in) and (min-height: 87.5in) {

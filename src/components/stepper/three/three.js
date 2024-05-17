@@ -83,7 +83,7 @@ const Three = ({
             </p>
             <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
               <img
-                className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24"
+                className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon"
                 src="/images/postpaid.svg"
                 alt=""
               />
@@ -98,7 +98,7 @@ const Three = ({
             className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
           >
             <img
-              className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24  "
+              className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon  "
               src="/images/postpaid.svg"
               alt=""
             />
@@ -116,7 +116,7 @@ const Three = ({
             </p>
             <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
               <img
-                className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24  min-[1800px]:mt-3  "
+                className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon  min-[1800px]:mt-3  "
                 src="/images/tv.svg"
                 alt=""
               />
@@ -136,7 +136,7 @@ const Three = ({
             </p>
             <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
               <img
-                className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24  "
+                className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon  "
                 src="/images/wifi.svg"
                 alt=""
               />
@@ -151,7 +151,7 @@ const Three = ({
             className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
           >
             <img
-              className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24  "
+              className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon  "
               src="/images/bill.svg"
               alt=""
             />
@@ -166,7 +166,7 @@ const Three = ({
             className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
           >
             <img
-              className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 "
+              className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon "
               src="/images/pay.svg"
               alt=""
             />
@@ -177,10 +177,10 @@ const Three = ({
         </div>
       )}
       {ispostpaid && (
-        <div className="flex justify-between     items-center">
+        <div className="flex items-center justify-between">
           <div
             onClick={handleBack}
-            className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32"
+            className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32 button-inner"
           >
             <svg
               fill="white"
@@ -259,10 +259,10 @@ const Three = ({
       )}
 
       {isPrepaid && (
-        <div className="flex justify-center items-center">
+        <div className="flex items-center justify-center">
           <div
             onClick={handleBack}
-            className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:ms-8 me-2 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32"
+            className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:ms-8 me-2 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32 button-inner"
           >
             <svg
               fill="white"
@@ -275,7 +275,7 @@ const Three = ({
             </svg>
           </div>
           <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] modal-wrapper pt-top xl:w-10/12 min-[1800px]:w-10/12 mx-auto">
-            <div className="relative  h-full flex flex-col cursor-pointer">
+            <div className="relative flex flex-col h-full cursor-pointer">
               <div
                 className="flex flex-col h-full  gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
                 dir={isEnglish ? "ltr" : "rtl"}
@@ -348,7 +348,7 @@ const Three = ({
       )}
 
       {isTv && (
-        <div className="flex justify-between items-center gap-20">
+        <div className="flex items-center justify-between gap-20">
           <div
             onClick={handleBack}
             className="flex items-center justify-center w-5 h-5 me-auto bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32"
@@ -364,7 +364,7 @@ const Three = ({
             </svg>
           </div>
           <div className="bg-gradient-to-r relative from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)]  py-8 grid grid-cols-2 px-3 gap-3 rounded-[24px] modal-wrapper pt-top">
-            <div className="relative flex flex-col cursor-pointer p-1">
+            <div className="relative flex flex-col p-1 cursor-pointer">
               <div
                 className="flex flex-col justify-center gap-1 p-3 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
                 dir={isEnglish ? "ltr" : "rtl"}
@@ -432,10 +432,10 @@ const Three = ({
       )}
 
       {isWifi && (
-        <div className="flex justify-between items-center ">
+        <div className="flex items-center justify-between ">
           <div
             onClick={handleBack}
-            className="flex items-center justify-center w-3 h-3  bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32"
+            className="flex items-center justify-center w-3 h-3  bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32 button-inner"
           >
             <svg
               fill="white"
@@ -493,10 +493,10 @@ const Three = ({
       )}
 
       {isAddToBill && (
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <div
             onClick={handleBack}
-            className="flex items-center justify-center w-5 h-5  bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32"
+            className="flex items-center justify-center w-5 h-5  bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32 button-inner"
           >
             <svg
               fill="white"
@@ -534,10 +534,10 @@ const Three = ({
       )}
 
       {isRecharge && (
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <div
             onClick={handleBack}
-            className="flex items-center justify-center w-5 h-5  bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32"
+            className="flex items-center justify-center w-5 h-5  bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32 button-inner"
           >
             <svg
               fill="white"

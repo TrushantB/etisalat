@@ -102,7 +102,7 @@ const Stepper = ({
                 !isRecharge &&
                 !isTv &&
                 !isWifi && (
-                  <div className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32">
+                  <div className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:ms-10 sm:w-10 sm:h-10 min-[1800px]:w-32 min-[1800px]:h-32 button-inner">
                     <svg
                       fill="white"
                       width={10}
@@ -178,7 +178,7 @@ const Stepper = ({
                 !isRecharge &&
                 !isTv &&
                 !isWifi && (
-                  <div className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:me-10 sm:h-10 sm:w-10 min-[1800px]:w-32 min-[1800px]:h-32">
+                  <div className="flex items-center justify-center w-5 h-5 bg-[#e00800] rounded-full sm:me-10 sm:h-10 sm:w-10 min-[1800px]:w-32 min-[1800px]:h-32 button-inner">
                     <svg
                       fill="white"
                       xmlns="http://www.w3.org/2000/svg"
