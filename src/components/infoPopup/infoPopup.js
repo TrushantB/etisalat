@@ -1,90 +1,97 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const InfoPopup = () => {
-  const [showModal, setShowModal] = React.useState(false);
-  const [step, setStep] = React.useState(1);
-  var settings = {
-    dots: true,
-    infinite: false,
+  const [showModal, setShowModal] = useState(false);
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    let interval;
+    if (showModal) {
+      interval = setInterval(() => {
+        if (sliderRef.current) {
+          sliderRef.current.slickNext();
+        }
+      }, 2000);
+    } else {
+      clearInterval(interval);
+    }
+
+    return () => clearInterval(interval);
+  }, [showModal]);
+
+  const openModal = () => {
+    setShowModal(true);
+    // Reset slider to the first slide when modal is opened
+    if (sliderRef.current) {
+      sliderRef.current.slickGoTo(0);
+    }
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  // const popup = setInterval(() => {
-  //   setStep(step + 1);
-  // }, 3000);
-
-  // useEffect(() => {
-  //   if (setStep == 3) {
-  //     clearInterval(popup);
-  //     showModal(false);
-  //   }
-  // }, [step]);
-
-  // console.log(step);
 
   return (
-    // <div>
-
-    //   {" "}
-    //   <div className="text-white opacity-100 justify-center mx-auto gap-3 p-5 py-3 ">
-    //     <div className="">
-    //       <img className="w-[500px] h-[300px]" src="/images/stepOne.gif" />
-    //     </div>
-    //   </div>
-    // </div>
     <>
       <button
-        className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        className="px-6 py-3 mb-1 mr-1 text-sm font-bold text-white uppercase transition-all duration-150 ease-linear bg-pink-500 rounded shadow outline-none active:bg-pink-600 hover:shadow-lg focus:outline-none"
         type="button"
-        onClick={() => setShowModal(true)}
+        onClick={openModal}
       >
         Open regular modal
       </button>
-      {showModal ? (
+      {showModal && (
         <>
-          <div className="justify-center items-end -mt-10  flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
             <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[1400px]">
-              {/*content*/}
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+              <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
-                  onClick={() => setShowModal(false)}
-                  className="absolute top-2 right-5 z-50 cursor-pointer text-xl "
+                  onClick={closeModal}
+                  className="absolute z-50 text-xl cursor-pointer top-2 right-5 "
                 >
                   x
                 </div>
-                <div className="relative p-6 flex-auto">
-                  <img
-                    className=" lg:h-[250px] sm:w-[300px] sm:w-[150px] lg:w-[500px] 2xl:w-[1300px] 2xl:h-auto "
-                    src="/images/stepOne.gif"
-                  />
-                </div>
-                {/*footer*/}
-                {/* <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                  <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowModal(false)}
-                  >
-                    Close
-                  </button>
-                  <button
-                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowModal(false)}
-                  >
-                    Save Changes
-                  </button>
-                </div> */}
+                <Slider ref={sliderRef} {...settings}>
+                  <div>
+                    <img
+                      className="lg:h-[250px] sm:w-[300px] sm:w-[150px] lg:w-[500px] 2xl:w-[1300px] 2xl:h-auto"
+                      src="/images/stepOne.gif"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      className="lg:h-[250px] sm:w-[300px] sm:w-[150px] lg:w-[500px] 2xl:w-[1300px] 2xl:h-auto"
+                      src="/images/stepTwo.gif"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      className="lg:h-[250px] sm:w-[300px] sm:w-[150px] lg:w-[500px] 2xl:w-[1300px] 2xl:h-auto"
+                      src="/images/stepThree.gif"
+                    />
+                  </div>
+                </Slider>
               </div>
             </div>
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+          <div
+            className="fixed inset-0 z-40 bg-black opacity-25"
+            onClick={closeModal}
+          ></div>
         </>
-      ) : null}
+      )}
     </>
   );
 };
