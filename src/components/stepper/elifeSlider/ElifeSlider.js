@@ -31,7 +31,7 @@ function ElifeSlider({ closeShowElife }) {
   const slideTime = (slide) => {
     switch (slide) {
       case 0:
-        sliderTimeOut(18000)
+        sliderTimeOut(10000)
         break;
       case 1:
         sliderTimeOut(2000)
@@ -46,10 +46,10 @@ function ElifeSlider({ closeShowElife }) {
         sliderTimeOut(3000)
         break;
       case 5:
-        sliderTimeOut(10000)
+        sliderTimeOut(3000)
         break;
       case 6:
-        sliderTimeOut(5500)
+        sliderTimeOut(3000)
         break;
       default:
         console.log(`Sorry, we are out of ${slide}.`);

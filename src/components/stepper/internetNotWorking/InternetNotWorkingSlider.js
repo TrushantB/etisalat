@@ -31,7 +31,7 @@ function InternetNotWorkingSlider({ closeShowInternetNotWorking }) {
   const slideTime = (slide) => {
     switch (slide) {
       case 0:
-        sliderTimeOut(11000)
+        sliderTimeOut(9000)
         break;
       case 1:
         sliderTimeOut(2600)
@@ -43,10 +43,10 @@ function InternetNotWorkingSlider({ closeShowInternetNotWorking }) {
         sliderTimeOut(2000)
         break;
       case 4:
-        sliderTimeOut(3000)
+        sliderTimeOut(3500)
         break;
       case 5:
-        sliderTimeOut(8000)
+        sliderTimeOut(3000)
         break;
       case 6:
         sliderTimeOut(3000)
