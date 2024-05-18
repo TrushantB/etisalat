@@ -242,6 +242,12 @@ svg {
   .number-popup label.text-base {
     @apply !py-8;
   }
+  .carousel-wrapper {
+    @apply mb-24;
+  }
+  .carousel-wrapper.faq-wrapper > div.w-full {
+    max-width: 1800px !important;
+  }
 }
 @media (min-width: 54in) and (min-height: 87.5in) {
   .logo,

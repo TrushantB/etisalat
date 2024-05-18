@@ -64,7 +64,7 @@ const NumberPopup = ({ setIsAskForNumber ,submitNumber}) => {
                     <label htmlFor="mobile-number" className="block text-base font-medium leading-6 text-gray-900">
                       Mobile Number
                     </label>
-                    <div className="relative mt-2 rounded-md shadow-sm">
+                    <div className="relative mt-2 rounded-md shadow-sm mb-4">
                       <input
                         type="tel" // Change type to 'tel' for mobile number
                         name="mobile-number"
@@ -79,7 +79,7 @@ const NumberPopup = ({ setIsAskForNumber ,submitNumber}) => {
                   </div>
                   <button
                     type='submit'
-                    className="bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] py-2 px-5 rounded-full mt-4 text-white">
+                    className="bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] py-2 px-5 rounded-full mt-4 text-white text-small">
                     Submit
                   </button>
                 </form>
@@ -90,7 +90,7 @@ const NumberPopup = ({ setIsAskForNumber ,submitNumber}) => {
                     <label htmlFor="telephone-number" className="block text-base font-medium leading-6 text-gray-900">
                       Telephone Number
                     </label>
-                    <div className="relative mt-2 rounded-md shadow-sm">
+                    <div className="relative mt-2 rounded-md shadow-sm mb-4">
                       <input
                         type="tel" // Change type to 'tel' for telephone number
                         name="telephone-number"
@@ -105,7 +105,7 @@ const NumberPopup = ({ setIsAskForNumber ,submitNumber}) => {
                   </div>
                   <button
                     type='submit'
-                    className="bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] py-2 px-5 rounded-full mt-4 text-white">
+                    className="bg-gradient-to-r from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] py-2 px-5 rounded-full mt-4 text-white text-small">
                     Submit
                   </button>
                 </form>
