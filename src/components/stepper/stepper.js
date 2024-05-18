@@ -24,7 +24,14 @@ const Stepper = ({
   isMicOn,
   handleMicOnOff,
   handleStopTalking,
-  type
+  billDeviation,
+  type,
+  internetNotWorking,
+  elife,
+  slowInternetSpeed,
+  showBussinessMenu,
+  submitNumber
+
 }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [isMain, setIsMain] = useState(true);
@@ -37,10 +44,10 @@ const Stepper = ({
 
   const [isAskForNumber, setIsAskForNumber]=useState(true);
 
-  useEffect(() =>{
-    const isAskForNumber= sessionStorage.getItem("isAskForNumber");
-    setIsAskForNumber(isAskForNumber)
-  },[])
+  // useEffect(() =>{
+  //   const isAskForNumber= sessionStorage.getItem("isAskForNumber");
+  //   setIsAskForNumber(isAskForNumber)
+  // },[])
 
   const handleLeftStep = () => {
     if (step > 1) {
@@ -183,6 +190,7 @@ const Stepper = ({
                   setStep={setStep}
                   onSelectType={onSelectType}
                   isEnglish={isEnglish}
+                  showBussinessMenu={showBussinessMenu}
                 />
               )}
               {step === 2 && (
@@ -191,13 +199,18 @@ const Stepper = ({
                 {
                   isAskForNumber ? 
                   
-                  <NumberPopup setIsAskForNumber={setIsAskForNumber}/>
+                  <NumberPopup setIsAskForNumber={setIsAskForNumber} submitNumber={submitNumber}/>
                   :
                   <Three
                   setStep={setStep}
                   onSelectType={onSelectType}
                   isEnglish={isEnglish}
                   isMain={isMain}
+                  billDeviation={billDeviation}
+                  handleStopTalking={handleStopTalking}
+                  internetNotWorking={internetNotWorking}
+                  elife={elife}
+                  slowInternetSpeed={slowInternetSpeed}
                 />
                 }
                 </> :
@@ -228,12 +241,23 @@ const Stepper = ({
                 //   setIsAddToBill={setIsAddToBill}
                 //   setIsRecharge={setIsRecharge}
                 // />
-                <Three
+                <>{
+                  isAskForNumber ? 
+                  
+                  <NumberPopup setIsAskForNumber={setIsAskForNumber} submitNumber={submitNumber}/>
+                  :
+                  <Three
                   setStep={setStep}
                   onSelectType={onSelectType}
                   isEnglish={isEnglish}
                   isMain={isMain}
+                  billDeviation={billDeviation}
+                  handleStopTalking={handleStopTalking}
+                  internetNotWorking={internetNotWorking}
+                  elife={elife}
+                  slowInternetSpeed={slowInternetSpeed}
                 />
+                }</>
               }
                 </>
               )}

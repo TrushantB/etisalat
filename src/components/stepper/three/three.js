@@ -2,50 +2,65 @@ import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { BILL_DEVIATION } from "@/utility/constant";
+import BillDeviationSlider from "../billDeviationSlider/BillDeviationSlider";
+import InternetNotWorkingSlider from "../internetNotWorking/InternetNotWorkingSlider";
+import ElifeSlider from "../elifeSlider/ElifeSlider";
+import FaqSlider from "../faqSlider/FaqSlider";
 
 const Three = ({
   setStep,
   onSelectType,
   isEnglish,
   isMain,
+  billDeviation,
+  handleStopTalking,
+  internetNotWorking,
+  elife,
+  slowInternetSpeed,
 }) => {
   const [showBillDeviation, setShowBillDeviation] = useState(false);
-  const sliderRef = useRef(null);
+  const [showInternetNotWorking, setShowInternetNotWorking] = useState(false);
+  const [showElif, setShowElif] = useState(false);
+  const [showFaq, setShowFaq] = useState(false);
 
-  useEffect(() => {
-    let interval;
-    if (showBillDeviation) {
-      interval = setInterval(() => {
-        if (sliderRef.current) {
-          sliderRef.current.slickNext();
-        }
-      }, 2000);
-    } else {
-      clearInterval(interval);
-    }
-
-    return () => clearInterval(interval);
-  }, [showBillDeviation]);
-
-  const openShowBillDeviation = () => {
+  const openShowBillDeviation = (event) => {
+    billDeviation();
     setShowBillDeviation(true);
-    if (sliderRef.current) {
-      sliderRef.current.slickGoTo(0);
-    }
+  };
+  const openShowInternetNotWorking = (event) => {
+    internetNotWorking();
+    setShowInternetNotWorking(true);
+  };
+
+  const openElif = () => {
+    elife();
+    setShowElif(true);
+  };
+  const closeShowElife = () => {
+    setShowElif(false);
+    handleStopTalking();
+  };
+
+  const closeShowInternetNotWorking = () => {
+    setShowInternetNotWorking(false);
+    handleStopTalking();
   };
 
   const closeShowBillDeviation = () => {
     setShowBillDeviation(false);
+    handleStopTalking();
   };
 
-  const settings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+  const openFaq = () => {
+    // elife();
+    setShowFaq(true);
   };
+  const closeShowFaq = () => {
+    setShowFaq(false);
+    handleStopTalking();
+  };
+
   return (
     <>
       {isMain && (
@@ -54,13 +69,19 @@ const Three = ({
             onClick={openShowBillDeviation}
             className="relative flex flex-col cursor-pointer"
           >
-            <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
+            <div
+              className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
+              name="bill deviation"
+            >
               <img
                 className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon"
                 src="/images/postpaid.svg"
                 alt=""
               />
-              <p className="text-xs text-center sm:text-sm text-secondary-in">
+              <p
+                className="text-xs text-center sm:text-sm text-secondary-in"
+                name="bill deviation"
+              >
                 {isEnglish ? "Bill Deviation" : "انحراف الفاتورة"}
               </p>
             </div>
@@ -68,6 +89,7 @@ const Three = ({
 
           <div
             className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
+            onClick={openShowInternetNotWorking}
           >
             <img
               className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon  "
@@ -79,10 +101,11 @@ const Three = ({
             </p>
           </div>
 
-          <div
-            className="relative flex flex-col cursor-pointer"
-          >
-            <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
+          <div className="relative flex flex-col cursor-pointer">
+            <div
+              className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
+              onClick={openElif}
+            >
               <img
                 className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon  min-[1800px]:mt-3  "
                 src="/images/tv.svg"
@@ -90,15 +113,18 @@ const Three = ({
               />
               <p className="text-xs text-center sm:text-sm text-secondary-in">
                 {" "}
-                {isEnglish ? "Facing an issue with eLife" : "واجهت مشكلة مع إي لايف"}
+                {isEnglish
+                  ? "Facing an issue with eLife"
+                  : "واجهت مشكلة مع إي لايف"}
               </p>
             </div>
           </div>
 
-          <div
-            className="relative flex flex-col cursor-pointer"
-          >
-            <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3">
+          <div className="relative flex flex-col cursor-pointer">
+            <div
+              className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md min-[1800px]:p-6 min-[1800px]:gap-3"
+              onClick={slowInternetSpeed}
+            >
               <img
                 className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon  "
                 src="/images/wifi.svg"
@@ -110,9 +136,7 @@ const Three = ({
             </div>
           </div>
 
-          <div
-            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
-          >
+          <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3">
             <img
               className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon  "
               src="/images/bill.svg"
@@ -124,21 +148,20 @@ const Three = ({
             </p>
           </div>
 
-          <div
-            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
-          >
+          <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
+          onClick={openFaq}>
             <img
               className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon "
               src="/images/pay.svg"
               alt=""
             />
             <p className="text-xs text-center sm:text-sm text-secondary-in">
-            {isEnglish ? "Faq" : "التعليمات"}{" "}
+              {isEnglish ? "Faq" : "التعليمات"}{" "}
             </p>
           </div>
         </div>
       )}
-       {showBillDeviation && (
+      {showBillDeviation && (
         <>
           <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
             <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[1400px] w-full">
@@ -149,62 +172,81 @@ const Three = ({
                 >
                   x
                 </div>
-                <Slider ref={sliderRef} {...settings}>
-                  <div>
-                    <img
-                      className="w-full h-auto"
-                      src="/images/stepOne.gif"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      className="w-full h-auto"
-                      src="/images/stepTwo.gif"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      className="w-full h-auto"
-                      src="/images/stepThree.gif"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      className="w-full h-auto"
-                      src="/images/stepFour.gif"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      className="w-full h-auto"
-                      src="/images/stepFive.gif"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      className="w-full h-auto"
-                      src="/images/stepSix.gif"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      className="w-full h-auto"
-                      src="/images/stepSeven.gif"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      className="w-full h-auto"
-                      src="/images/stepEight.gif"
-                    />
-                  </div>
-                </Slider>
+                <BillDeviationSlider
+                  showBillDeviation={showBillDeviation}
+                  closeShowBillDeviation={closeShowBillDeviation}
+                />
               </div>
             </div>
           </div>
           <div
             className="fixed inset-0 z-40 bg-black opacity-25"
             onClick={closeShowBillDeviation}
+          ></div>
+        </>
+      )}
+      {showInternetNotWorking && (
+        <>
+          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[1400px] w-full">
+              <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
+                <div
+                  onClick={closeShowInternetNotWorking}
+                  className="absolute z-50 text-xl cursor-pointer top-2 right-5 "
+                >
+                  x
+                </div>
+                <InternetNotWorkingSlider
+                  closeShowInternetNotWorking={closeShowInternetNotWorking}
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="fixed inset-0 z-40 bg-black opacity-25"
+            onClick={closeShowInternetNotWorking}
+          ></div>
+        </>
+      )}
+      {showElif && (
+        <>
+          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[1400px] w-full">
+              <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
+                <div
+                  onClick={closeShowElife}
+                  className="absolute z-50 text-xl cursor-pointer top-2 right-5 "
+                >
+                  x
+                </div>
+                <ElifeSlider closeShowElife={closeShowElife} />
+              </div>
+            </div>
+          </div>
+          <div
+            className="fixed inset-0 z-40 bg-black opacity-25"
+            onClick={closeShowElife}
+          ></div>
+        </>
+      )}
+       {showFaq && (
+        <>
+          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[1400px] w-full">
+              <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
+                <div
+                  onClick={closeShowFaq}
+                  className="absolute z-50 text-xl cursor-pointer top-2 right-5 "
+                >
+                  x
+                </div>
+                <FaqSlider closeShowFaq={closeShowFaq} />
+              </div>
+            </div>
+          </div>
+          <div
+            className="fixed inset-0 z-40 bg-black opacity-25"
+            onClick={closeShowFaq}
           ></div>
         </>
       )}

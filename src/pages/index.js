@@ -201,6 +201,66 @@ export default function Home() {
     setIsMicOn(!isMicOn);
   };
 
+  const billDeviation = () => {
+    persona
+      .conversationSend("this is for Bill Deviation")
+      .then((response) => {
+        console.log("billDeviation", response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const internetNotWorking = () => {
+    persona
+      .conversationSend("this is for Internet not working")
+      .then((response) => {
+        console.log("billDeviation", response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const elife = () => {
+    persona
+      .conversationSend("this is for Facing and issue with eLife")
+      .then((response) => {
+        console.log("billDeviation", response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const slowInternetSpeed = () => {
+    persona
+      .conversationSend("this is for Speed is very slow")
+      .then((response) => {
+        console.log("billDeviation", response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const showBussinessMenu = () => {
+    persona
+      .conversationSend("this is for Click on Business/Consumer button")
+      .then((response) => {
+        console.log("billDeviation", response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const submitNumber = () => {
+    persona
+      .conversationSend("this is for Submit number")
+      .then((response) => {
+        console.log("billDeviation", response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const handleStopTalking = () => {
     persona.stopSpeaking();
   };
@@ -230,6 +290,12 @@ export default function Home() {
           handleMicOnOff={handleMicOnOff}
           handleStopTalking={handleStopTalking}
           type={type}
+          billDeviation={billDeviation}
+          internetNotWorking={internetNotWorking}
+          elife={elife}
+          slowInternetSpeed={slowInternetSpeed}
+          showBussinessMenu={showBussinessMenu}
+          submitNumber={submitNumber}
         />
         {/* <div className="absolute bottom-0">
           <InfoPopup />

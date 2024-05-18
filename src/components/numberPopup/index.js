@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const NumberPopup = ({ setIsAskForNumber }) => {
+const NumberPopup = ({ setIsAskForNumber ,submitNumber}) => {
   const [openTab, setOpenTab] = useState(1);
   const [phoneNumber, setPhoneNumber] = useState('');
 
@@ -9,6 +9,7 @@ const NumberPopup = ({ setIsAskForNumber }) => {
     if (phoneNumber.trim() !== '') {
       setIsAskForNumber(false);
       sessionStorage.setItem("isAskForNumber", "true");
+      submitNumber();
     } else {
       alert("Please enter a phone number.");
     }
