@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import One from "./one/one";
 import Two from "./two/two";
 import Three from "./three/three";
 import Four from "./four/four";
 import Login from "../login";
+import NumberPopup from "../numberPopup";
 
 const Stepper = ({
   setStep,
@@ -33,6 +34,13 @@ const Stepper = ({
   const [isWifi, setIsWifi] = useState(false);
   const [isAddToBill, setIsAddToBill] = useState(false);
   const [isRecharge, setIsRecharge] = useState(false);
+
+  const [isAskForNumber, setIsAskForNumber]=useState(true);
+
+  useEffect(() =>{
+    const isAskForNumber= sessionStorage.getItem("isAskForNumber");
+    setIsAskForNumber(isAskForNumber)
+  },[])
 
   const handleLeftStep = () => {
     if (step > 1) {
@@ -179,12 +187,20 @@ const Stepper = ({
               )}
               {step === 2 && (
                 <>{type === "business"? 
-                <Three
+                <>
+                {
+                  isAskForNumber ? 
+                  
+                  <NumberPopup setIsAskForNumber={setIsAskForNumber}/>
+                  :
+                  <Three
                   setStep={setStep}
                   onSelectType={onSelectType}
                   isEnglish={isEnglish}
                   isMain={isMain}
-                /> :
+                />
+                }
+                </> :
                 // <Four
                 //   setStep={setStep}
                 //   handleFAQ={handleFAQ}
