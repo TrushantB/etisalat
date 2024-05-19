@@ -29,6 +29,7 @@ const Four = ({
  }) => {
   const [showPopup, setShowPopup] = useState(false);
   
+  
   const togglePopup = () => {
     setShowPopup(!showPopup);
   };
@@ -77,6 +78,11 @@ const Four = ({
     setIsRecharge(true);
     handleQuickPayRecharge();
   };
+
+  const handleLiveChats = () =>{
+    console.log("hi")
+    myMeeting();
+  }
   return (
     <>
       {isMain && (
@@ -163,6 +169,8 @@ const Four = ({
 
               <div
                 className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
+                onClick={handleLiveChats}
+                // ref={myMeeting}
               >
                 <img
                   className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon  "

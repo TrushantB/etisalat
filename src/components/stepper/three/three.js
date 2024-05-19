@@ -7,6 +7,7 @@ import BillDeviationSlider from "../billDeviationSlider/BillDeviationSlider";
 import InternetNotWorkingSlider from "../internetNotWorking/InternetNotWorkingSlider";
 import ElifeSlider from "../elifeSlider/ElifeSlider";
 import FaqSlider from "../faqSlider/FaqSlider";
+import Room from "../room/Room";
 
 const Three = ({
   setStep,
@@ -23,7 +24,69 @@ const Three = ({
   const [showInternetNotWorking, setShowInternetNotWorking] = useState(false);
   const [showElif, setShowElif] = useState(false);
   const [showFaq, setShowFaq] = useState(false);
+  const [showLiveChat, setShowLiveChat] = useState();
 
+  const zpRef = useRef(null);
+
+  // function randomID(len) {
+  //   let result = "";
+  //   if (result) return result;
+  //   var chars =
+  //       "12345qwertyuiopasdfgh67890jklmnbvcxzMNBVCZXASDQWERTYHGFUIOLKJP",
+  //     maxPos = chars.length,
+  //     i;
+  //   len = len || 5;
+  //   for (i = 0; i < len; i++) {
+  //     result += chars.charAt(Math.floor(Math.random() * maxPos));
+  //   }
+  //   return result;
+  // }
+  // let myMeeting = async (element) => {
+  //   const { ZegoUIKitPrebuilt } = await import(
+  //     "@zegocloud/zego-uikit-prebuilt"
+  //   );
+
+  //   // generate Kit Token
+  //   const roomID = "Arvind";
+
+  //   const appID = Number(process.env.NEXT_PUBLIC_APP_ID);
+  //   const serverSecret = process.env.NEXT_PUBLIC_SERVER_SECRETE;
+  //   const kitToken = ZegoUIKitPrebuilt?.generateKitTokenForTest(
+  //     appID,
+  //     serverSecret,
+  //     roomID,
+  //     randomID(5),
+  //     "Setoo Solutions"
+  //   );
+  //   const zp = ZegoUIKitPrebuilt.create(kitToken);
+  //   zpRef.current = zp;
+  //   zp?.joinRoom({
+  //     container: element,
+  //     sharedLinks: [
+  //       {
+  //         name: "Personal link",
+  //         url:
+  //           window.location.protocol +
+  //           "//" +
+  //           window.location.host +
+  //           window.location.pathname +
+  //           "?roomID=" +
+  //           roomID,
+  //       },
+  //     ],
+  //     scenario: {
+  //       mode: ZegoUIKitPrebuilt.OneONoneCall, // To implement 1-on-1 calls, modify the parameter here to [ZegoUIKitPrebuilt.OneONoneCall].
+  //       // showPreJoinView:false;
+  //     },
+      
+  //   });
+    
+  // };
+const leaveCall = async() =>{
+  if (zpRef.current && typeof zpRef.current.leaveRoom === 'function') {
+    zpRef.current.leaveRoom();
+  }
+}
   const openShowBillDeviation = (event) => {
     billDeviation();
     setShowBillDeviation(true);
@@ -37,9 +100,15 @@ const Three = ({
     elife();
     setShowElif(true);
   };
+  const openLiveChat = () => {
+    setShowLiveChat(true);
+  };
   const closeShowElife = () => {
-    setShowElif(false);
+    setShowLiveChat(false);
     handleStopTalking();
+  };
+  const closeShowLiveChat = () => {
+    setShowLiveChat(false);
   };
 
   const closeShowInternetNotWorking = () => {
@@ -53,14 +122,13 @@ const Three = ({
   };
 
   const openFaq = () => {
-    // elife();
     setShowFaq(true);
   };
   const closeShowFaq = () => {
     setShowFaq(false);
     handleStopTalking();
   };
-
+ 
   return (
     <>
       {isMain && (
@@ -136,7 +204,10 @@ const Three = ({
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3">
+          <div
+            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
+            onClick={openLiveChat}
+          >
             <img
               className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon  "
               src="/images/bill.svg"
@@ -148,8 +219,10 @@ const Three = ({
             </p>
           </div>
 
-          <div className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
-          onClick={openFaq}>
+          <div
+            className="flex flex-col items-center justify-start h-full gap-1 p-2 bg-white rounded-md cursor-pointer min-[1800px]:p-6 min-[1800px]:gap-3"
+            onClick={openFaq}
+          >
             <img
               className="w-6 h-6 min-[1800px]:w-24 min-[1800px]:h-24 services-icon "
               src="/images/pay.svg"
@@ -229,7 +302,7 @@ const Three = ({
           ></div>
         </>
       )}
-       {showFaq && (
+      {showFaq && (
         <>
           <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper faq-wrapper">
             <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[1400px] w-full">
@@ -247,6 +320,29 @@ const Three = ({
           <div
             className="fixed inset-0 z-40 bg-black opacity-25"
             onClick={closeShowFaq}
+          ></div>
+        </>
+      )}
+      {showLiveChat && (
+        <>
+          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper faq-wrapper">
+            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[800px]">
+              <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
+                <div
+                  onClick={closeShowLiveChat}
+                  className="absolute z-50 text-xl cursor-pointer top-2 right-5 "
+                >
+                  x
+                </div>
+                <Room setShowLiveChat={setShowLiveChat} showLiveChat={showLiveChat}/>
+
+                {/* <div ref={myMeeting}></div> */}
+              </div>
+            </div>
+          </div>
+          <div
+            className="fixed inset-0 z-40 bg-black opacity-25"
+            onClick={closeShowLiveChat}
           ></div>
         </>
       )}
