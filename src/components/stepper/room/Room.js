@@ -26,8 +26,10 @@ const Room = ({ setShowLiveChat, showLiveChat }) => {
 
       // Generate Kit Token
       const roomID = "Arvind";
-      const appID = Number(process.env.NEXT_PUBLIC_APP_ID);
-      const serverSecret = process.env.NEXT_PUBLIC_SERVER_SECRETE;
+      const appID = Number(8213693);
+    //   const appID = Number(process.env.NEXT_PUBLIC_APP_ID);
+      const serverSecret = b970e20132df716482149049248bf875;
+    //   const serverSecret = process.env.NEXT_PUBLIC_SERVER_SECRETE;
       const kitToken = ZegoUIKitPrebuilt?.generateKitTokenForTest(
         appID,
         serverSecret,
