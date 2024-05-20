@@ -123,22 +123,12 @@ svg {
   @apply fixed bottom-0 px-8 py-16 bg-transparent;
 }
 
-/* div .video-frame video:first-of-type {
-  width: 500px;
-  height: 300px;
-} */
-/* div .video-frame video:last-of-type {
-  width: 100px;
-  height: fit-content;
-} */
-/* 
-.video-frame  {
-  height: 300px;
-  width: max-content;
-} */
-/* .video-frame video[cameraopen="OPEN"]{
-height: 100px;
-} */
+.video-frame {
+  position: relative;
+}
+.video-frame .tNt73LbNo0bjqasgdCKO {
+  @apply !absolute !top-0 !right-0 !w-4/12 !h-2/6;
+}
 /* Media query for mobile devices */
 @media (min-width: 767px) {
   svg {

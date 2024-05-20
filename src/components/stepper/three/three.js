@@ -325,12 +325,12 @@ const leaveCall = async() =>{
       )}
       {showLiveChat && (
         <>
-          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper faq-wrapper">
-            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[800px]">
+          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper">
+            <div className="relative w-full my-6 mx-5 max-w-3xl 2xl:max-w-[800px]">
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
                   onClick={closeShowLiveChat}
-                  className="absolute z-50 text-xl cursor-pointer top-2 right-5 "
+                  className="absolute z-50 text-base text-white cursor-pointer top-2 right-5"
                 >
                   x
                 </div>
