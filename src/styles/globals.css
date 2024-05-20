@@ -123,11 +123,18 @@ svg {
   @apply fixed bottom-0 px-8 py-16 bg-transparent;
 }
 
-.video-frame {
-  position: relative;
-}
-.video-frame .tNt73LbNo0bjqasgdCKO {
-  @apply !absolute !top-0 !right-0 !w-4/12 !h-2/6;
+div:has(div .zego_model_parent) {
+  position: fixed;
+  width: 40% !important;
+  height: 40% !important;
+  min-width: 325px;
+  top: auto !important;
+  z-index: 100;
+  background-color: rgb(255, 255, 255);
+  overflow: auto;
+  left: 50% !important;
+  bottom: 0 !important;
+  transform: translate(-50%, -50px) !important;
 }
 /* Media query for mobile devices */
 @media (min-width: 767px) {
