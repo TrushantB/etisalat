@@ -143,6 +143,9 @@ div[style="position: fixed; width: 100%; height: 100%; min-width: 345px; top: 0p
   height: 30% !important;
   border-radius: 24px !important;
 }
+.ZegoRoomMobile_ZegoRoom div:nth-child(3) {
+  padding: 0 !important;
+}
 .ZegoRoomMobile_ZegoRoom div:nth-child(3) a{
   width: 7vmin !important;
   height: 7vmin !important;
@@ -272,6 +275,9 @@ div[style="position: fixed; width: 100%; height: 100%; min-width: 345px; top: 0p
     @apply !py-8;
   }
   .carousel-wrapper {
+    @apply mb-[36rem] ml-24;
+  }
+  .faq-wrapper {
     @apply mb-24;
   }
   .carousel-wrapper.faq-wrapper > div.w-full {

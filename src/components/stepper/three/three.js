@@ -361,8 +361,8 @@ const Three = ({
       )}
       {showBillDeviation && (
         <>
-          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper">
-            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[1400px] w-full">
+          <div className="fixed inset-0 z-50 flex items-center justify-start -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper">
+            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[600px] w-full">
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
                   onClick={closeShowBillDeviation}
@@ -385,8 +385,8 @@ const Three = ({
       )}
       {showInternetNotWorking && (
         <>
-          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper">
-            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[1400px] w-full">
+          <div className="fixed inset-0 z-50 flex items-center justify-start -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper">
+            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[600px] w-full">
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
                   onClick={closeShowInternetNotWorking}
@@ -408,8 +408,8 @@ const Three = ({
       )}
       {showElif && (
         <>
-          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper">
-            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[1400px] w-full">
+          <div className="fixed inset-0 z-50 flex items-center justify-start -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper">
+            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[600px] w-full">
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
                   onClick={closeShowElife}
@@ -429,7 +429,7 @@ const Three = ({
       )}
       {showFaq && (
         <>
-          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper faq-wrapper">
+          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none faq-wrapper">
             <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[1400px] w-full">
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
@@ -448,31 +448,6 @@ const Three = ({
           ></div>
         </>
       )}
-      {/* {showLiveChat && (
-        <>
-          <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper faq-wrapper">
-            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[800px]">
-              <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
-                <div
-                  onClick={closeShowLiveChat}
-                  className="absolute z-50 text-xl cursor-pointer top-2 right-5 "
-                >
-                  x
-                </div>
-                <Room
-                  setShowLiveChat={setShowLiveChat}
-                  showLiveChat={showLiveChat}
-                />
-
-              </div>
-            </div>
-          </div>
-          <div
-            className="fixed inset-0 z-40 bg-black opacity-25"
-            onClick={closeShowLiveChat}
-          ></div>
-        </>
-      )} */}
     </>
   );
 };
