@@ -95,52 +95,53 @@ const NumberPopup = ({ setIsAskForNumber, submitNumber }) => {
                         inputMode="numeric"
                         pattern="[0-9]*"
                         required={true}
+                        disabled={true}
                       />
-                      <div id="container-keybord">
-                        <ul id="keyboard">
-                          <li onClick={handleNumberClick} class="letter">
-                            1
-                          </li>
-                          <li onClick={handleNumberClick} class="letter">
-                            2
-                          </li>
-                          <li onClick={handleNumberClick} class="letter">
-                            3
-                          </li>
-                          <li onClick={handleNumberClick} class="letter clearl">
-                            4
-                          </li>
-                          <li onClick={handleNumberClick} class="letter">
-                            5
-                          </li>
-                          <li onClick={handleNumberClick} class="letter">
-                            6
-                          </li>
-
-                          <li onClick={handleNumberClick} class="letter clearl">
-                            7
-                          </li>
-                          <li onClick={handleNumberClick} class="letter ">
-                            8
-                          </li>
-                          <li onClick={handleNumberClick} class="letter">
-                            9
-                          </li>
-                          <li onClick={handleNumberClick} class="return clearl">
-                            +
-                          </li>
-                          <li onClick={handleNumberClick} class="letter ">
-                            0
-                          </li>
-                          <li
-                            onClick={handleNumberDelete}
-                            class="delete lastitem"
-                          >
-                            x
-                          </li>
-                        </ul>
-                      </div>
                     </div>
+                  </div>
+                  <div id="container-keybord">
+                    <ul id="keyboard" className="grid grid-cols-3 grid-rows-4 gap-4">
+                      <li onClick={handleNumberClick} class="letter">
+                        1
+                      </li>
+                      <li onClick={handleNumberClick} class="letter">
+                        2
+                      </li>
+                      <li onClick={handleNumberClick} class="letter">
+                        3
+                      </li>
+                      <li onClick={handleNumberClick} class="letter clearl">
+                        4
+                      </li>
+                      <li onClick={handleNumberClick} class="letter">
+                        5
+                      </li>
+                      <li onClick={handleNumberClick} class="letter">
+                        6
+                      </li>
+
+                      <li onClick={handleNumberClick} class="letter clearl">
+                        7
+                      </li>
+                      <li onClick={handleNumberClick} class="letter ">
+                        8
+                      </li>
+                      <li onClick={handleNumberClick} class="letter">
+                        9
+                      </li>
+                      <li onClick={handleNumberClick} class="return clearl">
+                        +
+                      </li>
+                      <li onClick={handleNumberClick} class="letter ">
+                        0
+                      </li>
+                      <li
+                        onClick={handleNumberDelete}
+                        class="delete lastitem"
+                      >
+                        x
+                      </li>
+                    </ul>
                   </div>
                   <button
                     type="submit"
@@ -171,52 +172,53 @@ const NumberPopup = ({ setIsAskForNumber, submitNumber }) => {
                         inputMode="numeric"
                         pattern="[0-9]*"
                         required={true}
+                        disabled={true}
                       />
                     </div>
-                    <div id="container-keybord">
-                      <ul id="keyboard">
-                        <li onClick={handleNumberClick} class="letter">
-                          1
-                        </li>
-                        <li onClick={handleNumberClick} class="letter">
-                          2
-                        </li>
-                        <li onClick={handleNumberClick} class="letter">
-                          3
-                        </li>
-                        <li onClick={handleNumberClick} class="letter clearl">
-                          4
-                        </li>
-                        <li onClick={handleNumberClick} class="letter">
-                          5
-                        </li>
-                        <li onClick={handleNumberClick} class="letter">
-                          6
-                        </li>
+                  </div>
+                  <div id="container-keybord">
+                    <ul id="keyboard"  className="grid grid-cols-3 grid-rows-4 gap-4">
+                      <li onClick={handleNumberClick} class="letter">
+                        1
+                      </li>
+                      <li onClick={handleNumberClick} class="letter">
+                        2
+                      </li>
+                      <li onClick={handleNumberClick} class="letter">
+                        3
+                      </li>
+                      <li onClick={handleNumberClick} class="letter clearl">
+                        4
+                      </li>
+                      <li onClick={handleNumberClick} class="letter">
+                        5
+                      </li>
+                      <li onClick={handleNumberClick} class="letter">
+                        6
+                      </li>
 
-                        <li onClick={handleNumberClick} class="letter clearl">
-                          7
-                        </li>
-                        <li onClick={handleNumberClick} class="letter ">
-                          8
-                        </li>
-                        <li onClick={handleNumberClick} class="letter">
-                          9
-                        </li>
-                        <li onClick={handleNumberClick} class="return clearl">
-                          +
-                        </li>
-                        <li onClick={handleNumberClick} class="letter ">
-                          0
-                        </li>
-                        <li
-                          onClick={handleNumberDelete}
-                          class="delete lastitem"
-                        >
-                          x
-                        </li>
-                      </ul>
-                    </div>
+                      <li onClick={handleNumberClick} class="letter clearl">
+                        7
+                      </li>
+                      <li onClick={handleNumberClick} class="letter ">
+                        8
+                      </li>
+                      <li onClick={handleNumberClick} class="letter">
+                        9
+                      </li>
+                      <li onClick={handleNumberClick} class="return clearl">
+                        +
+                      </li>
+                      <li onClick={handleNumberClick} class="letter ">
+                        0
+                      </li>
+                      <li
+                        onClick={handleNumberDelete}
+                        class="delete lastitem"
+                      >
+                        x
+                      </li>
+                    </ul>
                   </div>
                   <button
                     type="submit"
