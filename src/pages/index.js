@@ -296,6 +296,8 @@ export default function Home() {
           slowInternetSpeed={slowInternetSpeed}
           showBussinessMenu={showBussinessMenu}
           submitNumber={submitNumber}
+          scene={scene}
+          setIsMicOn={setIsMicOn}
         />
         {/* <div className="absolute bottom-0">
           <InfoPopup />

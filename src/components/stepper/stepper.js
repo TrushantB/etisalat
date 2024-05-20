@@ -30,7 +30,9 @@ const Stepper = ({
   elife,
   slowInternetSpeed,
   showBussinessMenu,
-  submitNumber
+  submitNumber,
+  scene,
+  setIsMicOn
 
 }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -92,7 +94,7 @@ const Stepper = ({
         <div className="absolute bottom-0 flex items-center justify-between w-full px-4 py-4 bg-transparent">
           <div className="flex items-center gap-4 footer-icons">
             <div
-                className="flex items-center justify-center w-12 h-12 rounded-full cursor-pointer bottom-5 left-8 sm:left-5 bg-slate-700 active:bg-slate-900 min-[1800px]:!w-28 min-[1800px]:!h-28"
+                className={`flex items-center justify-center w-12 h-12 rounded-full cursor-pointer bottom-5 left-8 sm:left-5 ${isMicOn ? "bg-slate-700" :"bg-red-400"} active:bg-slate-900 min-[1800px]:!w-28 min-[1800px]:!h-28`}
                 onClick={() => handleMicOnOff()}
             >
                 {isMicOn ? (
@@ -208,6 +210,8 @@ const Stepper = ({
                   internetNotWorking={internetNotWorking}
                   elife={elife}
                   slowInternetSpeed={slowInternetSpeed}
+                  scene={scene}
+                  setIsMicOn={setIsMicOn}
                 />
                 }
                 </> :

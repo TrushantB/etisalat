@@ -19,6 +19,8 @@ const Three = ({
   internetNotWorking,
   elife,
   slowInternetSpeed,
+  scene,
+  setIsMicOn
 }) => {
   const [showBillDeviation, setShowBillDeviation] = useState(false);
   const [showInternetNotWorking, setShowInternetNotWorking] = useState(false);
@@ -77,9 +79,7 @@ const Three = ({
         title: "Setoo Solutions calling",
         message: "Incoming video call...",
       },
-      
     });
-
     // const zp = await ZegoUIKitPrebuilt.create(TOKEN);
 
     // zp.addPlugins({ ZIM });
@@ -196,6 +196,10 @@ const Three = ({
       const zpInstance = ZegoUIKitPrebuilt.create(kitToken);
       zpInstanceRef.current = zpInstance;
       invite();
+      scene && scene.setMediaDeviceActive({
+        microphone: false,
+      });
+      setIsMicOn(false)
       // zpInstance.joinRoom({
       //   container: containerRef.current,
       //   // showPreJoinView: false,
@@ -253,7 +257,7 @@ const Three = ({
     setShowFaq(false);
     handleStopTalking();
   };
-
+console.log("scene",scene);
   return (
     <>
       {isMain && (
