@@ -125,15 +125,15 @@ svg {
 
 div[style="position: fixed; width: 100%; height: 100%; min-width: 345px; top: 0px; left: 0px; z-index: 100; background-color: rgb(255, 255, 255); overflow: auto;"] {
   position: fixed;
-  width: 40% !important;
-  height: 40% !important;
+  width: 20% !important;
+  height: 20% !important;
   min-width: 325px;
   top: auto !important;
   z-index: 100;
   background-color: rgb(255, 255, 255);
   overflow: auto;
   left: 50% !important;
-  bottom: 0 !important;
+  bottom: 55rem !important;
   transform: translate(-50%, -50px) !important;
 }
 .ZegoRoomMobile_ZegoRoom div:nth-child(2) {
@@ -147,9 +147,9 @@ div[style="position: fixed; width: 100%; height: 100%; min-width: 345px; top: 0p
   padding: 0 !important;
 }
 .ZegoRoomMobile_ZegoRoom div:nth-child(3) a{
-  width: 7vmin !important;
-  height: 7vmin !important;
-  background-size: 6vmin 6vmin !important;
+  width: 6vmin !important;
+  height: 6vmin !important;
+  background-size: 5vmin 5vmin !important;
 }
 /* Media query for mobile devices */
 @media (min-width: 767px) {
