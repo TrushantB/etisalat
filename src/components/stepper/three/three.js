@@ -241,7 +241,7 @@ const leaveCall = async() =>{
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
                   onClick={closeShowBillDeviation}
-                  className="absolute z-50 text-xl cursor-pointer top-2 right-5 text-small"
+                  className="absolute z-50 text-base cursor-pointer top-2 right-5"
                 >
                   x
                 </div>
@@ -265,7 +265,7 @@ const leaveCall = async() =>{
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
                   onClick={closeShowInternetNotWorking}
-                  className="absolute z-50 text-xl cursor-pointer top-2 right-5 "
+                  className="absolute z-50 text-base cursor-pointer top-2 right-5"
                 >
                   x
                 </div>
@@ -288,7 +288,7 @@ const leaveCall = async() =>{
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
                   onClick={closeShowElife}
-                  className="absolute z-50 text-xl cursor-pointer top-2 right-5 "
+                  className="absolute z-50 text-base cursor-pointer top-2 right-5"
                 >
                   x
                 </div>
@@ -309,7 +309,7 @@ const leaveCall = async() =>{
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
                   onClick={closeShowFaq}
-                  className="absolute z-50 text-xl cursor-pointer top-2 right-5 "
+                  className="absolute z-50 text-base cursor-pointer top-2 right-5"
                 >
                   x
                 </div>

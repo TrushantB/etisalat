@@ -210,6 +210,9 @@ height: 100px;
     row-gap: 0.4in !important;
     column-gap: 0.2in !important;
   }
+  .number-modal-wrapper {
+    padding: 0.4in !important;
+  }
   .modal-wrapper.pt-top {
     padding-top: 0.8in !important;
   }
@@ -227,7 +230,7 @@ height: 100px;
     @apply gap-10;
   }
   #sm-video {
-    padding: 0 3cm;
+    padding: 0 4cm;
   }
   body .min-\[1800px\]\:\!w-28 {
     width: 8rem !important;

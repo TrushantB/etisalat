@@ -16,13 +16,13 @@ const NumberPopup = ({ setIsAskForNumber ,submitNumber}) => {
   };
 
   return (
-    <div className="bg-gradient-to-r mx-auto from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] py-5 px-3 rounded-[24px] w-3/6">
+    <div className="bg-gradient-to-r mx-auto from-[rgba(10,10,10,0.5)] to-[rgba(224,8,0,0.5)] py-5 px-3 rounded-[24px] w-3/6 number-modal-wrapper">
       <div className="flex flex-col justify-center min-h-full px-4 pt-2 pb-4 bg-white rounded-md lg:px-4 number-popup">
         <h2 className="pb-2 text-xl font-bold text-secondary-in min-[1800px]:pb-6">Please enter your number</h2>
         <ul className="flex flex-row flex-wrap pt-3 pb-4 mb-0 list-none" role="tablist">
           <li className="flex-auto mr-2 -mb-px text-center last:mr-0">
             <a
-              className={"text-base font-bold uppercase block leading-normal pb-2" +
+              className={"text-base font-bold  block leading-normal pb-2" +
                 (openTab === 1
                   ? "border-b border-b-2 border-red-700 text-gray-600"
                   : "text-gray-600 bg-white")}
@@ -39,7 +39,7 @@ const NumberPopup = ({ setIsAskForNumber ,submitNumber}) => {
           </li>
           <li className="flex-auto mr-2 -mb-px text-center last:mr-0">
             <a
-              className={"text-base font-bold uppercase block leading-normal pb-2" +
+              className={"text-base font-bold  block leading-normal pb-2" +
                 (openTab === 2
                   ? "border-b border-b-2 border-red-700 text-gray-600"
                   : "text-gray-600 bg-white")}
@@ -64,17 +64,19 @@ const NumberPopup = ({ setIsAskForNumber ,submitNumber}) => {
                     <label htmlFor="mobile-number" className="block text-base font-medium leading-6 text-gray-900">
                       Mobile Number
                     </label>
-                    <div className="relative mt-2 rounded-md shadow-sm mb-4">
-                      <input
-                        type="tel" // Change type to 'tel' for mobile number
-                        name="mobile-number"
-                        id="mobile-number"
+                    <div className="relative mt-2 mb-4 rounded-md shadow-sm">
+                    <input
+                        type="tel" 
+                        name="telephone-number"
+                        id="telephone-number"
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
-                        className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm text-base sm:leading-6"
+                        className="block w-full p-2 text-base text-gray-900 border-0 rounded-md shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         placeholder="+1 (555) 987-6543"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
                         required={true}
-                      />
+                    />
                     </div>
                   </div>
                   <button
@@ -90,17 +92,19 @@ const NumberPopup = ({ setIsAskForNumber ,submitNumber}) => {
                     <label htmlFor="telephone-number" className="block text-base font-medium leading-6 text-gray-900">
                       Telephone Number
                     </label>
-                    <div className="relative mt-2 rounded-md shadow-sm mb-4">
-                      <input
-                        type="tel" // Change type to 'tel' for telephone number
+                    <div className="relative mt-2 mb-4 rounded-md shadow-sm">
+                    <input
+                        type="tel" 
                         name="telephone-number"
                         id="telephone-number"
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
-                        className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm text-base sm:leading-6"
+                        className="block w-full p-2 text-base text-gray-900 border-0 rounded-md shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         placeholder="+1 (555) 987-6543"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
                         required={true}
-                      />
+                    />
                     </div>
                   </div>
                   <button
