@@ -45,10 +45,7 @@ const Footer = ({
             </svg>
         </div>
         </div>
-        <img
-        className="w-32 h-12 bottom-5 right-5 footer-logo"
-        src="/images/full-logo.svg"
-        />
+        <></>
   </div>
   );
 };
