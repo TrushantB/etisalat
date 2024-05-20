@@ -4,7 +4,6 @@ export const BILL_DEVIATION = [
   { url: "/images/stepThree.gif" },
   { url: "/images/stepFour.gif" },
   { url: "/images/stepFive.gif" },
-
   { url: "/images/stepEight.gif" },
 ];
 export const INTERNET_NOT_WORKING = [
