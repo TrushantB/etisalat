@@ -203,7 +203,7 @@ export default function Home() {
 
   const billDeviation = () => {
     persona
-      .conversationSend("this is for Bill Deviation")
+      .conversationSend("bill-deviation")
       .then((response) => {
         console.log("billDeviation", response);
       })
@@ -213,7 +213,7 @@ export default function Home() {
   };
   const internetNotWorking = () => {
     persona
-      .conversationSend("this is for Internet not working")
+      .conversationSend("internet-issue")
       .then((response) => {
         console.log("billDeviation", response);
       })
@@ -223,7 +223,7 @@ export default function Home() {
   };
   const elife = () => {
     persona
-      .conversationSend("this is for Facing and issue with eLife")
+      .conversationSend("elife-issue")
       .then((response) => {
         console.log("billDeviation", response);
       })
@@ -233,7 +233,7 @@ export default function Home() {
   };
   const slowInternetSpeed = () => {
     persona
-      .conversationSend("this is for Speed is very slow")
+      .conversationSend("slow-speed")
       .then((response) => {
         console.log("billDeviation", response);
       })
@@ -243,7 +243,7 @@ export default function Home() {
   };
   const showBussinessMenu = () => {
     persona
-      .conversationSend("this is for Click on Business/Consumer button")
+      .conversationSend("enternumber")
       .then((response) => {
         console.log("billDeviation", response);
       })
@@ -253,7 +253,7 @@ export default function Home() {
   };
   const submitNumber = () => {
     persona
-      .conversationSend("this is for Submit number")
+      .conversationSend("submitnumber")
       .then((response) => {
         console.log("billDeviation", response);
       })
