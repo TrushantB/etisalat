@@ -123,7 +123,7 @@ svg {
   @apply fixed bottom-0 px-8 py-16 bg-transparent;
 }
 
-div:has(div .zego_model_parent) {
+div[style="position: fixed; width: 100%; height: 100%; min-width: 345px; top: 0px; left: 0px; z-index: 100; background-color: rgb(255, 255, 255); overflow: auto;"] {
   position: fixed;
   width: 40% !important;
   height: 40% !important;
@@ -135,6 +135,18 @@ div:has(div .zego_model_parent) {
   left: 50% !important;
   bottom: 0 !important;
   transform: translate(-50%, -50px) !important;
+}
+.ZegoRoomMobile_ZegoRoom div:nth-child(2) {
+  top: 0 !important;
+  right: 0 !important;
+  width: 30% !important;
+  height: 30% !important;
+  border-radius: 24px !important;
+}
+.ZegoRoomMobile_ZegoRoom div:nth-child(3) a{
+  width: 7vmin !important;
+  height: 7vmin !important;
+  background-size: 6vmin 6vmin !important;
 }
 /* Media query for mobile devices */
 @media (min-width: 767px) {
