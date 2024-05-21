@@ -366,7 +366,7 @@ console.log("scene",scene);
       {showBillDeviation && (
         <>
           <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper">
-            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[340px] w-full">
+            <div className="relative w-auto w-full max-w-3xl mx-5 my-6 inner-slider-wrapper">
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
                   onClick={closeShowBillDeviation}
@@ -390,7 +390,7 @@ console.log("scene",scene);
       {showInternetNotWorking && (
         <>
           <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper">
-            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[340px] w-full">
+            <div className="relative w-auto w-full max-w-3xl mx-5 my-6 inner-slider-wrapper">
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
                   onClick={closeShowInternetNotWorking}
@@ -413,7 +413,7 @@ console.log("scene",scene);
       {showElif && (
         <>
           <div className="fixed inset-0 z-50 flex items-end justify-center -mt-10 overflow-x-hidden overflow-y-auto outline-none focus:outline-none carousel-wrapper">
-            <div className="relative w-auto my-6 mx-5 max-w-3xl 2xl:max-w-[340px] w-full">
+            <div className="relative w-auto w-full max-w-3xl mx-5 my-6 inner-slider-wrapper">
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 <div
                   onClick={closeShowElife}
