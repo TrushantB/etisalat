@@ -101,43 +101,43 @@ const NumberPopup = ({ setIsAskForNumber, submitNumber }) => {
                   </div>
                   <div id="container-keybord">
                     <ul id="keyboard" className="grid grid-cols-3 grid-rows-4 gap-4">
-                      <li onClick={handleNumberClick} class="letter text-base">
+                      <li onClick={handleNumberClick} className="letter text-base">
                         1
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base">
+                      <li onClick={handleNumberClick} className="letter text-base">
                         2
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base">
+                      <li onClick={handleNumberClick} className="letter text-base">
                         3
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base clearl">
+                      <li onClick={handleNumberClick} className="letter text-base clearl">
                         4
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base">
+                      <li onClick={handleNumberClick} className="letter text-base">
                         5
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base">
+                      <li onClick={handleNumberClick} className="letter text-base">
                         6
                       </li>
 
-                      <li onClick={handleNumberClick} class="letter text-base clearl">
+                      <li onClick={handleNumberClick} className="letter text-base clearl">
                         7
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base ">
+                      <li onClick={handleNumberClick} className="letter text-base ">
                         8
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base">
+                      <li onClick={handleNumberClick} className="letter text-base">
                         9
                       </li>
-                      <li onClick={handleNumberClick} class="return clearl text-base">
+                      <li onClick={handleNumberClick} className="return clearl text-base">
                         +
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base ">
+                      <li onClick={handleNumberClick} className="letter text-base ">
                         0
                       </li>
                       <li
                         onClick={handleNumberDelete}
-                        class="delete lastitem text-base"
+                        className="delete lastitem text-base"
                       >
                         x
                       </li>
@@ -178,43 +178,43 @@ const NumberPopup = ({ setIsAskForNumber, submitNumber }) => {
                   </div>
                   <div id="container-keybord">
                     <ul id="keyboard"  className="grid grid-cols-3 grid-rows-4 gap-4">
-                      <li onClick={handleNumberClick} class="letter text-base">
+                      <li onClick={handleNumberClick} className="letter text-base">
                         1
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base">
+                      <li onClick={handleNumberClick} className="letter text-base">
                         2
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base">
+                      <li onClick={handleNumberClick} className="letter text-base">
                         3
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base clearl">
+                      <li onClick={handleNumberClick} className="letter text-base clearl">
                         4
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base">
+                      <li onClick={handleNumberClick} className="letter text-base">
                         5
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base">
+                      <li onClick={handleNumberClick} className="letter text-base">
                         6
                       </li>
 
-                      <li onClick={handleNumberClick} class="letter text-base clearl">
+                      <li onClick={handleNumberClick} className="letter text-base clearl">
                         7
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base ">
+                      <li onClick={handleNumberClick} className="letter text-base ">
                         8
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base">
+                      <li onClick={handleNumberClick} className="letter text-base">
                         9
                       </li>
-                      <li onClick={handleNumberClick} class="return clearl text-base">
+                      <li onClick={handleNumberClick} className="return clearl text-base">
                         +
                       </li>
-                      <li onClick={handleNumberClick} class="letter text-base ">
+                      <li onClick={handleNumberClick} className="letter text-base ">
                         0
                       </li>
                       <li
                         onClick={handleNumberDelete}
-                        class="delete lastitem text-base"
+                        className="delete lastitem text-base"
                       >
                         x
                       </li>
