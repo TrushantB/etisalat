@@ -129,7 +129,7 @@ const NumberPopup = ({ setIsAskForNumber, submitNumber }) => {
                       <li onClick={handleNumberClick} class="letter text-base">
                         9
                       </li>
-                      <li onClick={handleNumberClick} class="return clearl">
+                      <li onClick={handleNumberClick} class="return clearl text-base">
                         +
                       </li>
                       <li onClick={handleNumberClick} class="letter text-base ">
@@ -137,7 +137,7 @@ const NumberPopup = ({ setIsAskForNumber, submitNumber }) => {
                       </li>
                       <li
                         onClick={handleNumberDelete}
-                        class="delete lastitem"
+                        class="delete lastitem text-base"
                       >
                         x
                       </li>
@@ -206,7 +206,7 @@ const NumberPopup = ({ setIsAskForNumber, submitNumber }) => {
                       <li onClick={handleNumberClick} class="letter text-base">
                         9
                       </li>
-                      <li onClick={handleNumberClick} class="return clearl">
+                      <li onClick={handleNumberClick} class="return clearl text-base">
                         +
                       </li>
                       <li onClick={handleNumberClick} class="letter text-base ">
@@ -214,7 +214,7 @@ const NumberPopup = ({ setIsAskForNumber, submitNumber }) => {
                       </li>
                       <li
                         onClick={handleNumberDelete}
-                        class="delete lastitem"
+                        class="delete lastitem text-base"
                       >
                         x
                       </li>

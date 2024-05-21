@@ -143,7 +143,7 @@ svg {
 }
 @media (min-width: 12in) and (min-height: 29in) {
   .inner-slider-wrapper {
-    @apply !max-w-[3.54in] !max-h-[7.5in];
+    @apply !max-w-[4in] !max-h-[7.5in];
   }
   .logo,
   .scan-code {
@@ -287,8 +287,7 @@ svg {
   }
 }
 #container-keybord {
-  margin: 100px auto;
-  width: 760px;
+  @apply mx-auto my-5;
   }
   #keyboard {
   margin: 0;
