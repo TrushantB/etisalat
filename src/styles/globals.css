@@ -252,7 +252,7 @@ svg {
     @apply !py-8;
   }
   .carousel-wrapper {
-    @apply mb-[54rem];
+    @apply mb-[10in];
   }
   .faq-wrapper {
     @apply mb-24;
