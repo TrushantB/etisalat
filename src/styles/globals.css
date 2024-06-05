@@ -122,9 +122,14 @@ svg {
 .footer {
   @apply fixed bottom-0 px-8 py-16 bg-transparent;
 }
+
+.carousel-wrapper {
+  @apply bottom-[10in];
+}
 .inner-slider-wrapper {
   @apply !max-w-[2in] !max-h-[3.8in];
 }
+
 /* Media query for mobile devices */
 @media (min-width: 767px) {
   svg {
