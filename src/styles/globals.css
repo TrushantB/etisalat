@@ -122,6 +122,9 @@ svg {
 .footer {
   @apply fixed bottom-0 px-8 py-16 bg-transparent;
 }
+.inner-slider-wrapper {
+  @apply !max-w-[2in] !max-h-[3.8in];
+}
 /* Media query for mobile devices */
 @media (min-width: 767px) {
   svg {
@@ -143,7 +146,7 @@ svg {
 }
 @media (min-width: 12in) and (min-height: 29in) {
   .inner-slider-wrapper {
-    @apply !max-w-[4in] !max-h-[7.5in];
+    @apply !max-w-[2.5in] !max-h-[4.5in] !h-full !w-full;
   }
   .logo,
   .scan-code {
@@ -328,6 +331,9 @@ border-color: #e5e5e5;
 cursor: pointer;
 }
 @media (min-width: 54in) and (min-height: 87.5in) {
+  .inner-slider-wrapper {
+    @apply !max-w-[4in] !max-h-[7.5in] !h-full !w-full;
+  }
   .logo,
   .scan-code {
     width: 9in !important;
@@ -409,5 +415,8 @@ cursor: pointer;
   }
   #sm-video {
     padding: 0 12cm;
+  }
+  .carousel-wrapper {
+    @apply mb-[20in];
   }
 }
