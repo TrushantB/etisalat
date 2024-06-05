@@ -252,7 +252,7 @@ svg {
     @apply !py-8;
   }
   .carousel-wrapper {
-    @apply mb-[10in];
+    @apply bottom-[10in];
   }
   .faq-wrapper {
     @apply mb-24;
@@ -417,6 +417,6 @@ cursor: pointer;
     padding: 0 12cm;
   }
   .carousel-wrapper {
-    @apply mb-[20in];
+    @apply bottom-[20in];
   }
 }
