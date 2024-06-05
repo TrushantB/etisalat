@@ -124,7 +124,7 @@ svg {
 }
 
 .carousel-wrapper {
-  @apply bottom-[10in];
+  @apply bottom-[6in];
 }
 .inner-slider-wrapper {
   @apply !max-w-[2in] !max-h-[3.8in];
