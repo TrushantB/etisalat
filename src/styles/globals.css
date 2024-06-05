@@ -124,10 +124,10 @@ svg {
 }
 
 .carousel-wrapper {
-  @apply bottom-[6in];
+  @apply bottom-[4in];
 }
 .inner-slider-wrapper {
-  @apply !max-w-[2in] !max-h-[3.8in];
+  @apply !max-w-[3in] !max-h-[4.8in];
 }
 
 /* Media query for mobile devices */
